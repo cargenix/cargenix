@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoAtlas — discover cars and bikes, compare specifications, explore prices and find your next vehicle.">
+  <meta name="theme-color" content="#0b1020">
+  <title>AutoAtlas — Cars, Bikes & Vehicle Research</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="AutoAtlas home">
+      <span class="brand-mark">A</span>
+      <span>Auto<span>Atlas</span></span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#cars">Cars</a><a href="#bikes">Bikes</a><a href="#compare">Compare</a>
+      <a href="#discover">Discover</a><a href="#news">News</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#cars">Cars</a><a href="#bikes">Bikes</a><a href="#compare">Compare</a>
+    <a href="#discover">Discover</a><a href="#news">News</a>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE NEW WAY TO RESEARCH VEHICLES</p>
+        <h1>Find your next <span>car or bike.</span></h1>
+        <p class="hero-text">Explore prices, specifications, features, comparisons and real automotive media — all in one clean place.</p>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search cars, bikes, brands or specifications..." autocomplete="off">
+          <button id="searchBtn">Search</button>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#cars">Explore Cars</a>
+          <a class="btn ghost" href="#bikes">Explore Bikes</a>
+          <a class="btn ghost" href="#compare">Compare</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-photo">REAL MEDIA<br><small>Replace with your licensed vehicle photo</small></div>
+          <div class="hero-stats"><span><b>360°</b><small>Research</small></span><span><b>Specs</b><small>Detailed</small></span><span><b>DNA</b><small>Smart scores</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="discover">
+      <div class="section-head"><div><p class="eyebrow">START HERE</p><h2>What are you looking for?</h2></div></div>
+      <div class="category-grid">
+        <button class="category" data-filter="SUV"><strong>🚙</strong><span>SUVs</span><small>Family & adventure</small></button>
+        <button class="category" data-filter="Sedan"><strong>🚘</strong><span>Sedans</span><small>Comfort & style</small></button>
+        <button class="category" data-filter="Sports"><strong>🏎️</strong><span>Performance</span><small>Built to thrill</small></button>
+        <button class="category" data-filter="Electric"><strong>⚡</strong><span>Electric</span><small>Future ready</small></button>
+        <button class="category" data-filter="Cruiser"><strong>🏍️</strong><span>Cruisers</span><small>Relaxed rides</small></button>
+        <button class="category" data-filter="Adventure"><strong>🛣️</strong><span>Adventure</span><small>Go beyond</small></button>
+      </div>
+    </section>
+
+    <section class="section" id="cars">
+      <div class="section-head">
+        <div><p class="eyebrow">EXPLORE</p><h2>Trending cars</h2></div>
+        <div class="filters">
+          <button class="filter active" data-type="car" data-value="all">All</button>
+          <button class="filter" data-type="car" data-value="SUV">SUV</button>
+          <button class="filter" data-type="car" data-value="Sedan">Sedan</button>
+          <button class="filter" data-type="car" data-value="Electric">EV</button>
+        </div>
+      </div>
+      <div class="vehicle-grid" id="carGrid"></div>
+    </section>
+
+    <section class="section dark-section" id="bikes">
+      <div class="section-head">
+        <div><p class="eyebrow">TWO WHEELS</p><h2>Popular bikes</h2></div>
+        <div class="filters dark-filters">
+          <button class="filter active" data-type="bike" data-value="all">All</button>
+          <button class="filter" data-type="bike" data-value="Sports">Sports</button>
+          <button class="filter" data-type="bike" data-value="Cruiser">Cruiser</button>
+          <button class="filter" data-type="bike" data-value="Electric">EV</button>
+        </div>
+      </div>
+      <div class="vehicle-grid" id="bikeGrid"></div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="section-head"><div><p class="eyebrow">HEAD TO HEAD</p><h2>Compare in seconds</h2><p class="muted">Pick two vehicles and see the important differences.</p></div></div>
+      <div class="compare-picker">
+        <select id="compareA"></select><div class="vs">VS</div><select id="compareB"></select><button class="btn primary" id="compareBtn">Compare</button>
+      </div>
+      <div class="compare-output" id="compareOutput"></div>
+    </section>
+
+    <section class="section split-section">
+      <div class="dna-panel">
+        <p class="eyebrow">OUR SIGNATURE FEATURE</p><h2>Vehicle DNA</h2>
+        <p>Turn a long specification sheet into an easy visual personality profile.</p>
+        <div class="dna-bars">
+          <div><span>Performance</span><i><b style="width:90%"></b></i></div>
+          <div><span>Comfort</span><i><b style="width:82%"></b></i></div>
+          <div><span>Safety</span><i><b style="width:94%"></b></i></div>
+          <div><span>Technology</span><i><b style="width:88%"></b></i></div>
+          <div><span>Family</span><i><b style="width:91%"></b></i></div>
+        </div>
+      </div>
+      <div class="find-panel">
+        <p class="eyebrow">SMART DISCOVERY</p><h2>Find your vehicle</h2>
+        <p>Choose a budget and priority to get a simple starting recommendation.</p>
+        <label>Budget <select id="budget"><option value="10">Under ₹10 lakh</option><option value="15">₹10–15 lakh</option><option value="20">₹15–20 lakh</option><option value="999">₹20 lakh+</option></select></label>
+        <label>Priority <select id="priority"><option value="family">Family</option><option value="performance">Performance</option><option value="mileage">Mileage</option><option value="electric">Electric</option></select></label>
+        <button class="btn primary" id="recommendBtn">Show my matches</button>
+        <div id="recommendation" class="recommendation"></div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-head"><div><p class="eyebrow">FROM THE GARAGE</p><h2>Latest automotive ideas</h2></div></div>
+      <div class="article-grid">
+        <article><span class="article-tag">BUYING GUIDE</span><h3>What should you check before buying a new car?</h3><p>Price is only the beginning. Compare ownership, safety, practicality and features.</p><a href="#">Read article →</a></article>
+        <article><span class="article-tag">EXPLAINED</span><h3>Horsepower vs torque: what actually matters?</h3><p>A simple explanation for everyday drivers and enthusiasts.</p><a href="#">Read article →</a></article>
+        <article><span class="article-tag">COMING SOON</span><h3>How to build a useful upcoming-vehicle tracker</h3><p>Separate confirmed launches from expected and rumoured information.</p><a href="#">Read article →</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div><a class="brand" href="#home"><span class="brand-mark">A</span><span>Auto<span>Atlas</span></span></a><p>Your independent place to research cars and bikes.</p></div>
+      <div><h4>Explore</h4><a href="#cars">Cars</a><a href="#bikes">Bikes</a><a href="#compare">Compare</a></div>
+      <div><h4>Company</h4><a href="#">About</a><a href="#">Contact</a><a href="#">Editorial policy</a></div>
+      <div><h4>Legal</h4><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 AutoAtlas. Demo build — replace demo data with verified/licensed content before launch.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
