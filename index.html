@@ -1,86 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
-<title>Cargenix — Cars, Bikes & Automotive Discovery</title>
-<meta name="description" content="Cargenix helps you discover cars and bikes, explore specifications, compare vehicles and browse automotive brands.">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="topbar">
-  <a class="logo" href="#" onclick="showHome();return false;"><span class="logo-mark">C</span>Cargenix</a>
-  <nav id="mainNav">
-    <a href="#" onclick="showHome();return false;">Home</a>
-    <a href="#" onclick="showListing('car');return false;">Cars</a>
-    <a href="#" onclick="showListing('bike');return false;">Bikes</a>
-    <a href="#" onclick="showBrands();return false;">Brands</a>
-    <a href="#" onclick="showCompare();return false;">Compare</a>
-    <a href="#" onclick="showNews();return false;">News</a>
-  </nav>
-  <button class="icon-btn" onclick="toggleTheme()" title="Toggle theme">◐</button>
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<main>
-<section id="home" class="page">
-  <div class="hero">
-    <div class="hero-copy">
-      <span class="eyebrow">THE AUTOMOTIVE DISCOVERY PLATFORM</span>
-      <h1>Every car.<br>Every bike.<br><span>One smarter place.</span></h1>
-      <p>Discover models, compare specifications and explore the automotive world without the clutter.</p>
-      <div class="searchbox">
-        <span>⌕</span><input id="homeSearch" autocomplete="off" placeholder="Search Creta, Thar, BMW, Royal Enfield…" onkeydown="if(event.key==='Enter')doSearch()"><button onclick="doSearch()">Search</button>
+  <title>CarGeniX — India's Automotive Discovery Platform</title>
+
+  <meta
+    name="description"
+    content="Discover cars, bikes, specifications, prices and comparisons with CarGeniX."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <div class="logo">
+      <span class="logo-icon">C</span>
+      <span>CarGeniX</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#cars">Cars</a>
+      <a href="#bikes">Bikes</a>
+      <a href="#brands">Brands</a>
+      <a href="#compare">Compare</a>
+      <a href="#news">News</a>
+    </nav>
+
+    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          INDIA'S AUTOMOTIVE DISCOVERY PLATFORM
+        </div>
+
+        <h1>
+          Every car.<br>
+          Every bike.<br>
+          <span>One smarter place.</span>
+        </h1>
+
+        <p>
+          Discover vehicles, explore specifications, compare models
+          and find what's new in the automotive world.
+        </p>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search a car, bike or brand — e.g. Creta, Thar, BMW..."
+            onkeyup="searchVehicles()"
+          >
+
+          <button onclick="searchVehicles()">
+            Search
+          </button>
+
+        </div>
+
+
+        <!-- QUICK SEARCH -->
+        <div class="quick-search">
+
+          <span>Popular:</span>
+
+          <button onclick="quickSearch('Creta')">
+            Creta
+          </button>
+
+          <button onclick="quickSearch('Thar')">
+            Thar
+          </button>
+
+          <button onclick="quickSearch('BMW')">
+            BMW
+          </button>
+
+          <button onclick="quickSearch('Fortuner')">
+            Fortuner
+          </button>
+
+        </div>
+
+
+        <!-- CTA -->
+        <div class="hero-buttons">
+
+          <a href="#cars" class="primary-btn">
+            Explore Cars →
+          </a>
+
+          <a href="#bikes" class="secondary-btn">
+            Explore Bikes →
+          </a>
+
+        </div>
+
       </div>
-      <div class="suggestions"><button onclick="quickSearch('Creta')">Creta</button><button onclick="quickSearch('Thar')">Thar</button><button onclick="quickSearch('BMW')">BMW</button><button onclick="quickSearch('Royal Enfield')">Royal Enfield</button></div>
-      <div class="quick-links"><button onclick="showListing('car')">Explore Cars →</button><button onclick="showListing('bike')">Explore Bikes →</button></div>
-      <div class="trust-row"><span>✓ Detailed specs</span><span>✓ Side-by-side compare</span><span>✓ Real media only</span></div>
+
+
+      <!-- HERO STATS -->
+      <div class="hero-visual">
+
+        <div class="visual-card">
+
+          <div class="visual-glow"></div>
+
+          <div class="visual-title">
+            CARGENIX
+          </div>
+
+          <div class="visual-subtitle">
+            AUTOMOTIVE DISCOVERY
+          </div>
+
+          <div class="visual-stats">
+
+            <div>
+              <strong>22+</strong>
+              <span>Vehicles</span>
+            </div>
+
+            <div>
+              <strong>15+</strong>
+              <span>Brands</span>
+            </div>
+
+            <div>
+              <strong>2</strong>
+              <span>Categories</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+      <div class="feature">
+        <div class="feature-icon">✓</div>
+        <div>
+          <strong>Detailed Specs</strong>
+          <p>Engine, power, torque & more</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⚖</div>
+        <div>
+          <strong>Compare Vehicles</strong>
+          <p>See models side-by-side</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">◉</div>
+        <div>
+          <strong>Real Vehicle Media</strong>
+          <p>Licensed / authorized media only</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">↗</div>
+        <div>
+          <strong>Always Discover</strong>
+          <p>Find what's new</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+    <section class="section" id="cars">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">POPULAR RIGHT NOW</span>
+          <h2>Featured vehicles</h2>
+        </div>
+
+        <a href="#cars">View all →</a>
+
+      </div>
+
+
+      <div class="vehicle-grid" id="vehicleGrid">
+
+        <!-- CRETA -->
+        <article class="vehicle-card">
+
+          <div class="vehicle-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85"
+              alt="Hyundai Creta"
+            >
+
+            <span class="vehicle-tag">POPULAR SUV</span>
+
+            <button class="heart" onclick="toggleHeart(this)">
+              ♡
+            </button>
+
+          </div>
+
+          <div class="vehicle-info">
+
+            <div class="vehicle-brand">
+              Hyundai
+            </div>
+
+            <h3>Creta</h3>
+
+            <p>
+              1.5L Petrol / Diesel / Turbo Petrol
+            </p>
+
+            <div class="vehicle-bottom">
+
+              <strong>₹11 Lakh*</strong>
+
+              <button onclick="showDetails('Hyundai Creta')">
+                View →
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- THAR -->
+        <article class="vehicle-card">
+
+          <div class="vehicle-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85"
+              alt="Mahindra Thar"
+            >
+
+            <span class="vehicle-tag">ADVENTURE</span>
+
+            <button class="heart" onclick="toggleHeart(this)">
+              ♡
+            </button>
+
+          </div>
+
+          <div class="vehicle-info">
+
+            <div class="vehicle-brand">
+              Mahindra
+            </div>
+
+            <h3>Thar</h3>
+
+            <p>
+              Turbo Petrol / Diesel
+            </p>
+
+            <div class="vehicle-bottom">
+
+              <strong>₹11.50 Lakh*</strong>
+
+              <button onclick="showDetails('Mahindra Thar')">
+                View →
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SELTOS -->
+        <article class="vehicle-card">
+
+          <div class="vehicle-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=85"
+              alt="Kia Seltos"
+            >
+
+            <span class="vehicle-tag">FRESH SUV</span>
+
+            <button class="heart" onclick="toggleHeart(this)">
+              ♡
+            </button>
+
+          </div>
+
+          <div class="vehicle-info">
+
+            <div class="vehicle-brand">
+              Kia
+            </div>
+
+            <h3>Seltos</h3>
+
+            <p>
+              1.5L Petrol / Turbo Petrol / Diesel
+            </p>
+
+            <div class="vehicle-bottom">
+
+              <strong>₹11 Lakh*</strong>
+
+              <button onclick="showDetails('Kia Seltos')">
+                View →
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- FORTUNER -->
+        <article class="vehicle-card">
+
+          <div class="vehicle-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=85"
+              alt="Toyota Fortuner"
+            >
+
+            <span class="vehicle-tag">PREMIUM SUV</span>
+
+            <button class="heart" onclick="toggleHeart(this)">
+              ♡
+            </button>
+
+          </div>
+
+          <div class="vehicle-info">
+
+            <div class="vehicle-brand">
+              Toyota
+            </div>
+
+            <h3>Fortuner</h3>
+
+            <p>
+              Petrol / Diesel
+            </p>
+
+            <div class="vehicle-bottom">
+
+              <strong>₹33 Lakh*</strong>
+
+              <button onclick="showDetails('Toyota Fortuner')">
+                View →
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- BIKES -->
+    <section class="section alternate" id="bikes">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">TWO WHEELS</span>
+          <h2>Popular bikes</h2>
+        </div>
+
+        <a href="#bikes">View all →</a>
+
+      </div>
+
+
+      <div class="bike-grid">
+
+        <article class="bike-card">
+          <div class="bike-number">01</div>
+          <h3>Royal Enfield</h3>
+          <p>Classic • Hunter • Himalayan</p>
+          <button onclick="showDetails('Royal Enfield')">
+            Explore →
+          </button>
+        </article>
+
+        <article class="bike-card">
+          <div class="bike-number">02</div>
+          <h3>Yamaha</h3>
+          <p>R15 • MT • FZ</p>
+          <button onclick="showDetails('Yamaha')">
+            Explore →
+          </button>
+        </article>
+
+        <article class="bike-card">
+          <div class="bike-number">03</div>
+          <h3>KTM</h3>
+          <p>Duke • RC • Adventure</p>
+          <button onclick="showDetails('KTM')">
+            Explore →
+          </button>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- BRANDS -->
+    <section class="brands-section" id="brands">
+
+      <span class="section-label">
+        EXPLORE BY BRAND
+      </span>
+
+      <h2>Find your favourite brand</h2>
+
+      <div class="brand-list">
+
+        <button onclick="quickSearch('Hyundai')">
+          Hyundai
+        </button>
+
+        <button onclick="quickSearch('Mahindra')">
+          Mahindra
+        </button>
+
+        <button onclick="quickSearch('Toyota')">
+          Toyota
+        </button>
+
+        <button onclick="quickSearch('Kia')">
+          Kia
+        </button>
+
+        <button onclick="quickSearch('BMW')">
+          BMW
+        </button>
+
+        <button onclick="quickSearch('Honda')">
+          Honda
+        </button>
+
+        <button onclick="quickSearch('Tata')">
+          Tata
+        </button>
+
+        <button onclick="quickSearch('Maruti')">
+          Maruti Suzuki
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPARE -->
+    <section class="compare-section" id="compare">
+
+      <div>
+
+        <span class="section-label">
+          SIDE-BY-SIDE
+        </span>
+
+        <h2>Can't decide?</h2>
+
+        <p>
+          Compare cars and bikes side-by-side and find the one
+          that fits you best.
+        </p>
+
+        <button onclick="startCompare()" class="primary-btn">
+          Start Comparing →
+        </button>
+
+      </div>
+
+      <div class="compare-visual">
+
+        <div class="compare-box">
+          <span>CRETA</span>
+          <strong>VS</strong>
+          <span>SELTOS</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">
+            AUTOMOTIVE WORLD
+          </span>
+
+          <h2>Latest discoveries</h2>
+        </div>
+
+      </div>
+
+      <div class="news-grid">
+
+        <article>
+          <span>NEW LAUNCH</span>
+          <h3>Discover what's new in cars</h3>
+          <p>
+            Stay updated with upcoming models and new launches.
+          </p>
+        </article>
+
+        <article>
+          <span>TECHNOLOGY</span>
+          <h3>The future of automotive tech</h3>
+          <p>
+            EVs, ADAS, connected cars and more.
+          </p>
+        </article>
+
+        <article>
+          <span>GUIDES</span>
+          <h3>Make smarter vehicle decisions</h3>
+          <p>
+            Compare specifications before you choose.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      CarGeniX
     </div>
-    <div class="hero-visual">
-      <div class="visual-glow"></div><div class="vehicle-outline">CARGENIX<br><small>REAL VEHICLE MEDIA</small></div>
-      <div class="hero-stat stat-one"><b>22+</b><small>vehicles loaded</small></div><div class="hero-stat stat-two"><b>15+</b><small>brands</small></div>
+
+    <p>
+      India's automotive discovery platform.
+    </p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#cars">Cars</a>
+      <a href="#bikes">Bikes</a>
+      <a href="#brands">Brands</a>
+      <a href="#compare">Compare</a>
     </div>
+
+    <small>
+      © 2026 CarGeniX. Built for automotive enthusiasts.
+    </small>
+
+  </footer>
+
+
+  <!-- DETAILS POPUP -->
+  <div class="modal" id="detailsModal">
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
+      <span class="section-label">
+        VEHICLE
+      </span>
+
+      <h2 id="modalTitle">
+        Vehicle
+      </h2>
+
+      <p>
+        Vehicle details will be available here.
+      </p>
+
+      <button
+        class="primary-btn"
+        onclick="closeModal()"
+      >
+        Got it
+      </button>
+
+    </div>
+
   </div>
 
-  <section class="section stats-row">
-    <div><b id="vehicleCount">0</b><span>Vehicles</span></div><div><b id="brandCount">0</b><span>Brands</span></div><div><b>2</b><span>Categories</span></div><div><b>24/7</b><span>Discovery</span></div>
-  </section>
 
-  <section class="section">
-    <div class="section-head"><div><span class="eyebrow">POPULAR RIGHT NOW</span><h2>Featured vehicles</h2></div><button class="text-btn" onclick="showListing('all')">View all →</button></div>
-    <div id="featuredGrid" class="vehicle-grid"></div>
-  </section>
+  <script src="app.js"></script>
 
-  <section class="section dark-panel">
-    <div class="section-head"><div><span class="eyebrow light">DISCOVER</span><h2>Find your kind of vehicle</h2></div></div>
-    <div class="category-grid">
-      <button onclick="showListing('SUV')"><strong>🚙 SUVs</strong><span>Family, city & adventure</span></button>
-      <button onclick="showListing('Sedan')"><strong>🚘 Sedans</strong><span>Comfort & performance</span></button>
-      <button onclick="showListing('Hatchback')"><strong>🚗 Hatchbacks</strong><span>Compact & practical</span></button>
-      <button onclick="showListing('Sports')"><strong>🏎️ Sports</strong><span>Performance machines</span></button>
-      <button onclick="showListing('Cruiser')"><strong>🏍️ Cruisers</strong><span>Relaxed riding</span></button>
-      <button onclick="showListing('Adventure')"><strong>🏔️ Adventure</strong><span>Go beyond roads</span></button>
-    </div>
-  </section>
-</section>
-
-<section id="listing" class="page hidden">
-  <div class="page-title"><span class="eyebrow">EXPLORE</span><h1 id="listingTitle">Cars</h1><p>Search, filter and open a model for its full specification profile.</p></div>
-  <div class="toolbar"><input id="listingSearch" placeholder="Search model, brand or engine…" oninput="renderListing()"><select id="typeFilter" onchange="renderListing()"><option value="all">All body types</option><option>SUV</option><option>Sedan</option><option>Hatchback</option><option>Sports</option><option>Cruiser</option><option>Adventure</option><option>Scooter</option></select><select id="sortFilter" onchange="renderListing()"><option value="featured">Featured</option><option value="name">Name A–Z</option><option value="brand">Brand A–Z</option></select></div>
-  <div id="listingGrid" class="vehicle-grid"></div>
-</section>
-
-<section id="detail" class="page hidden"><button class="back-btn" onclick="goBack()">← Back</button><div id="detailContent"></div></section>
-
-<section id="brands" class="page hidden"><div class="page-title"><span class="eyebrow">BRANDS</span><h1>Explore brands</h1><p>Jump directly to vehicles from a manufacturer.</p></div><div class="brand-search"><input id="brandSearch" placeholder="Search a brand…" oninput="renderBrands()"></div><div id="brandGrid" class="brand-grid"></div></section>
-
-<section id="compare" class="page hidden"><div class="page-title"><span class="eyebrow">SIDE-BY-SIDE</span><h1>Compare vehicles</h1><p>Choose two models and see their key specifications together.</p></div><div class="compare-selects"><select id="compareA" onchange="renderCompare()"></select><span>VS</span><select id="compareB" onchange="renderCompare()"></select></div><div id="compareTable"></div></section>
-
-<section id="news" class="page hidden"><div class="page-title"><span class="eyebrow">AUTOMOTIVE</span><h1>News & guides</h1><p>A clean home for original Cargenix automotive content.</p></div><div class="news-grid"><article><span>LAUNCHES</span><h3>New car launches</h3><p>Publish original, fact-checked launch coverage here.</p></article><article><span>BIKES</span><h3>New bike launches</h3><p>Keep riders updated with new models and variants.</p></article><article><span>GUIDES</span><h3>Buying guides</h3><p>Explain features, ownership and comparisons in simple language.</p></article></div></section>
-</main>
-
-<footer><div><strong>Cargenix</strong><p>Cars • Bikes • Specifications • Compare</p></div><div><span>Built for automotive discovery.</span><small>© 2026 Cargenix • Verify specifications before publication.</small></div></footer>
-<script src="app.js"></script>
 </body>
 </html>
