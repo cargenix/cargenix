@@ -1,107 +1,54 @@
-const vehicles = [
-  {id:"creta",type:"car",brand:"Hyundai",name:"Creta",category:"SUV",price:11,displayPrice:"₹11 lakh*",fuel:"Petrol / Diesel",transmission:"Manual / Auto",engine:"1.5L",power:"160 PS",torque:"253 Nm",mileage:"Up to 21.8 km/l",dna:{performance:86,comfort:91,safety:90,technology:92,family:94}},
-  {id:"nexon",type:"car",brand:"Tata",name:"Nexon",category:"SUV",price:8,displayPrice:"₹8 lakh*",fuel:"Petrol / Diesel / EV",transmission:"Manual / AMT / DCT",engine:"1.2L / 1.5L",power:"120 PS",torque:"170 Nm",mileage:"Up to 24 km/l",dna:{performance:80,comfort:84,safety:94,technology:88,family:92}},
-  {id:"seltos",type:"car",brand:"Kia",name:"Seltos",category:"SUV",price:11,displayPrice:"₹11 lakh*",fuel:"Petrol / Diesel",transmission:"Manual / Auto",engine:"1.5L",power:"160 PS",torque:"253 Nm",mileage:"Up to 20.7 km/l",dna:{performance:88,comfort:90,safety:91,technology:93,family:90}},
-  {id:"city",type:"car",brand:"Honda",name:"City",category:"Sedan",price:12,displayPrice:"₹12 lakh*",fuel:"Petrol",transmission:"Manual / CVT",engine:"1.5L",power:"121 PS",torque:"145 Nm",mileage:"Up to 18.4 km/l",dna:{performance:76,comfort:92,safety:90,technology:84,family:91}},
-  {id:"tiago-ev",type:"car",brand:"Tata",name:"Tiago EV",category:"Electric",price:8,displayPrice:"₹8 lakh*",fuel:"Electric",transmission:"Automatic",engine:"EV",power:"61 PS",torque:"110 Nm",mileage:"Up to 315 km range",dna:{performance:70,comfort:82,safety:84,technology:90,family:85}},
-  {id:"m340i",type:"car",brand:"BMW",name:"M340i",category:"Sports",price:75,displayPrice:"₹75 lakh*",fuel:"Petrol",transmission:"Automatic",engine:"3.0L Turbo",power:"374 PS",torque:"500 Nm",mileage:"Performance focused",dna:{performance:99,comfort:88,safety:93,technology:97,family:72}},
-  {id:"classic350",type:"bike",brand:"Royal Enfield",name:"Classic 350",category:"Cruiser",price:2,displayPrice:"₹2 lakh*",fuel:"Petrol",transmission:"5-speed",engine:"349cc",power:"20.2 PS",torque:"27 Nm",mileage:"Around 40 km/l",dna:{performance:70,comfort:91,safety:78,technology:68,family:76}},
-  {id:"r15",type:"bike",brand:"Yamaha",name:"R15",category:"Sports",price:2,displayPrice:"₹2 lakh*",fuel:"Petrol",transmission:"6-speed",engine:"155cc",power:"18.4 PS",torque:"14.2 Nm",mileage:"Around 45 km/l",dna:{performance:88,comfort:65,safety:82,technology:85,family:55}},
-  {id:"duke390",type:"bike",brand:"KTM",name:"390 Duke",category:"Sports",price:3,displayPrice:"₹3 lakh*",fuel:"Petrol",transmission:"6-speed",engine:"399cc",power:"46 PS",torque:"39 Nm",mileage:"Performance focused",dna:{performance:97,comfort:68,safety:86,technology:94,family:56}},
-  {id:"450x",type:"bike",brand:"Ather",name:"450X",category:"Electric",price:1.5,displayPrice:"₹1.5 lakh*",fuel:"Electric",transmission:"Automatic",engine:"EV",power:"7.3 kW",torque:"26 Nm",mileage:"Range varies",dna:{performance:82,comfort:80,safety:84,technology:96,family:73}}
+const vehicles=[
+{name:"Hyundai Creta",type:"car",category:"SUV",brand:"Hyundai",price:"₹11–20.15 Lakh",power:"115–160 PS",fuel:"Petrol / Diesel"},
+{name:"Mahindra Thar",type:"car",category:"SUV",brand:"Mahindra",price:"₹11–18 Lakh",power:"119–150 PS",fuel:"Petrol / Diesel"},
+{name:"Tata Nexon",type:"car",category:"SUV",brand:"Tata",price:"₹8–15.60 Lakh",power:"100–120 PS",fuel:"Petrol / Diesel / EV"},
+{name:"Kia Seltos",type:"car",category:"SUV",brand:"Kia",price:"₹11–20 Lakh",power:"116–160 PS",fuel:"Petrol / Diesel"},
+{name:"Honda City",type:"car",category:"Sedan",brand:"Honda",price:"₹11.95–16.55 Lakh",power:"121 PS",fuel:"Petrol"},
+{name:"BMW 3 Series",type:"car",category:"Sports",brand:"BMW",price:"₹60 Lakh+",power:"258 PS",fuel:"Petrol"},
+{name:"Tata Curvv EV",type:"car",category:"Electric",brand:"Tata",price:"₹17.49 Lakh+",power:"167–167 PS",fuel:"Electric"},
+{name:"Toyota Fortuner",type:"car",category:"SUV",brand:"Toyota",price:"₹33 Lakh+",power:"204 PS",fuel:"Diesel / Petrol"},
+{name:"Royal Enfield Classic 350",type:"bike",category:"Cruiser",brand:"Royal Enfield",price:"₹1.95 Lakh+",power:"20.2 PS",fuel:"Petrol"},
+{name:"Yamaha R15",type:"bike",category:"Sports",brand:"Yamaha",price:"₹1.67 Lakh+",power:"18.4 PS",fuel:"Petrol"},
+{name:"KTM 390 Adventure",type:"bike",category:"Adventure",brand:"KTM",price:"₹3.4 Lakh+",power:"46 PS",fuel:"Petrol"},
+{name:"BMW G 310 GS",type:"bike",category:"Adventure",brand:"BMW Motorrad",price:"₹3.3 Lakh+",power:"34 PS",fuel:"Petrol"}
 ];
 
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
+const brands=["Maruti Suzuki","Hyundai","Tata Motors","Mahindra","Toyota","Kia","Honda","Skoda","Volkswagen","BMW","Mercedes-Benz","Audi","Porsche","Royal Enfield","Hero","Honda 2Wheelers","TVS","Bajaj","Yamaha","KTM","Kawasaki","Ducati","Triumph","BMW Motorrad"];
 
-function vehicleCard(v){
-  return `<article class="vehicle-card">
-    <div class="vehicle-image">REAL VEHICLE MEDIA<br><small>Upload licensed photo</small></div>
-    <div class="vehicle-body">
-      <div class="vehicle-top"><div class="vehicle-name">${v.brand} ${v.name}</div><span class="tag">${v.category}</span></div>
-      <div class="vehicle-price">${v.displayPrice}</div>
-      <div class="spec-line"><span>${v.engine}</span><span>${v.power}</span><span>${v.fuel}</span></div>
-      <div class="card-actions"><button onclick="showDNA('${v.id}')">Vehicle DNA</button><button onclick="addCompare('${v.id}')">Compare</button></div>
-    </div>
-  </article>`;
+function card(v){
+return `<article class="card"><div class="card-media">REAL ${v.type.toUpperCase()} MEDIA<br><small>Licensed photo to be added</small></div><div class="card-body"><div class="card-top"><h3>${v.name}</h3><span class="tag">${v.category}</span></div><div class="price">${v.price}</div><div class="specs"><span>${v.power}</span><span>${v.fuel}</span><span>${v.brand}</span><span>Detailed specs</span></div><div class="card-actions"><button onclick="alert('Vehicle detail page will be added in the next Cargenix update.')">View details</button><button onclick="addCompare('${v.name}')">Compare</button></div></div></article>`
 }
-
-function render(type="car", value="all"){
-  const list = vehicles.filter(v=>v.type===type && (value==="all" || v.category===value));
-  const grid = type==="car" ? $("#carGrid") : $("#bikeGrid");
-  grid.innerHTML = list.map(vehicleCard).join("") || `<p class="muted">No vehicles in this filter yet.</p>`;
+function render(kind="car",filter="all"){
+const arr=vehicles.filter(v=>v.type===kind&&(filter==="all"||v.category===filter));
+document.getElementById(kind==="car"?"carGrid":"bikeGrid").innerHTML=arr.map(card).join("");
 }
-render("car"); render("bike");
+render("car");render("bike");
 
-$$(".filter").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const type=btn.dataset.type,value=btn.dataset.value;
-    $$(`.filter[data-type="${type}"]`).forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active"); render(type,value);
-  });
-});
-
-$$(".category").forEach(btn=>btn.addEventListener("click",()=>{
-  const value=btn.dataset.filter;
-  document.querySelector("#cars").scrollIntoView({behavior:"smooth"});
-  const type = ["Cruiser","Adventure"].includes(value) ? "bike" : "car";
-  const target=$(`.filter[data-type="${type}"][data-value="${value}"]`);
-  if(target){target.click()} else render(type,value);
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
+const kind=b.dataset.kind;document.querySelectorAll(`.tabs button[data-kind="${kind}"]`).forEach(x=>x.classList.remove("active"));b.classList.add("active");render(kind,b.dataset.filter);
 }));
 
-function fillCompare(){
-  const options=vehicles.map(v=>`<option value="${v.id}">${v.brand} ${v.name}</option>`).join("");
-  $("#compareA").innerHTML=options; $("#compareB").innerHTML=options;
-  $("#compareB").selectedIndex=Math.min(1,vehicles.length-1);
-}
-fillCompare();
+const brandsEl=document.getElementById("brandGrid");brandsEl.innerHTML=brands.map(b=>`<button class="brand" onclick="searchBrand('${b}')">${b}</button>`).join("");
 
-function compare(){
-  const a=vehicles.find(v=>v.id===$("#compareA").value), b=vehicles.find(v=>v.id===$("#compareB").value);
-  if(!a||!b)return;
-  const rows=[["Price",a.displayPrice,b.displayPrice],["Engine",a.engine,b.engine],["Power",a.power,b.power],["Torque",a.torque,b.torque],["Mileage / Range",a.mileage,b.mileage],["Fuel",a.fuel,b.fuel],["Transmission",a.transmission,b.transmission]];
-  $("#compareOutput").innerHTML=`<div class="comparison"><h3>${a.brand} ${a.name} <span style="color:var(--accent)">vs</span> ${b.brand} ${b.name}</h3>${rows.map(r=>`<div class="comparison-row"><div>${r[0]}</div><div>${r[1]}</div><div>${r[2]}</div></div>`).join("")}</div>`;
+const searchInput=document.getElementById("searchInput"),results=document.getElementById("searchResults");
+function doSearch(){
+const q=searchInput.value.trim().toLowerCase(); if(!q){results.style.display="none";return}
+const found=vehicles.filter(v=>(v.name+" "+v.brand+" "+v.category+" "+v.type).toLowerCase().includes(q)).slice(0,7);
+results.innerHTML=found.length?found.map(v=>`<div class="result" onclick="chooseResult('${v.name}')"><b>${v.name}</b><small>${v.brand} • ${v.category} • ${v.price}</small></div>`).join(""):`<div class="result"><b>No vehicle in the demo database yet</b><small>Next step: expand the database.</small></div>`;
+results.style.display="block";
 }
-$("#compareBtn").addEventListener("click",compare);
+searchInput.addEventListener("input",doSearch);document.getElementById("searchBtn").addEventListener("click",doSearch);
+function chooseResult(name){searchInput.value=name;results.style.display="none";alert(name+" selected. Full vehicle pages are the next database upgrade.");}
+function searchBrand(b){searchInput.value=b;document.getElementById("home").scrollIntoView();doSearch()}
+document.querySelectorAll(".quick-grid button").forEach(b=>b.addEventListener("click",()=>{searchInput.value=b.dataset.query;document.getElementById("home").scrollIntoView();doSearch()}));
 
-function addCompare(id){
-  $("#compareA").value=id; document.querySelector("#compare").scrollIntoView({behavior:"smooth"});
-}
-window.addCompare=addCompare;
-
-function showDNA(id){
-  const v=vehicles.find(x=>x.id===id); if(!v)return;
-  alert(`${v.brand} ${v.name} — Vehicle DNA\nPerformance ${v.dna.performance}/100\nComfort ${v.dna.comfort}/100\nSafety ${v.dna.safety}/100\nTechnology ${v.dna.technology}/100\nFamily ${v.dna.family}/100`);
-}
-window.showDNA=showDNA;
-
-$("#recommendBtn").addEventListener("click",()=>{
-  const budget=Number($("#budget").value),priority=$("#priority").value;
-  let matches=vehicles.filter(v=>v.price<=budget);
-  if(priority==="electric") matches=matches.filter(v=>v.fuel==="Electric");
-  if(priority==="performance") matches.sort((a,b)=>b.dna.performance-a.dna.performance);
-  if(priority==="family") matches.sort((a,b)=>b.dna.family-a.dna.family);
-  if(priority==="mileage") matches.sort((a,b)=>b.dna.comfort-a.dna.comfort);
-  const v=matches[0];
-  $("#recommendation").innerHTML=v?`<strong>${v.brand} ${v.name}</strong><br><span class="muted">A good starting match for your ${priority} priority and budget.</span>`:`<span class="muted">No demo vehicle matches yet. Add more vehicles through your future admin panel.</span>`;
+const allNames=vehicles.map(v=>v.name);const a=document.getElementById("compareA"),bb=document.getElementById("compareB");
+vehicles.forEach(v=>{a.innerHTML+=`<option>${v.name}</option>`;bb.innerHTML+=`<option>${v.name}</option>`});
+function addCompare(name){if(!a.value)a.value=name;else if(!bb.value)bb.value=name;document.getElementById("compare").scrollIntoView()}
+document.getElementById("compareBtn").addEventListener("click",()=>{
+const x=vehicles.find(v=>v.name===a.value),y=vehicles.find(v=>v.name===bb.value);if(!x||!y){alert("Choose two vehicles first.");return}
+const rows=[["Price",x.price,y.price],["Power",x.power,y.power],["Fuel",x.fuel,y.fuel],["Category",x.category,y.category],["Brand",x.brand,y.brand]];
+document.getElementById("compareOutput").innerHTML=`<div class="comparison">${rows.map(r=>`<div><b>${r[0]}</b><span>${r[1]}</span><span>${r[2]}</span></div>`).join("")}</div>`;
 });
-
-const searchInput=$("#searchInput"),results=$("#searchResults");
-function search(){
-  const q=searchInput.value.trim().toLowerCase();
-  if(!q){results.classList.remove("show");return}
-  const found=vehicles.filter(v=>`${v.brand} ${v.name} ${v.category} ${v.engine} ${v.fuel} ${v.power}`.toLowerCase().includes(q)).slice(0,7);
-  results.innerHTML=found.length?found.map(v=>`<div class="search-item" onclick="pickSearch('${v.id}')"><span><b>${v.brand} ${v.name}</b><br><small>${v.category} · ${v.engine}</small></span><span>${v.displayPrice}</span></div>`).join(""):`<div class="search-item">No demo match. Try another search.</div>`;
-  results.classList.add("show");
-}
-searchInput.addEventListener("input",search); $("#searchBtn").addEventListener("click",search);
-window.pickSearch=(id)=>{results.classList.remove("show");searchInput.value="";showDNA(id)};
-document.addEventListener("click",e=>{if(!e.target.closest(".search-wrap"))results.classList.remove("show")});
-
-$("#menuBtn").addEventListener("click",()=>$("#mobileNav").classList.toggle("show"));
-$$(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>$("#mobileNav").classList.remove("show")));
-
-$("#themeBtn").addEventListener("click",()=>{
-  document.body.classList.toggle("dark");
-  $("#themeBtn").textContent=document.body.classList.contains("dark")?"☀":"☾";
-});
+document.getElementById("themeBtn").addEventListener("click",()=>document.body.classList.toggle("dark"));
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileNav").classList.toggle("open"));
