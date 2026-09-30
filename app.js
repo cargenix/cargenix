@@ -33,7 +33,7 @@ const vehicles = [
     drive:'RWD / 4WD',
     seats:'4',
     tag:'Adventure',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Mahindra%20Thar.jpg'
+    image: 'images/thar.jpg'
   },
 
   {
