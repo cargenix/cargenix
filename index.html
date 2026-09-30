@@ -1,96 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Cargenix — cars, bikes, specifications, comparisons, prices and automotive news.">
-  <meta name="theme-color" content="#07111f">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cargenix - explore cars, bikes, specifications and comparisons.">
   <title>Cargenix — Cars & Bikes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-  <a class="logo" href="#home"><span class="logo-mark">C</span><span>Cargenix</span></a>
+<header class="site-header">
+  <a class="logo" href="index.html"><span>C</span> Cargenix</a>
   <nav>
-    <a href="#cars">Cars</a><a href="#bikes">Bikes</a><a href="#brands">Brands</a>
-    <a href="#compare">Compare</a><a href="#news">News</a>
+    <a class="active" href="#home">Home</a>
+    <a href="#cars">Cars</a>
+    <a href="#bikes">Bikes</a>
+    <a href="#brands">Brands</a>
+    <a href="#compare">Compare</a>
   </nav>
-  <button id="themeBtn" class="round" aria-label="Toggle theme">☾</button>
-  <button id="menuBtn" class="round mobile-only">☰</button>
 </header>
-<div id="mobileNav" class="mobile-nav">
-  <a href="#cars">Cars</a><a href="#bikes">Bikes</a><a href="#brands">Brands</a><a href="#compare">Compare</a><a href="#news">News</a>
-</div>
 
-<main id="home">
-<section class="hero">
+<main>
+<section id="home" class="hero">
   <div class="hero-copy">
-    <div class="pill">INDIA'S AUTOMOTIVE DISCOVERY PLATFORM</div>
-    <h1>Every car. Every bike.<br><span>One smarter place.</span></h1>
-    <p>Search vehicles, explore specifications, compare models and discover what's new in the automotive world.</p>
-    <div class="search-box">
-      <span>⌕</span><input id="searchInput" placeholder="Search a car, bike or brand — e.g. Creta, Thar, BMW..." autocomplete="off">
+    <p class="eyebrow">THE AUTOMOTIVE DISCOVERY PLATFORM</p>
+    <h1>Every car. Every bike.<br><strong>One smarter place.</strong></h1>
+    <p>Search vehicles, explore specifications, discover brands and compare models side-by-side.</p>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Search Creta, Fortuner, Royal Enfield..." autocomplete="off">
       <button id="searchBtn">Search</button>
-      <div id="searchResults" class="search-results"></div>
     </div>
-    <div class="hero-actions"><a class="btn primary" href="#cars">Explore Cars</a><a class="btn secondary" href="#bikes">Explore Bikes</a></div>
-    <div class="trust-row"><span>✓ Detailed specs</span><span>✓ Compare vehicles</span><span>✓ Real media only</span></div>
+    <div id="suggestions" class="suggestions"></div>
   </div>
-  <div class="hero-panel">
-    <div class="hero-media">REAL VEHICLE MEDIA<div>Only add media you own or are licensed to use.</div></div>
-    <div class="hero-panel-bottom"><div><b>Cars</b><span>Explore models</span></div><div><b>Bikes</b><span>Explore models</span></div><div><b>Compare</b><span>Side-by-side</span></div></div>
+  <div class="hero-card">
+    <div class="hero-card-top">CARGENIX DATABASE</div>
+    <div class="hero-stat"><b id="vehicleCount">0</b><span>vehicles loaded</span></div>
+    <div class="hero-stat"><b id="brandCount">0</b><span>brands</span></div>
+    <div class="hero-note">Vehicle data is stored in a structured database so the site can grow without rebuilding every page.</div>
   </div>
 </section>
 
-<section class="quick">
-  <div><small>QUICK SEARCH</small><h2>What do you want to explore?</h2></div>
-  <div class="quick-grid">
-    <button data-query="SUV">🚙 <b>SUVs</b><span>Family & adventure</span></button>
-    <button data-query="Sedan">🚘 <b>Sedans</b><span>Comfort & style</span></button>
-    <button data-query="Electric">⚡ <b>Electric</b><span>EV cars & bikes</span></button>
-    <button data-query="Sports">🏎️ <b>Performance</b><span>Fast machines</span></button>
-  </div>
+<section id="results" class="section hidden">
+  <div class="section-heading"><div><p class="eyebrow">SEARCH RESULTS</p><h2>Vehicles matching your search</h2></div></div>
+  <div id="resultsGrid" class="vehicle-grid"></div>
 </section>
 
 <section id="cars" class="section">
-  <div class="section-title"><div><small>CAR DATABASE</small><h2>Popular cars</h2></div><a href="#brands">View brands →</a></div>
-  <div class="toolbar"><div class="tabs"><button class="active" data-kind="car" data-filter="all">All</button><button data-kind="car" data-filter="SUV">SUV</button><button data-kind="car" data-filter="Sedan">Sedan</button><button data-kind="car" data-filter="Electric">EV</button></div></div>
-  <div id="carGrid" class="grid"></div>
+  <div class="section-heading">
+    <div><p class="eyebrow">EXPLORE</p><h2>Popular cars</h2></div>
+    <button class="outline" data-filter="car">View all cars</button>
+  </div>
+  <div id="carsGrid" class="vehicle-grid"></div>
 </section>
 
-<section id="bikes" class="section alt">
-  <div class="section-title"><div><small>BIKE DATABASE</small><h2>Popular bikes</h2></div><a href="#brands">View brands →</a></div>
-  <div class="toolbar"><div class="tabs"><button class="active" data-kind="bike" data-filter="all">All</button><button data-kind="bike" data-filter="Cruiser">Cruiser</button><button data-kind="bike" data-filter="Sports">Sports</button><button data-kind="bike" data-filter="Adventure">Adventure</button></div></div>
-  <div id="bikeGrid" class="grid"></div>
+<section id="bikes" class="section">
+  <div class="section-heading">
+    <div><p class="eyebrow">EXPLORE</p><h2>Popular bikes</h2></div>
+    <button class="outline" data-filter="bike">View all bikes</button>
+  </div>
+  <div id="bikesGrid" class="vehicle-grid"></div>
 </section>
 
-<section id="brands" class="section">
-  <div class="section-title"><div><small>BRANDS</small><h2>Browse by manufacturer</h2></div></div>
-  <div id="brandGrid" class="brand-grid"></div>
+<section id="brands" class="section soft">
+  <div class="section-heading"><div><p class="eyebrow">DISCOVER</p><h2>Brands</h2></div></div>
+  <div id="brandsGrid" class="brands-grid"></div>
 </section>
 
-<section id="compare" class="compare-section">
-  <div><small>COMPARE</small><h2>Make the right choice</h2><p>Select vehicles and compare price, power, mileage, transmission and more.</p></div>
+<section id="compare" class="section">
+  <div class="section-heading"><div><p class="eyebrow">COMPARE</p><h2>Compare vehicles</h2></div></div>
   <div class="compare-box">
-    <select id="compareA"><option value="">Choose vehicle 1</option></select>
+    <select id="compareA"><option value="">Select first vehicle</option></select>
     <span>VS</span>
-    <select id="compareB"><option value="">Choose vehicle 2</option></select>
-    <button id="compareBtn" class="btn primary">Compare</button>
+    <select id="compareB"><option value="">Select second vehicle</option></select>
+    <button id="compareBtn">Compare</button>
   </div>
-  <div id="compareOutput"></div>
-</section>
-
-<section id="news" class="section">
-  <div class="section-title"><div><small>AUTOMOTIVE WORLD</small><h2>Latest content</h2></div></div>
-  <div class="news-grid">
-    <article><span>GUIDE</span><h3>How to choose the right SUV for your family</h3><p>Learn which specifications actually matter before buying.</p></article>
-    <article><span>TECH</span><h3>EV vs petrol: what should you consider?</h3><p>Range, charging, running cost and ownership basics.</p></article>
-    <article><span>BUYING</span><h3>What to check before buying a used car</h3><p>A practical checklist for your next inspection.</p></article>
-  </div>
+  <div id="compareResult"></div>
 </section>
 </main>
 
-<footer><div class="logo"><span class="logo-mark">C</span><span>Cargenix</span></div><p>Cars • Bikes • Specs • Comparisons • Automotive content</p><small>© 2026 Cargenix. Vehicle information should be verified before publishing.</small></footer>
+<footer>
+  <div class="logo"><span>C</span> Cargenix</div>
+  <p>Independent automotive information platform. © 2026 Cargenix.</p>
+</footer>
 <script src="app.js"></script>
 </body>
 </html>
