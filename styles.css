@@ -2,3 +2,67 @@
 body.dark{background:#0b1020;color:#eef2f7}body.dark .topbar,body.dark .vehicle-card,body.dark .stats-row>div,body.dark .brand-grid button,body.dark .detail-hero,body.dark .spec,body.dark .compare-table,body.dark .news-grid article,body.dark .toolbar input,body.dark .toolbar select,body.dark .compare-selects select,body.dark .brand-search input,body.dark .searchbox,body.dark .suggestions button{background:#12192a;color:#eef2f7;border-color:#273149}body.dark .topbar nav a,body.dark .meta,body.dark .page-title p,body.dark .hero p,body.dark .trust-row{color:#9ca8bb}body.dark .icon-btn,body.dark .menu-btn,body.dark .quick-links button:last-child,body.dark .card-actions button,body.dark .detail-actions button{background:#12192a;color:#eef2f7;border-color:#273149}body.dark .notice{background:#0d1424}body.dark .brand-logo{background:#e94731}
 @media(max-width:900px){.topbar{padding:0 18px;gap:12px}.topbar nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;padding:16px 20px;border-bottom:1px solid #ddd;flex-direction:column}.topbar nav.open{display:flex}.menu-btn{display:block}.hero{grid-template-columns:1fr}.hero-visual{height:380px}.vehicle-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(2,1fr)}.detail-hero{grid-template-columns:1fr}.category-grid,.news-grid{grid-template-columns:1fr}.spec-grid{grid-template-columns:1fr 1fr}.stats-row{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.page{padding:35px 15px}.hero h1{font-size:45px;letter-spacing:-2.5px}.vehicle-grid{grid-template-columns:1fr}.toolbar{flex-direction:column}.brand-grid{grid-template-columns:1fr}.detail h1{font-size:38px}.vehicle-img.large-media{height:300px}.compare-selects{grid-template-columns:1fr}.compare-selects span{padding:0}.compare-table{font-size:11px}.compare-table span,.compare-table b{padding:10px}.hero-visual{height:320px}.vehicle-outline{font-size:21px}}
+/* CARGENIX VEHICLE IMAGES */
+
+.vehicle-img{
+  height:220px;
+  background:#eef1f5;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.vehicle-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
+}
+
+.vehicle-card:hover .vehicle-img img{
+  transform:scale(1.04);
+}
+
+.vehicle-img.large-media{
+  height:430px;
+}
+
+.vehicle-img.large-media img{
+  object-fit:cover;
+}
+
+.image-fallback{
+  display:none;
+  position:absolute;
+  inset:0;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:8px;
+  text-align:center;
+}
+
+.image-fallback span,
+.image-placeholder span{
+  font-size:12px;
+  opacity:.65;
+}
+
+.image-error .image-fallback{
+  display:flex;
+}
+
+.image-placeholder{
+  background:linear-gradient(135deg,#111827,#273449);
+  color:white;
+}
+
+.image-placeholder div{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
