@@ -33,7 +33,7 @@ const vehicles = [
     drive:'RWD / 4WD',
     seats:'4',
     tag:'Adventure',
-    image: "images/thar.jpg",
+    image: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
   },
 
   {
