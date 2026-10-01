@@ -12,3 +12,14 @@ footer{border-top:1px solid #202833;max-width:var(--max);margin:auto;padding:45p
 .spin-hint{font-size:11px;color:#758292;text-align:center;padding:8px;background:#eceff2}.source-note{font-size:10px;color:#778492;margin-top:15px}
 @media(max-width:900px){nav{display:none}.nav-search{display:block}.hero{grid-template-columns:1fr;padding-top:45px}.hero-art{min-height:330px}.vehicle-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.detail-top{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr}.detail-info h2{font-size:34px}}
 @media(max-width:620px){.hero h1{font-size:49px;letter-spacing:-2.5px}.vehicle-grid{grid-template-columns:1fr}.brand-grid{grid-template-columns:repeat(2,1fr)}.section{padding:55px 16px}.hero{padding-left:16px;padding-right:16px}.hero-art{min-height:250px}.vehicle-image{height:215px}.compare-slots{grid-template-columns:1fr}.spec-table,.feature-list{grid-template-columns:1fr}.detail-top{padding:15px}.detail-sections{padding:0 15px 25px}.detail-media{min-height:350px}.detail-main{min-height:280px}.section-head{align-items:start;flex-direction:column}}
+
+/* V7 vehicle configurator improvements */
+.detail-main{position:relative;overflow:hidden}
+.detail-main img{position:relative;z-index:1}
+.color-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:color;opacity:0;transition:opacity .25s ease;background:#fff}
+.stage-label{position:absolute;z-index:3;top:14px;left:14px;padding:7px 11px;border-radius:999px;background:rgba(8,12,18,.78);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em}
+.view360{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 15px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:linear-gradient(135deg,#ff5a5f,#ff7a45);color:#fff!important;text-decoration:none;font-weight:800;box-shadow:0 8px 25px rgba(255,90,95,.18)}
+.official{margin-top:14px}
+.search-result-count{font-size:13px;color:#9ca8b7;margin-top:6px}
+.vehicle-card .vehicle-image{background:linear-gradient(135deg,#eef2f6,#dce3ea)}
+.vehicle-card .vehicle-image img{mix-blend-mode:normal}
