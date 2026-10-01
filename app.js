@@ -1,1171 +1,1312 @@
-// ============================================================
-// CARGENIX — VEHICLE DATABASE V2
-// ============================================================
+/* =========================================================
+   CARGENIX - AUTOMOTIVE DATABASE
+   Images are automatically searched from Wikimedia Commons
+   ========================================================= */
 
 const vehicles = [
 
-  // =========================
-  // HYUNDAI
-  // =========================
-
-  {
-    name: "Hyundai Exter",
-    brand: "Hyundai",
-    type: "SUV",
-    fuel: "Petrol / CNG",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2023–Present",
-    price: "₹5.80 Lakh*",
-    engine: "1.2L Petrol / CNG",
-    power: "83 PS",
-    torque: "114 Nm",
-    tag: "Compact SUV"
-  },
-
-  {
-    name: "Hyundai Venue",
-    brand: "Hyundai",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
-    generation: "2nd Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹7.99 Lakh*",
-    engine: "1.2L / 1.0L Turbo / 1.5L Diesel",
-    power: "Up to 120 PS",
-    torque: "Up to 172 Nm",
-    tag: "Compact SUV"
-  },
-
-  {
-    name: "Hyundai Venue N Line",
-    brand: "Hyundai",
-    type: "SUV",
-    fuel: "Petrol",
-    generation: "2nd Generation",
-    version: "N Line",
-    year: "2025–Present",
-    price: "₹10.66 Lakh*",
-    engine: "1.0L Turbo Petrol",
-    power: "120 PS",
-    torque: "172 Nm",
-    tag: "Performance SUV"
-  },
+  /* ===================== HYUNDAI ===================== */
 
   {
     name: "Hyundai Creta",
     brand: "Hyundai",
     type: "SUV",
-    fuel: "Petrol / Diesel",
     generation: "2nd Generation",
     version: "Facelift",
-    year: "2024–Present",
-    price: "₹10.90 Lakh*",
-    engine: "1.5L Petrol / Turbo / Diesel",
+    year: "2024-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.5L Petrol / Turbo Petrol / Diesel",
     power: "Up to 160 PS",
     torque: "Up to 253 Nm",
-    tag: "Popular SUV"
+    price: "₹10.90 Lakh*",
+    tag: "Popular SUV",
+    imageSearch: "Hyundai Creta"
   },
 
   {
     name: "Hyundai Creta N Line",
     brand: "Hyundai",
-    type: "SUV",
-    fuel: "Petrol",
+    type: "Performance SUV",
     generation: "2nd Generation",
     version: "N Line",
-    year: "2024–Present",
-    price: "₹19.03 Lakh*",
+    year: "2024-Present",
+    fuel: "Petrol",
     engine: "1.5L Turbo Petrol",
     power: "160 PS",
     torque: "253 Nm",
-    tag: "Performance SUV"
+    price: "₹19.03 Lakh*",
+    tag: "Performance SUV",
+    imageSearch: "Hyundai Creta N Line"
   },
 
   {
     name: "Hyundai Creta Electric",
     brand: "Hyundai",
     type: "Electric SUV",
+    generation: "1st Generation",
+    version: "Electric",
+    year: "2025-Present",
     fuel: "Electric",
+    engine: "42 kWh / 51.4 kWh Battery",
+    power: "Up to 171 PS",
+    torque: "Up to 255 Nm",
+    price: "₹18.02 Lakh*",
+    tag: "Electric SUV",
+    imageSearch: "Hyundai Creta Electric"
+  },
+
+  {
+    name: "Hyundai Venue",
+    brand: "Hyundai",
+    type: "Compact SUV",
+    generation: "2nd Generation",
+    version: "Current",
+    year: "2025-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.2L Petrol / 1.0L Turbo / 1.5L Diesel",
+    power: "Up to 120 PS",
+    torque: "Up to 172 Nm",
+    price: "₹7.99 Lakh*",
+    tag: "Compact SUV",
+    imageSearch: "Hyundai Venue"
+  },
+
+  {
+    name: "Hyundai Venue N Line",
+    brand: "Hyundai",
+    type: "Performance SUV",
+    generation: "2nd Generation",
+    version: "N Line",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "1.0L Turbo Petrol",
+    power: "120 PS",
+    torque: "172 Nm",
+    price: "₹10.66 Lakh*",
+    tag: "Performance",
+    imageSearch: "Hyundai Venue N Line"
+  },
+
+  {
+    name: "Hyundai Exter",
+    brand: "Hyundai",
+    type: "SUV",
     generation: "1st Generation",
     version: "Current",
-    year: "2025–Present",
-    price: "₹18.02 Lakh*",
-    engine: "42 / 51.4 kWh Battery",
-    power: "Up to 171 PS",
-    torque: "255 Nm",
-    tag: "Electric SUV"
+    year: "2023-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L Petrol",
+    power: "83 PS",
+    torque: "114 Nm",
+    price: "₹5.80 Lakh*",
+    tag: "Popular SUV",
+    imageSearch: "Hyundai Exter"
   },
 
   {
     name: "Hyundai Alcazar",
     brand: "Hyundai",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
-    generation: "1st Generation",
+    type: "7-Seater SUV",
+    generation: "2nd Generation",
     version: "Facelift",
-    year: "2024–Present",
-    price: "₹14.50 Lakh*",
-    engine: "1.5L Turbo Petrol / Diesel",
+    year: "2024-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.5L Turbo Petrol / 1.5L Diesel",
     power: "Up to 160 PS",
-    torque: "253 Nm",
-    tag: "6/7-Seater SUV"
+    torque: "Up to 253 Nm",
+    price: "₹14.50 Lakh*",
+    tag: "7-Seater",
+    imageSearch: "Hyundai Alcazar"
   },
 
   {
     name: "Hyundai Verna",
     brand: "Hyundai",
     type: "Sedan",
+    generation: "5th Generation",
+    version: "Current",
+    year: "2023-Present",
     fuel: "Petrol",
-    generation: "6th Generation",
-    version: "Current",
-    year: "2023–Present",
+    engine: "1.5L Petrol / Turbo Petrol",
+    power: "Up to 160 PS",
+    torque: "Up to 253 Nm",
     price: "₹10.99 Lakh*",
-    engine: "1.5L Petrol / Turbo",
-    power: "160 PS",
-    torque: "253 Nm",
-    tag: "Sedan"
-  },
-
-  {
-    name: "Hyundai Aura",
-    brand: "Hyundai",
-    type: "Sedan",
-    fuel: "Petrol / CNG",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2023–Present",
-    price: "₹5.99 Lakh*",
-    engine: "1.2L Petrol / CNG",
-    power: "83 PS",
-    torque: "114 Nm",
-    tag: "Compact Sedan"
-  },
-
-  {
-    name: "Hyundai Grand i10 Nios",
-    brand: "Hyundai",
-    type: "Hatchback",
-    fuel: "Petrol / CNG",
-    generation: "3rd Generation",
-    version: "Facelift",
-    year: "2023–Present",
-    price: "₹5.59 Lakh*",
-    engine: "1.2L Petrol / CNG",
-    power: "83 PS",
-    torque: "114 Nm",
-    tag: "Hatchback"
+    tag: "Sedan",
+    imageSearch: "Hyundai Verna"
   },
 
   {
     name: "Hyundai i20",
     brand: "Hyundai",
     type: "Hatchback",
-    fuel: "Petrol",
     generation: "3rd Generation",
     version: "Facelift",
-    year: "2023–Present",
-    price: "₹5.99 Lakh*",
+    year: "2023-Present",
+    fuel: "Petrol",
     engine: "1.2L Petrol",
     power: "83 PS",
     torque: "114 Nm",
-    tag: "Premium Hatchback"
+    price: "₹5.99 Lakh*",
+    tag: "Hatchback",
+    imageSearch: "Hyundai i20"
   },
 
   {
     name: "Hyundai i20 N Line",
     brand: "Hyundai",
-    type: "Hatchback",
-    fuel: "Petrol",
+    type: "Performance Hatchback",
     generation: "3rd Generation",
     version: "N Line",
-    year: "2023–Present",
-    price: "₹9.32 Lakh*",
+    year: "2023-Present",
+    fuel: "Petrol",
     engine: "1.0L Turbo Petrol",
     power: "120 PS",
     torque: "172 Nm",
-    tag: "Performance Hatchback"
+    price: "₹9.27 Lakh*",
+    tag: "Performance",
+    imageSearch: "Hyundai i20 N Line"
   },
 
   {
-    name: "Hyundai IONIQ 5",
+    name: "Hyundai Aura",
     brand: "Hyundai",
-    type: "Electric SUV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Updated",
-    year: "2026–Present",
-    price: "₹55.70 Lakh*",
-    engine: "84 kWh Battery",
-    power: "229 PS",
-    torque: "350 Nm",
-    tag: "Premium EV"
-  },
-
-  // =========================
-  // KIA
-  // =========================
-
-  {
-    name: "Kia Sonet",
-    brand: "Kia",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
+    type: "Sedan",
     generation: "1st Generation",
     version: "Facelift",
-    year: "2024–Present",
-    price: "₹7.99 Lakh*",
-    engine: "1.2L / 1.0L Turbo / 1.5L Diesel",
-    power: "Up to 120 PS",
-    torque: "Up to 250 Nm",
-    tag: "Compact SUV"
+    year: "2023-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L Petrol",
+    power: "83 PS",
+    torque: "114 Nm",
+    price: "₹5.99 Lakh*",
+    tag: "Sedan",
+    imageSearch: "Hyundai Aura"
   },
 
-  {
-    name: "Kia Syros",
-    brand: "Kia",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹9 Lakh*",
-    engine: "1.0L Turbo / 1.5L Diesel",
-    power: "Up to 120 PS",
-    torque: "Up to 250 Nm",
-    tag: "New SUV"
-  },
 
-  {
-    name: "Kia Seltos",
-    brand: "Kia",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
-    generation: "Current Generation",
-    version: "All-New",
-    year: "2026–Present",
-    price: "₹10.99 Lakh*",
-    engine: "Petrol / Diesel",
-    power: "Up to 160 PS",
-    torque: "Up to 253 Nm",
-    tag: "Premium SUV"
-  },
-
-  {
-    name: "Kia Carens",
-    brand: "Kia",
-    type: "MPV",
-    fuel: "Petrol / Diesel",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2022–Present",
-    price: "₹10.60 Lakh*",
-    engine: "1.5L Petrol / Turbo / Diesel",
-    power: "Up to 160 PS",
-    torque: "Up to 253 Nm",
-    tag: "Family MPV"
-  },
-
-  {
-    name: "Kia Carens Clavis",
-    brand: "Kia",
-    type: "MPV",
-    fuel: "Petrol / Diesel",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹11.50 Lakh*",
-    engine: "Petrol / Diesel",
-    power: "Up to 160 PS",
-    torque: "Up to 253 Nm",
-    tag: "New Family Car"
-  },
-
-  {
-    name: "Kia Carens Clavis EV",
-    brand: "Kia",
-    type: "Electric MPV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹17 Lakh*",
-    engine: "Electric",
-    power: "Up to 204 PS",
-    torque: "Up to 283 Nm",
-    tag: "Electric MPV"
-  },
-
-  {
-    name: "Kia EV6",
-    brand: "Kia",
-    type: "Electric SUV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Facelift",
-    year: "2025–Present",
-    price: "₹60 Lakh*",
-    engine: "84 kWh Battery",
-    power: "325 PS",
-    torque: "605 Nm",
-    tag: "Performance EV"
-  },
-
-  {
-    name: "Kia EV9",
-    brand: "Kia",
-    type: "Electric SUV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2024–Present",
-    price: "₹1.30 Crore*",
-    engine: "99.8 kWh Battery",
-    power: "384 PS",
-    torque: "700 Nm",
-    tag: "Luxury EV"
-  },
-
-  {
-    name: "Kia Carnival",
-    brand: "Kia",
-    type: "MPV",
-    fuel: "Diesel",
-    generation: "4th Generation",
-    version: "Current",
-    year: "2024–Present",
-    price: "₹63.90 Lakh*",
-    engine: "2.2L Diesel",
-    power: "200 PS",
-    torque: "440 Nm",
-    tag: "Luxury MPV"
-  },
-
-  // =========================
-  // MAHINDRA
-  // =========================
-
-  {
-    name: "Mahindra XUV 3XO",
-    brand: "Mahindra",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
-    generation: "1st Generation",
-    version: "Facelift",
-    year: "2024–Present",
-    price: "₹7.49 Lakh*",
-    engine: "1.2L Turbo / 1.5L Diesel",
-    power: "Up to 131 PS",
-    torque: "Up to 300 Nm",
-    tag: "Compact SUV"
-  },
+  /* ===================== MAHINDRA ===================== */
 
   {
     name: "Mahindra Thar",
     brand: "Mahindra",
     type: "SUV",
-    fuel: "Petrol / Diesel",
     generation: "2nd Generation",
     version: "Current",
-    year: "2020–Present",
-    price: "₹11.50 Lakh*",
+    year: "2020-Present",
+    fuel: "Petrol / Diesel",
     engine: "2.0L Turbo Petrol / 2.2L Diesel",
     power: "Up to 177 PS",
     torque: "Up to 400 Nm",
-    tag: "Adventure"
+    price: "₹11.50 Lakh*",
+    tag: "Adventure",
+    imageSearch: "Mahindra Thar"
   },
 
   {
     name: "Mahindra Thar Roxx",
     brand: "Mahindra",
-    type: "SUV",
+    type: "5-Door SUV",
+    generation: "2nd Generation",
+    version: "5-Door",
+    year: "2024-Present",
     fuel: "Petrol / Diesel",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2024–Present",
-    price: "₹12.99 Lakh*",
     engine: "2.0L Turbo Petrol / 2.2L Diesel",
     power: "Up to 177 PS",
     torque: "Up to 400 Nm",
-    tag: "5-Door SUV"
+    price: "₹12.99 Lakh*",
+    tag: "5-Door SUV",
+    imageSearch: "Mahindra Thar Roxx"
   },
 
   {
-    name: "Mahindra Scorpio N",
+    name: "Mahindra XUV 3XO",
     brand: "Mahindra",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
+    type: "Compact SUV",
     generation: "1st Generation",
-    version: "Current",
-    year: "2022–Present",
-    price: "₹13.99 Lakh*",
-    engine: "2.0L Turbo Petrol / 2.2L Diesel",
-    power: "Up to 203 PS",
-    torque: "Up to 400 Nm",
-    tag: "Adventure SUV"
+    version: "Facelift",
+    year: "2024-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.2L Turbo / 1.5L Diesel",
+    power: "Up to 131 PS",
+    torque: "Up to 300 Nm",
+    price: "₹7.99 Lakh*",
+    tag: "Compact SUV",
+    imageSearch: "Mahindra XUV 3XO"
   },
 
   {
     name: "Mahindra XUV700",
     brand: "Mahindra",
     type: "SUV",
-    fuel: "Petrol / Diesel",
     generation: "1st Generation",
     version: "Current",
-    year: "2021–Present",
-    price: "₹14.49 Lakh*",
+    year: "2021-Present",
+    fuel: "Petrol / Diesel",
     engine: "2.0L Turbo Petrol / 2.2L Diesel",
     power: "Up to 200 PS",
     torque: "Up to 450 Nm",
-    tag: "Premium SUV"
+    price: "₹14.49 Lakh*",
+    tag: "Premium SUV",
+    imageSearch: "Mahindra XUV700"
   },
 
   {
-    name: "Mahindra Bolero",
+    name: "Mahindra Scorpio N",
     brand: "Mahindra",
     type: "SUV",
-    fuel: "Diesel",
-    generation: "1st Generation",
-    version: "Updated",
-    year: "2025–Present",
-    price: "₹9.80 Lakh*",
-    engine: "1.5L Diesel",
-    power: "76 PS",
-    torque: "210 Nm",
-    tag: "Utility SUV"
-  },
-
-  {
-    name: "Mahindra Bolero Neo",
-    brand: "Mahindra",
-    type: "SUV",
-    fuel: "Diesel",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2021–Present",
-    price: "₹9.95 Lakh*",
-    engine: "1.5L Diesel",
-    power: "100 PS",
-    torque: "260 Nm",
-    tag: "Compact SUV"
-  },
-
-  {
-    name: "Mahindra BE 6",
-    brand: "Mahindra",
-    type: "Electric SUV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹18.90 Lakh*",
-    engine: "59 / 79 kWh Battery",
-    power: "286 PS",
-    torque: "380 Nm",
-    tag: "Electric SUV"
-  },
-
-  {
-    name: "Mahindra XEV 9e",
-    brand: "Mahindra",
-    type: "Electric SUV",
-    fuel: "Electric",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2025–Present",
-    price: "₹21.90 Lakh*",
-    engine: "59 / 79 kWh Battery",
-    power: "286 PS",
-    torque: "380 Nm",
-    tag: "Electric SUV Coupe"
-  },
-
-  // =========================
-  // TOYOTA
-  // =========================
-
-  {
-    name: "Toyota Glanza",
-    brand: "Toyota",
-    type: "Hatchback",
-    fuel: "Petrol / CNG",
     generation: "2nd Generation",
     version: "Current",
-    year: "2022–Present",
-    price: "₹6.73 Lakh*",
-    engine: "1.2L Petrol / CNG",
-    power: "90 PS",
-    torque: "113 Nm",
-    tag: "Hatchback"
+    year: "2022-Present",
+    fuel: "Petrol / Diesel",
+    engine: "2.0L Turbo Petrol / 2.2L Diesel",
+    power: "Up to 203 PS",
+    torque: "Up to 400 Nm",
+    price: "₹13.99 Lakh*",
+    tag: "SUV",
+    imageSearch: "Mahindra Scorpio N"
   },
 
   {
-    name: "Toyota Urban Cruiser Taisor",
-    brand: "Toyota",
+    name: "Mahindra XUV 3XO EV",
+    brand: "Mahindra",
+    type: "Electric SUV",
+    generation: "1st Generation",
+    version: "Electric",
+    year: "2025-Present",
+    fuel: "Electric",
+    engine: "Electric Motor",
+    power: "Up to 150+ PS",
+    torque: "Up to 310 Nm",
+    price: "₹13.00 Lakh*",
+    tag: "Electric",
+    imageSearch: "Mahindra XUV 3XO EV"
+  },
+
+
+  /* ===================== KIA ===================== */
+
+  {
+    name: "Kia Seltos",
+    brand: "Kia",
     type: "SUV",
-    fuel: "Petrol",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2024–Present",
-    price: "₹7.49 Lakh*",
-    engine: "1.2L Petrol / 1.0L Turbo",
-    power: "100 PS",
-    torque: "147 Nm",
-    tag: "Compact SUV"
-  },
-
-  {
-    name: "Toyota Rumion",
-    brand: "Toyota",
-    type: "MPV",
-    fuel: "Petrol / CNG",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2023–Present",
-    price: "₹10.44 Lakh*",
-    engine: "1.5L Petrol / CNG",
-    power: "103 PS",
-    torque: "137 Nm",
-    tag: "Family MPV"
-  },
-
-  {
-    name: "Toyota Urban Cruiser Hyryder",
-    brand: "Toyota",
-    type: "SUV",
-    fuel: "Petrol / Hybrid / CNG",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2022–Present",
-    price: "₹12.56 Lakh*",
-    engine: "1.5L Petrol / Strong Hybrid",
-    power: "116 PS",
-    torque: "141 Nm",
-    tag: "Hybrid SUV"
-  },
-
-  {
-    name: "Toyota Innova Crysta",
-    brand: "Toyota",
-    type: "MPV",
-    fuel: "Diesel",
     generation: "2nd Generation",
+    version: "Facelift",
+    year: "2023-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.5L Petrol / Turbo Petrol / Diesel",
+    power: "Up to 160 PS",
+    torque: "Up to 253 Nm",
+    price: "₹10.99 Lakh*",
+    tag: "Premium SUV",
+    imageSearch: "Kia Seltos"
+  },
+
+  {
+    name: "Kia Sonet",
+    brand: "Kia",
+    type: "Compact SUV",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2024-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.0L Turbo / 1.2L Petrol / 1.5L Diesel",
+    power: "Up to 120 PS",
+    torque: "Up to 250 Nm",
+    price: "₹7.40 Lakh*",
+    tag: "Compact SUV",
+    imageSearch: "Kia Sonet"
+  },
+
+  {
+    name: "Kia Syros",
+    brand: "Kia",
+    type: "Compact SUV",
+    generation: "1st Generation",
     version: "Current",
-    year: "2020–Present",
-    price: "₹19 Lakh*",
-    engine: "2.4L Diesel",
-    power: "150 PS",
-    torque: "343 Nm",
-    tag: "Premium MPV"
+    year: "2025-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.0L Turbo Petrol / 1.5L Diesel",
+    power: "Up to 120 PS",
+    torque: "Up to 250 Nm",
+    price: "₹9.00 Lakh*",
+    tag: "New SUV",
+    imageSearch: "Kia Syros"
+  },
+
+  {
+    name: "Kia Carens",
+    brand: "Kia",
+    type: "MPV",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2025-Present",
+    fuel: "Petrol / Diesel / CNG",
+    engine: "1.5L Petrol / Turbo Petrol / Diesel",
+    power: "Up to 160 PS",
+    torque: "Up to 253 Nm",
+    price: "₹10.60 Lakh*",
+    tag: "Family MPV",
+    imageSearch: "Kia Carens"
+  },
+
+  {
+    name: "Kia Carens Clavis",
+    brand: "Kia",
+    type: "MPV",
+    generation: "New Generation",
+    version: "Current",
+    year: "2025-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.5L Petrol / Turbo Petrol / Diesel",
+    power: "Up to 160 PS",
+    torque: "Up to 253 Nm",
+    price: "₹11.00 Lakh*",
+    tag: "New MPV",
+    imageSearch: "Kia Carens Clavis"
+  },
+
+  {
+    name: "Kia Carens Clavis EV",
+    brand: "Kia",
+    type: "Electric MPV",
+    generation: "1st Generation",
+    version: "Electric",
+    year: "2025-Present",
+    fuel: "Electric",
+    engine: "Electric Motor",
+    power: "Up to 171 PS",
+    torque: "Up to 255 Nm",
+    price: "₹17.99 Lakh*",
+    tag: "Electric",
+    imageSearch: "Kia Carens Clavis EV"
+  },
+
+  {
+    name: "Kia Carnival",
+    brand: "Kia",
+    type: "Luxury MPV",
+    generation: "4th Generation",
+    version: "Limousine",
+    year: "2024-Present",
+    fuel: "Diesel",
+    engine: "2.2L Diesel",
+    power: "193 PS",
+    torque: "441 Nm",
+    price: "₹63.90 Lakh*",
+    tag: "Luxury MPV",
+    imageSearch: "Kia Carnival"
+  },
+
+
+  /* ===================== TOYOTA ===================== */
+
+  {
+    name: "Toyota Fortuner",
+    brand: "Toyota",
+    type: "SUV",
+    generation: "2nd Generation",
+    version: "Facelift",
+    year: "2021-Present",
+    fuel: "Petrol / Diesel",
+    engine: "2.7L Petrol / 2.8L Diesel",
+    power: "Up to 204 PS",
+    torque: "Up to 500 Nm",
+    price: "₹33.65 Lakh*",
+    tag: "Premium SUV",
+    imageSearch: "Toyota Fortuner"
   },
 
   {
     name: "Toyota Innova Hycross",
     brand: "Toyota",
     type: "MPV",
+    generation: "6th Generation",
+    version: "Current",
+    year: "2022-Present",
     fuel: "Petrol / Hybrid",
-    generation: "3rd Generation",
-    version: "Current",
-    year: "2022–Present",
-    price: "₹18.70 Lakh*",
-    engine: "2.0L Petrol / Hybrid",
-    power: "186 PS",
-    torque: "206 Nm",
-    tag: "Hybrid MPV"
+    engine: "2.0L Petrol / 2.0L Hybrid",
+    power: "Up to 186 PS",
+    torque: "Up to 206 Nm",
+    price: "₹19.94 Lakh*",
+    tag: "Family MPV",
+    imageSearch: "Toyota Innova Hycross"
   },
 
   {
-    name: "Toyota Hilux",
+    name: "Toyota Innova Crysta",
     brand: "Toyota",
-    type: "Pickup",
-    fuel: "Diesel",
-    generation: "8th Generation",
+    type: "MPV",
+    generation: "2nd Generation",
     version: "Current",
-    year: "2022–Present",
-    price: "₹31.99 Lakh*",
-    engine: "2.8L Diesel",
-    power: "204 PS",
-    torque: "500 Nm",
-    tag: "Pickup"
+    year: "2016-Present",
+    fuel: "Diesel",
+    engine: "2.4L Diesel",
+    power: "150 PS",
+    torque: "343 Nm",
+    price: "₹19.99 Lakh*",
+    tag: "Family MPV",
+    imageSearch: "Toyota Innova Crysta"
   },
 
   {
-    name: "Toyota Fortuner",
+    name: "Toyota Urban Cruiser Hyryder",
     brand: "Toyota",
     type: "SUV",
-    fuel: "Petrol / Diesel",
+    generation: "1st Generation",
+    version: "Current",
+    year: "2022-Present",
+    fuel: "Petrol / Hybrid / CNG",
+    engine: "1.5L Petrol / Hybrid",
+    power: "Up to 116 PS",
+    torque: "Up to 141 Nm",
+    price: "₹11.34 Lakh*",
+    tag: "Hybrid SUV",
+    imageSearch: "Toyota Urban Cruiser Hyryder"
+  },
+
+  {
+    name: "Toyota Glanza",
+    brand: "Toyota",
+    type: "Hatchback",
     generation: "2nd Generation",
     version: "Facelift",
-    year: "2021–Present",
-    price: "₹34.76 Lakh*",
-    engine: "2.7L Petrol / 2.8L Diesel",
-    power: "204 PS",
-    torque: "500 Nm",
-    tag: "Premium SUV"
-  },
-
-  {
-    name: "Toyota Fortuner Legender",
-    brand: "Toyota",
-    type: "SUV",
-    fuel: "Diesel",
-    generation: "2nd Generation",
-    version: "Legender",
-    year: "2021–Present",
-    price: "₹42.92 Lakh*",
-    engine: "2.8L Diesel",
-    power: "204 PS",
-    torque: "500 Nm",
-    tag: "Luxury SUV"
+    year: "2022-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L Petrol",
+    power: "90 PS",
+    torque: "113 Nm",
+    price: "₹6.81 Lakh*",
+    tag: "Hatchback",
+    imageSearch: "Toyota Glanza"
   },
 
   {
     name: "Toyota Camry",
     brand: "Toyota",
     type: "Sedan",
-    fuel: "Hybrid",
     generation: "9th Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹48.00 Lakh*",
-    engine: "2.5L Strong Hybrid",
+    year: "2024-Present",
+    fuel: "Hybrid",
+    engine: "2.5L Petrol Hybrid",
     power: "230 PS",
     torque: "221 Nm",
-    tag: "Premium Sedan"
-  },
-
-  {
-    name: "Toyota Vellfire",
-    brand: "Toyota",
-    type: "MPV",
-    fuel: "Petrol / Hybrid",
-    generation: "4th Generation",
-    version: "Current",
-    year: "2023–Present",
-    price: "₹1.20 Crore*",
-    engine: "2.5L Hybrid",
-    power: "193 PS",
-    torque: "240 Nm",
-    tag: "Luxury MPV"
+    price: "₹48.00 Lakh*",
+    tag: "Hybrid Sedan",
+    imageSearch: "Toyota Camry"
   },
 
   {
     name: "Toyota Land Cruiser 300",
     brand: "Toyota",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
+    type: "Luxury SUV",
     generation: "300 Series",
     version: "Current",
-    year: "2022–Present",
-    price: "₹2.10 Crore*",
-    engine: "3.3L Diesel / 3.5L Petrol",
-    power: "Up to 415 PS",
+    year: "2022-Present",
+    fuel: "Diesel",
+    engine: "3.3L Twin Turbo Diesel",
+    power: "309 PS",
     torque: "700 Nm",
-    tag: "Luxury SUV"
+    price: "₹2.31 Crore*",
+    tag: "Luxury SUV",
+    imageSearch: "Toyota Land Cruiser 300"
   },
 
-  // =========================
-  // TATA
-  // =========================
+
+  /* ===================== TATA ===================== */
 
   {
-    name: "Tata Tiago",
+    name: "Tata Nexon",
     brand: "Tata",
-    type: "Hatchback",
-    fuel: "Petrol / CNG",
-    generation: "1st Generation",
+    type: "Compact SUV",
+    generation: "2nd Generation",
     version: "Facelift",
-    year: "2020–Present",
-    price: "₹5 Lakh*",
-    engine: "1.2L Petrol / CNG",
-    power: "86 PS",
-    torque: "113 Nm",
-    tag: "Hatchback"
+    year: "2023-Present",
+    fuel: "Petrol / Diesel / CNG",
+    engine: "1.2L Turbo Petrol / 1.5L Diesel",
+    power: "Up to 120 PS",
+    torque: "Up to 170 Nm",
+    price: "₹8.00 Lakh*",
+    tag: "Popular SUV",
+    imageSearch: "Tata Nexon"
   },
 
   {
     name: "Tata Punch",
     brand: "Tata",
     type: "SUV",
-    fuel: "Petrol / CNG / Electric",
     generation: "1st Generation",
-    version: "Updated",
-    year: "2021–Present",
-    price: "₹6 Lakh*",
-    engine: "1.2L Petrol / CNG",
+    version: "Facelift",
+    year: "2024-Present",
+    fuel: "Petrol / CNG / Electric",
+    engine: "1.2L Petrol",
     power: "88 PS",
     torque: "115 Nm",
-    tag: "Popular SUV"
-  },
-
-  {
-    name: "Tata Nexon",
-    brand: "Tata",
-    type: "SUV",
-    fuel: "Petrol / Diesel / CNG",
-    generation: "2nd Generation",
-    version: "Facelift",
-    year: "2023–Present",
-    price: "₹8 Lakh*",
-    engine: "1.2L Turbo / 1.5L Diesel",
-    power: "120 PS",
-    torque: "260 Nm",
-    tag: "Compact SUV"
+    price: "₹6.13 Lakh*",
+    tag: "Popular SUV",
+    imageSearch: "Tata Punch"
   },
 
   {
     name: "Tata Curvv",
     brand: "Tata",
     type: "SUV Coupe",
-    fuel: "Petrol / Diesel / Electric",
     generation: "1st Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹10 Lakh*",
+    year: "2024-Present",
+    fuel: "Petrol / Diesel / Electric",
     engine: "1.2L Turbo / 1.5L Diesel",
-    power: "125 PS",
-    torque: "260 Nm",
-    tag: "SUV Coupe"
+    power: "Up to 125 PS",
+    torque: "Up to 260 Nm",
+    price: "₹9.99 Lakh*",
+    tag: "SUV Coupe",
+    imageSearch: "Tata Curvv"
   },
 
   {
     name: "Tata Harrier",
     brand: "Tata",
     type: "SUV",
-    fuel: "Diesel",
     generation: "1st Generation",
     version: "Facelift",
-    year: "2023–Present",
-    price: "₹14 Lakh*",
+    year: "2023-Present",
+    fuel: "Diesel",
     engine: "2.0L Diesel",
     power: "170 PS",
     torque: "350 Nm",
-    tag: "Premium SUV"
+    price: "₹14.00 Lakh*",
+    tag: "Premium SUV",
+    imageSearch: "Tata Harrier"
   },
 
   {
     name: "Tata Safari",
     brand: "Tata",
-    type: "SUV",
-    fuel: "Diesel",
+    type: "7-Seater SUV",
     generation: "2nd Generation",
     version: "Facelift",
-    year: "2023–Present",
-    price: "₹15.50 Lakh*",
+    year: "2023-Present",
+    fuel: "Diesel",
     engine: "2.0L Diesel",
     power: "170 PS",
     torque: "350 Nm",
-    tag: "7-Seater SUV"
+    price: "₹14.00 Lakh*",
+    tag: "7-Seater",
+    imageSearch: "Tata Safari SUV"
   },
 
-  // =========================
-  // MARUTI SUZUKI
-  // =========================
+  {
+    name: "Tata Nexon EV",
+    brand: "Tata",
+    type: "Electric SUV",
+    generation: "2nd Generation",
+    version: "Facelift",
+    year: "2023-Present",
+    fuel: "Electric",
+    engine: "30 kWh / 40.5 kWh Battery",
+    power: "Up to 145 PS",
+    torque: "215 Nm",
+    price: "₹12.49 Lakh*",
+    tag: "Electric",
+    imageSearch: "Tata Nexon EV"
+  },
+
+
+  /* ===================== MARUTI SUZUKI ===================== */
 
   {
-    name: "Maruti Swift",
+    name: "Maruti Suzuki Swift",
     brand: "Maruti Suzuki",
     type: "Hatchback",
-    fuel: "Petrol / CNG",
     generation: "4th Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹6 Lakh*",
-    engine: "1.2L Petrol / CNG",
+    year: "2024-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L Petrol",
     power: "82 PS",
     torque: "112 Nm",
-    tag: "Hatchback"
+    price: "₹6.49 Lakh*",
+    tag: "Popular Hatchback",
+    imageSearch: "Maruti Suzuki Swift"
   },
 
   {
-    name: "Maruti Baleno",
+    name: "Maruti Suzuki Baleno",
     brand: "Maruti Suzuki",
     type: "Hatchback",
-    fuel: "Petrol / CNG",
     generation: "2nd Generation",
-    version: "Current",
-    year: "2022–Present",
-    price: "₹6.60 Lakh*",
-    engine: "1.2L Petrol / CNG",
+    version: "Facelift",
+    year: "2022-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L Petrol",
     power: "90 PS",
     torque: "113 Nm",
-    tag: "Premium Hatchback"
+    price: "₹5.99 Lakh*",
+    tag: "Hatchback",
+    imageSearch: "Maruti Suzuki Baleno"
   },
 
   {
-    name: "Maruti Fronx",
+    name: "Maruti Suzuki Brezza",
     brand: "Maruti Suzuki",
     type: "SUV",
-    fuel: "Petrol / CNG",
-    generation: "1st Generation",
-    version: "Current",
-    year: "2023–Present",
-    price: "₹7.50 Lakh*",
-    engine: "1.2L Petrol / 1.0L Turbo",
-    power: "100 PS",
-    torque: "147 Nm",
-    tag: "Compact SUV"
-  },
-
-  {
-    name: "Maruti Brezza",
-    brand: "Maruti Suzuki",
-    type: "SUV",
-    fuel: "Petrol / CNG",
     generation: "2nd Generation",
     version: "Current",
-    year: "2022–Present",
-    price: "₹8.80 Lakh*",
-    engine: "1.5L Petrol / CNG",
+    year: "2022-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.5L Petrol",
     power: "103 PS",
     torque: "137 Nm",
-    tag: "SUV"
+    price: "₹8.69 Lakh*",
+    tag: "Popular SUV",
+    imageSearch: "Maruti Suzuki Brezza"
   },
 
   {
-    name: "Maruti Grand Vitara",
+    name: "Maruti Suzuki Fronx",
     brand: "Maruti Suzuki",
-    type: "SUV",
-    fuel: "Petrol / Hybrid / CNG",
+    type: "SUV Coupe",
     generation: "1st Generation",
     version: "Current",
-    year: "2022–Present",
-    price: "₹11 Lakh*",
-    engine: "1.5L Petrol / Strong Hybrid",
-    power: "116 PS",
-    torque: "141 Nm",
-    tag: "Hybrid SUV"
+    year: "2023-Present",
+    fuel: "Petrol / CNG",
+    engine: "1.2L / 1.0L Turbo Petrol",
+    power: "Up to 100 PS",
+    torque: "Up to 147 Nm",
+    price: "₹7.54 Lakh*",
+    tag: "SUV Coupe",
+    imageSearch: "Maruti Suzuki Fronx"
   },
 
   {
-    name: "Maruti Jimny",
+    name: "Maruti Suzuki Grand Vitara",
     brand: "Maruti Suzuki",
     type: "SUV",
-    fuel: "Petrol",
-    generation: "4th Generation",
+    generation: "1st Generation",
     version: "Current",
-    year: "2023–Present",
-    price: "₹12.30 Lakh*",
-    engine: "1.5L Petrol",
-    power: "105 PS",
-    torque: "134 Nm",
-    tag: "Off-Road SUV"
+    year: "2022-Present",
+    fuel: "Petrol / Hybrid / CNG",
+    engine: "1.5L Petrol / Hybrid",
+    power: "Up to 116 PS",
+    torque: "141 Nm",
+    price: "₹10.77 Lakh*",
+    tag: "Hybrid SUV",
+    imageSearch: "Maruti Suzuki Grand Vitara"
   },
 
-  // =========================
-  // BMW
-  // =========================
+
+  /* ===================== HONDA ===================== */
+
+  {
+    name: "Honda City",
+    brand: "Honda",
+    type: "Sedan",
+    generation: "5th Generation",
+    version: "Facelift",
+    year: "2023-Present",
+    fuel: "Petrol",
+    engine: "1.5L Petrol / 1.5L Hybrid",
+    power: "121 PS",
+    torque: "145 Nm",
+    price: "₹11.95 Lakh*",
+    tag: "Sedan",
+    imageSearch: "Honda City India"
+  },
+
+  {
+    name: "Honda Elevate",
+    brand: "Honda",
+    type: "SUV",
+    generation: "1st Generation",
+    version: "Current",
+    year: "2023-Present",
+    fuel: "Petrol",
+    engine: "1.5L Petrol",
+    power: "121 PS",
+    torque: "145 Nm",
+    price: "₹11.69 Lakh*",
+    tag: "SUV",
+    imageSearch: "Honda Elevate India"
+  },
+
+  {
+    name: "Honda Amaze",
+    brand: "Honda",
+    type: "Sedan",
+    generation: "3rd Generation",
+    version: "Current",
+    year: "2024-Present",
+    fuel: "Petrol",
+    engine: "1.2L Petrol",
+    power: "90 PS",
+    torque: "110 Nm",
+    price: "₹7.20 Lakh*",
+    tag: "Sedan",
+    imageSearch: "Honda Amaze India"
+  },
+
+
+  /* ===================== BMW ===================== */
 
   {
     name: "BMW 2 Series Gran Coupe",
     brand: "BMW",
-    type: "Sedan",
-    fuel: "Petrol",
+    type: "Luxury Sedan",
     generation: "2nd Generation",
     version: "Current",
-    year: "2025–Present",
-    price: "₹46 Lakh*",
-    engine: "2.0L Turbo Petrol",
-    power: "204 PS",
-    torque: "300 Nm",
-    tag: "Luxury Sedan"
+    year: "2025-Present",
+    fuel: "Petrol / Diesel",
+    engine: "2.0L Turbo",
+    power: "Up to 204 PS",
+    torque: "Up to 400 Nm",
+    price: "₹46.90 Lakh*",
+    tag: "Luxury",
+    imageSearch: "BMW 2 Series Gran Coupe"
   },
 
   {
     name: "BMW 3 Series",
     brand: "BMW",
-    type: "Sedan",
-    fuel: "Petrol",
+    type: "Luxury Sedan",
     generation: "7th Generation",
-    version: "Updated",
-    year: "2025–Present",
-    price: "₹60 Lakh*",
+    version: "Facelift",
+    year: "2022-Present",
+    fuel: "Petrol",
     engine: "2.0L Turbo Petrol",
     power: "258 PS",
     torque: "400 Nm",
-    tag: "Luxury Sedan"
+    price: "₹60 Lakh*",
+    tag: "Luxury",
+    imageSearch: "BMW 3 Series"
   },
 
   {
     name: "BMW 5 Series",
     brand: "BMW",
-    type: "Sedan",
-    fuel: "Petrol",
+    type: "Luxury Sedan",
     generation: "8th Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹72 Lakh*",
-    engine: "2.0L Turbo Petrol",
-    power: "190 PS",
-    torque: "310 Nm",
-    tag: "Executive Sedan"
+    year: "2024-Present",
+    fuel: "Petrol / Electric",
+    engine: "2.0L Turbo / Electric",
+    power: "Up to 258 PS",
+    torque: "Up to 400 Nm",
+    price: "₹72.90 Lakh*",
+    tag: "Luxury",
+    imageSearch: "BMW 5 Series"
   },
 
   {
     name: "BMW X1",
     brand: "BMW",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
+    type: "Luxury SUV",
     generation: "3rd Generation",
     version: "Current",
-    year: "2023–Present",
-    price: "₹50 Lakh*",
+    year: "2023-Present",
+    fuel: "Petrol / Diesel",
     engine: "1.5L Turbo / 2.0L Diesel",
     power: "Up to 204 PS",
     torque: "Up to 400 Nm",
-    tag: "Luxury SUV"
+    price: "₹50.80 Lakh*",
+    tag: "Luxury SUV",
+    imageSearch: "BMW X1"
   },
 
   {
     name: "BMW X3",
     brand: "BMW",
-    type: "SUV",
-    fuel: "Petrol / Diesel",
+    type: "Luxury SUV",
     generation: "4th Generation",
     version: "Current",
-    year: "2025–Present",
-    price: "₹75 Lakh*",
+    year: "2025-Present",
+    fuel: "Petrol / Diesel",
     engine: "2.0L Turbo",
-    power: "190 PS",
+    power: "Up to 208 PS",
     torque: "400 Nm",
-    tag: "Luxury SUV"
+    price: "₹75 Lakh*",
+    tag: "Luxury SUV",
+    imageSearch: "BMW X3"
   },
 
-  // =========================
-  // BIKES
-  // =========================
+
+  /* ===================== VOLKSWAGEN ===================== */
+
+  {
+    name: "Volkswagen Virtus",
+    brand: "Volkswagen",
+    type: "Sedan",
+    generation: "1st Generation",
+    version: "Current",
+    year: "2022-Present",
+    fuel: "Petrol",
+    engine: "1.0L Turbo / 1.5L Turbo",
+    power: "Up to 150 PS",
+    torque: "Up to 250 Nm",
+    price: "₹11.56 Lakh*",
+    tag: "Sedan",
+    imageSearch: "Volkswagen Virtus"
+  },
+
+  {
+    name: "Volkswagen Taigun",
+    brand: "Volkswagen",
+    type: "SUV",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "1.0L Turbo / 1.5L Turbo",
+    power: "Up to 150 PS",
+    torque: "Up to 250 Nm",
+    price: "₹11.70 Lakh*",
+    tag: "SUV",
+    imageSearch: "Volkswagen Taigun"
+  },
+
+
+  /* ===================== SKODA ===================== */
+
+  {
+    name: "Skoda Slavia",
+    brand: "Skoda",
+    type: "Sedan",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "1.0L Turbo / 1.5L Turbo",
+    power: "Up to 150 PS",
+    torque: "Up to 250 Nm",
+    price: "₹10.49 Lakh*",
+    tag: "Sedan",
+    imageSearch: "Skoda Slavia"
+  },
+
+  {
+    name: "Skoda Kushaq",
+    brand: "Skoda",
+    type: "SUV",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "1.0L Turbo / 1.5L Turbo",
+    power: "Up to 150 PS",
+    torque: "Up to 250 Nm",
+    price: "₹10.99 Lakh*",
+    tag: "SUV",
+    imageSearch: "Skoda Kushaq"
+  },
+
+  {
+    name: "Skoda Kodiaq",
+    brand: "Skoda",
+    type: "Premium SUV",
+    generation: "2nd Generation",
+    version: "Current",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "2.0L Turbo Petrol",
+    power: "204 PS",
+    torque: "320 Nm",
+    price: "₹46 Lakh*",
+    tag: "Premium SUV",
+    imageSearch: "Skoda Kodiaq"
+  },
+
+
+  /* ===================== MG ===================== */
+
+  {
+    name: "MG Hector",
+    brand: "MG",
+    type: "SUV",
+    generation: "1st Generation",
+    version: "Facelift",
+    year: "2023-Present",
+    fuel: "Petrol / Diesel",
+    engine: "1.5L Turbo Petrol / 2.0L Diesel",
+    power: "170 PS",
+    torque: "350 Nm",
+    price: "₹11.99 Lakh*",
+    tag: "SUV",
+    imageSearch: "MG Hector India"
+  },
+
+  {
+    name: "MG Windsor EV",
+    brand: "MG",
+    type: "Electric Crossover",
+    generation: "1st Generation",
+    version: "Current",
+    year: "2024-Present",
+    fuel: "Electric",
+    engine: "38 kWh Battery",
+    power: "136 PS",
+    torque: "200 Nm",
+    price: "₹13.50 Lakh*",
+    tag: "Electric",
+    imageSearch: "MG Windsor EV"
+  },
+
+
+  /* =====================================================
+     BIKES
+     ===================================================== */
 
   {
     name: "Royal Enfield Classic 350",
     brand: "Royal Enfield",
     type: "Bike",
-    fuel: "Petrol",
-    generation: "2nd Generation",
+    generation: "Current Generation",
     version: "Updated",
-    year: "2024–Present",
-    price: "₹1.93 Lakh*",
+    year: "2024-Present",
+    fuel: "Petrol",
     engine: "349cc",
     power: "20.2 PS",
     torque: "27 Nm",
-    tag: "Popular Bike"
+    price: "₹1.93 Lakh*",
+    tag: "Popular Bike",
+    imageSearch: "Royal Enfield Classic 350"
   },
 
   {
     name: "Royal Enfield Hunter 350",
     brand: "Royal Enfield",
     type: "Bike",
-    fuel: "Petrol",
-    generation: "1st Generation",
+    generation: "Current Generation",
     version: "Updated",
-    year: "2025–Present",
-    price: "₹1.50 Lakh*",
+    year: "2025-Present",
+    fuel: "Petrol",
     engine: "349cc",
     power: "20.2 PS",
     torque: "27 Nm",
-    tag: "Roadster"
+    price: "₹1.50 Lakh*",
+    tag: "Roadster",
+    imageSearch: "Royal Enfield Hunter 350"
   },
 
   {
     name: "Royal Enfield Himalayan 450",
     brand: "Royal Enfield",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Adventure Bike",
     generation: "2nd Generation",
     version: "Current",
-    year: "2023–Present",
-    price: "₹2.85 Lakh*",
+    year: "2023-Present",
+    fuel: "Petrol",
     engine: "452cc",
     power: "40 PS",
     torque: "40 Nm",
-    tag: "Adventure Bike"
+    price: "₹2.85 Lakh*",
+    tag: "Adventure",
+    imageSearch: "Royal Enfield Himalayan 450"
+  },
+
+  {
+    name: "Royal Enfield Guerrilla 450",
+    brand: "Royal Enfield",
+    type: "Roadster",
+    generation: "1st Generation",
+    version: "Current",
+    year: "2024-Present",
+    fuel: "Petrol",
+    engine: "452cc",
+    power: "40 PS",
+    torque: "40 Nm",
+    price: "₹2.39 Lakh*",
+    tag: "Roadster",
+    imageSearch: "Royal Enfield Guerrilla 450"
+  },
+
+  {
+    name: "Royal Enfield Interceptor 650",
+    brand: "Royal Enfield",
+    type: "Bike",
+    generation: "Current Generation",
+    version: "Updated",
+    year: "2018-Present",
+    fuel: "Petrol",
+    engine: "648cc",
+    power: "47 PS",
+    torque: "52 Nm",
+    price: "₹3.35 Lakh*",
+    tag: "Twin Cylinder",
+    imageSearch: "Royal Enfield Interceptor 650"
+  },
+
+  {
+    name: "Royal Enfield Continental GT 650",
+    brand: "Royal Enfield",
+    type: "Cafe Racer",
+    generation: "Current Generation",
+    version: "Updated",
+    year: "2018-Present",
+    fuel: "Petrol",
+    engine: "648cc",
+    power: "47 PS",
+    torque: "52 Nm",
+    price: "₹3.45 Lakh*",
+    tag: "Cafe Racer",
+    imageSearch: "Royal Enfield Continental GT 650"
   },
 
   {
     name: "KTM Duke 390",
     brand: "KTM",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Naked Bike",
     generation: "3rd Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹3 Lakh*",
+    year: "2024-Present",
+    fuel: "Petrol",
     engine: "399cc",
     power: "46 PS",
     torque: "39 Nm",
-    tag: "Performance"
+    price: "₹3.00 Lakh*",
+    tag: "Performance",
+    imageSearch: "KTM Duke 390"
+  },
+
+  {
+    name: "KTM RC 390",
+    brand: "KTM",
+    type: "Sports Bike",
+    generation: "2nd Generation",
+    version: "Current",
+    year: "2022-Present",
+    fuel: "Petrol",
+    engine: "373cc",
+    power: "43 PS",
+    torque: "37 Nm",
+    price: "₹3.21 Lakh*",
+    tag: "Sports Bike",
+    imageSearch: "KTM RC 390"
   },
 
   {
     name: "Yamaha R15 V4",
     brand: "Yamaha",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Sports Bike",
     generation: "4th Generation",
-    version: "Current",
-    year: "2021–Present",
-    price: "₹1.83 Lakh*",
+    version: "Updated",
+    year: "2025-Present",
+    fuel: "Petrol",
     engine: "155cc",
     power: "18.4 PS",
     torque: "14.2 Nm",
-    tag: "Sports Bike"
+    price: "₹1.83 Lakh*",
+    tag: "Sports Bike",
+    imageSearch: "Yamaha R15 V4"
   },
 
   {
-    name: "Yamaha MT-15 V2",
+    name: "Yamaha MT-15",
     brand: "Yamaha",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Naked Bike",
     generation: "2nd Generation",
     version: "Updated",
-    year: "2025–Present",
-    price: "₹1.70 Lakh*",
+    year: "2025-Present",
+    fuel: "Petrol",
     engine: "155cc",
     power: "18.4 PS",
     torque: "14.1 Nm",
-    tag: "Street Bike"
+    price: "₹1.70 Lakh*",
+    tag: "Street Bike",
+    imageSearch: "Yamaha MT 15"
   },
 
   {
     name: "TVS Apache RTR 310",
     brand: "TVS",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Naked Bike",
     generation: "1st Generation",
     version: "Current",
-    year: "2023–Present",
-    price: "₹2.50 Lakh*",
+    year: "2023-Present",
+    fuel: "Petrol",
     engine: "312cc",
-    power: "35.6 PS",
+    power: "35 PS",
     torque: "28.7 Nm",
-    tag: "Performance"
+    price: "₹2.50 Lakh*",
+    tag: "Performance",
+    imageSearch: "TVS Apache RTR 310"
+  },
+
+  {
+    name: "TVS Apache RR 310",
+    brand: "TVS",
+    type: "Sports Bike",
+    generation: "Updated Generation",
+    version: "Current",
+    year: "2024-Present",
+    fuel: "Petrol",
+    engine: "312cc",
+    power: "38 PS",
+    torque: "29 Nm",
+    price: "₹2.75 Lakh*",
+    tag: "Sports Bike",
+    imageSearch: "TVS Apache RR 310"
   },
 
   {
     name: "Bajaj Pulsar NS200",
     brand: "Bajaj",
-    type: "Bike",
+    type: "Naked Bike",
+    generation: "Updated",
+    version: "Current",
+    year: "2024-Present",
     fuel: "Petrol",
-    generation: "1st Generation",
-    version: "Updated",
-    year: "2024–Present",
-    price: "₹1.60 Lakh*",
     engine: "199cc",
     power: "24.5 PS",
     torque: "18.74 Nm",
-    tag: "Street Bike"
+    price: "₹1.59 Lakh*",
+    tag: "Street Bike",
+    imageSearch: "Bajaj Pulsar NS200"
   },
 
   {
-    name: "Honda CB350",
-    brand: "Honda",
-    type: "Bike",
+    name: "Bajaj Pulsar RS200",
+    brand: "Bajaj",
+    type: "Sports Bike",
+    generation: "Updated",
+    version: "Current",
+    year: "2025-Present",
     fuel: "Petrol",
-    generation: "1st Generation",
-    version: "Updated",
-    year: "2024–Present",
-    price: "₹2.00 Lakh*",
-    engine: "348cc",
-    power: "21 PS",
-    torque: "30 Nm",
-    tag: "Roadster"
+    engine: "199cc",
+    power: "24.5 PS",
+    torque: "18.7 Nm",
+    price: "₹1.75 Lakh*",
+    tag: "Sports Bike",
+    imageSearch: "Bajaj Pulsar RS200"
   },
 
   {
-    name: "Hero Xtreme 125R",
+    name: "Hero Xtreme 250R",
     brand: "Hero",
-    type: "Bike",
-    fuel: "Petrol",
+    type: "Naked Bike",
     generation: "1st Generation",
     version: "Current",
-    year: "2024–Present",
-    price: "₹1 Lakh*",
-    engine: "125cc",
-    power: "11.5 PS",
-    torque: "10.5 Nm",
-    tag: "Street Bike"
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "250cc",
+    power: "30 PS",
+    torque: "25 Nm",
+    price: "₹1.80 Lakh*",
+    tag: "Performance",
+    imageSearch: "Hero Xtreme 250R"
+  },
+
+  {
+    name: "Hero Xpulse 210",
+    brand: "Hero",
+    type: "Adventure Bike",
+    generation: "New Generation",
+    version: "Current",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "210cc",
+    power: "24.6 PS",
+    torque: "20.7 Nm",
+    price: "₹1.76 Lakh*",
+    tag: "Adventure",
+    imageSearch: "Hero Xpulse 210"
+  },
+
+  {
+    name: "Honda CB650R",
+    brand: "Honda",
+    type: "Naked Bike",
+    generation: "Updated",
+    version: "Current",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "649cc",
+    power: "95 PS",
+    torque: "63 Nm",
+    price: "₹9.20 Lakh*",
+    tag: "Premium Bike",
+    imageSearch: "Honda CB650R"
+  },
+
+  {
+    name: "Honda Africa Twin",
+    brand: "Honda",
+    type: "Adventure Bike",
+    generation: "Current Generation",
+    version: "Updated",
+    year: "2025-Present",
+    fuel: "Petrol",
+    engine: "1084cc",
+    power: "102 PS",
+    torque: "112 Nm",
+    price: "₹16 Lakh*",
+    tag: "Adventure",
+    imageSearch: "Honda Africa Twin"
   }
+
 ];
 
 
-// ============================================================
-// IMAGE SYSTEM
-// Uses Wikimedia Commons search so we don't hard-code
-// random images from unrelated vehicles.
-// ============================================================
+/* =========================================================
+   IMAGE SYSTEM
+   Automatically finds the vehicle image from Wikimedia
+   ========================================================= */
 
 const imageCache = {};
 
 async function getVehicleImage(vehicle) {
 
-  const cacheKey = vehicle.name;
+  const search = vehicle.imageSearch || vehicle.name;
 
-  if (imageCache[cacheKey]) {
-    return imageCache[cacheKey];
+  if (imageCache[search]) {
+    return imageCache[search];
   }
 
-  const query =
-    `${vehicle.brand} ${vehicle.name} car motorcycle`;
+  const cached = localStorage.getItem("cargenix_" + search);
 
-  const api =
-    `https://commons.wikimedia.org/w/api.php` +
-    `?action=query` +
-    `&generator=search` +
-    `&gsrsearch=${encodeURIComponent(query)}` +
-    `&gsrnamespace=6` +
-    `&gsrlimit=10` +
-    `&prop=imageinfo` +
-    `&iiprop=url` +
-    `&iiurlwidth=1000` +
-    `&format=json` +
-    `&origin=*`;
+  if (cached) {
+    imageCache[search] = cached;
+    return cached;
+  }
 
   try {
 
-    const response = await fetch(api);
+    const url =
+      "https://commons.wikimedia.org/w/api.php" +
+      "?action=query" +
+      "&generator=search" +
+      "&gsrsearch=" +
+      encodeURIComponent(search + " vehicle") +
+      "&gsrnamespace=6" +
+      "&gsrlimit=5" +
+      "&prop=imageinfo" +
+      "&iiprop=url" +
+      "&iiurlwidth=900" +
+      "&format=json" +
+      "&origin=*";
 
+    const response = await fetch(url);
     const data = await response.json();
 
     if (data.query && data.query.pages) {
 
-      const pages =
-        Object.values(data.query.pages);
+      const pages = Object.values(data.query.pages);
 
-      // Prefer files whose title contains the vehicle name.
-      const vehicleWords =
-        vehicle.name
-          .toLowerCase()
-          .replace(/[^a-z0-9 ]/g, "")
-          .split(" ")
-          .filter(word => word.length > 2);
+      const goodImage = pages.find(page =>
+        page.imageinfo &&
+        page.imageinfo[0] &&
+        page.imageinfo[0].thumburl
+      );
 
-      let best =
-        pages.find(page => {
-
-          const title =
-            page.title.toLowerCase();
-
-          return vehicleWords.some(word =>
-            title.includes(word)
-          );
-
-        });
-
-      if (!best) {
-        best = pages[0];
-      }
-
-      if (
-        best &&
-        best.imageinfo &&
-        best.imageinfo[0]
-      ) {
+      if (goodImage) {
 
         const image =
-          best.imageinfo[0].thumburl ||
-          best.imageinfo[0].url;
+          goodImage.imageinfo[0].thumburl;
 
-        imageCache[cacheKey] = image;
+        imageCache[search] = image;
+
+        localStorage.setItem(
+          "cargenix_" + search,
+          image
+        );
 
         return image;
       }
@@ -1180,34 +1321,16 @@ async function getVehicleImage(vehicle) {
 
   }
 
-  // Safe fallback — never shows a random different car.
-  return createPlaceholder(vehicle);
+  return "https://placehold.co/900x560/e9e9e9/333333?text=" +
+    encodeURIComponent(vehicle.name);
 }
 
 
-// ============================================================
-// PLACEHOLDER
-// ============================================================
+/* =========================================================
+   VEHICLE CARD
+   ========================================================= */
 
-function createPlaceholder(vehicle) {
-
-  const text =
-    encodeURIComponent(
-      `${vehicle.brand} ${vehicle.name}`
-    );
-
-  return (
-    `https://placehold.co/1000x650/111111/ffffff` +
-    `?text=${text}`
-  );
-}
-
-
-// ============================================================
-// VEHICLE CARD
-// ============================================================
-
-function vehicleCard(vehicle) {
+function vehicleCard(vehicle, index) {
 
   return `
     <article class="vehicle-card">
@@ -1215,9 +1338,8 @@ function vehicleCard(vehicle) {
       <div class="vehicle-image">
 
         <img
-          class="vehicle-photo"
-          data-vehicle="${vehicle.name}"
-          src="${createPlaceholder(vehicle)}"
+          id="vehicle-image-${index}"
+          src="https://placehold.co/900x560/f1f1f1/333333?text=Loading..."
           alt="${vehicle.name}"
           loading="lazy"
         >
@@ -1225,10 +1347,6 @@ function vehicleCard(vehicle) {
       </div>
 
       <div class="vehicle-info">
-
-        <span class="vehicle-tag">
-          ${vehicle.tag}
-        </span>
 
         <h3>${vehicle.name}</h3>
 
@@ -1277,9 +1395,13 @@ function vehicleCard(vehicle) {
           ${vehicle.price}
         </p>
 
+        <span class="vehicle-tag">
+          ${vehicle.tag}
+        </span>
+
         <button
           class="details-btn"
-          onclick='showDetails(${JSON.stringify(vehicle)})'
+          onclick="showDetails(${JSON.stringify(vehicle).replace(/"/g, '&quot;')})"
         >
           View Details
         </button>
@@ -1291,54 +1413,43 @@ function vehicleCard(vehicle) {
 }
 
 
-// ============================================================
-// LOAD REAL IMAGES
-// ============================================================
+/* =========================================================
+   LOAD IMAGES
+   ========================================================= */
 
-async function loadImages() {
+async function loadImages(list) {
 
-  const images =
-    document.querySelectorAll(
-      ".vehicle-photo"
-    );
+  for (let i = 0; i < list.length; i++) {
 
-  for (const img of images) {
-
-    const vehicleName =
-      img.dataset.vehicle;
-
-    const vehicle =
-      vehicles.find(
-        item => item.name === vehicleName
-      );
-
-    if (!vehicle) continue;
+    const vehicle = list[i];
 
     const image =
       await getVehicleImage(vehicle);
 
-    img.src = image;
+    const img =
+      document.getElementById(
+        "vehicle-image-" + i
+      );
+
+    if (img) {
+      img.src = image;
+    }
   }
 }
 
 
-// ============================================================
-// DISPLAY CARS
-// ============================================================
+/* =========================================================
+   DISPLAY CARS
+   ========================================================= */
 
 function displayVehicles(list = vehicles) {
 
   const grid =
-    document.getElementById(
-      "vehicleGrid"
-    );
+    document.getElementById("vehicleGrid");
 
-  const cars =
-    list.filter(vehicle =>
-      vehicle.type !== "Bike"
-    );
+  if (!grid) return;
 
-  if (!cars.length) {
+  if (list.length === 0) {
 
     grid.innerHTML =
       "<p>No cars found.</p>";
@@ -1347,29 +1458,28 @@ function displayVehicles(list = vehicles) {
   }
 
   grid.innerHTML =
-    cars.map(vehicleCard).join("");
+    list
+      .map((vehicle, index) =>
+        vehicleCard(vehicle, index)
+      )
+      .join("");
 
-  loadImages();
+  loadImages(list);
 }
 
 
-// ============================================================
-// DISPLAY BIKES
-// ============================================================
+/* =========================================================
+   DISPLAY BIKES
+   ========================================================= */
 
-function displayBikes(list = vehicles) {
+function displayBikes(list = bikes) {
 
   const grid =
-    document.getElementById(
-      "bikeGrid"
-    );
+    document.getElementById("bikeGrid");
 
-  const bikes =
-    list.filter(vehicle =>
-      vehicle.type === "Bike"
-    );
+  if (!grid) return;
 
-  if (!bikes.length) {
+  if (list.length === 0) {
 
     grid.innerHTML =
       "<p>No bikes found.</p>";
@@ -1378,15 +1488,19 @@ function displayBikes(list = vehicles) {
   }
 
   grid.innerHTML =
-    bikes.map(vehicleCard).join("");
+    list
+      .map((vehicle, index) =>
+        vehicleCard(vehicle, index + 1000)
+      )
+      .join("");
 
-  loadImages();
+  loadImages(list);
 }
 
 
-// ============================================================
-// SEARCH
-// ============================================================
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
 function searchVehicles() {
 
@@ -1405,30 +1519,59 @@ function searchVehicles() {
     return;
   }
 
-  const results =
-    vehicles.filter(vehicle => {
+  const carResults =
+    vehicles.filter(vehicle =>
 
-      const searchableText = [
+      vehicle.name
+        .toLowerCase()
+        .includes(input) ||
 
-        vehicle.name,
-        vehicle.brand,
-        vehicle.type,
-        vehicle.fuel,
-        vehicle.generation,
-        vehicle.version,
-        vehicle.year,
-        vehicle.tag
+      vehicle.brand
+        .toLowerCase()
+        .includes(input) ||
 
-      ]
-        .join(" ")
-        .toLowerCase();
+      vehicle.type
+        .toLowerCase()
+        .includes(input) ||
 
-      return searchableText.includes(input);
+      vehicle.generation
+        .toLowerCase()
+        .includes(input) ||
 
-    });
+      vehicle.version
+        .toLowerCase()
+        .includes(input)
 
-  displayVehicles(results);
-  displayBikes(results);
+    );
+
+  const bikeResults =
+    bikes.filter(vehicle =>
+
+      vehicle.name
+        .toLowerCase()
+        .includes(input) ||
+
+      vehicle.brand
+        .toLowerCase()
+        .includes(input) ||
+
+      vehicle.type
+        .toLowerCase()
+        .includes(input) ||
+
+      vehicle.generation
+        .toLowerCase()
+        .includes(input) ||
+
+      vehicle.version
+        .toLowerCase()
+        .includes(input)
+
+    );
+
+  displayVehicles(carResults);
+
+  displayBikes(bikeResults);
 
   document
     .getElementById("cars")
@@ -1438,9 +1581,9 @@ function searchVehicles() {
 }
 
 
-// ============================================================
-// QUICK SEARCH
-// ============================================================
+/* =========================================================
+   BRAND SEARCH
+   ========================================================= */
 
 function quickSearch(text) {
 
@@ -1452,82 +1595,20 @@ function quickSearch(text) {
 }
 
 
-// ============================================================
-// BRAND FILTER
-// ============================================================
-
-function filterByBrand(brand) {
-
-  const results =
-    vehicles.filter(vehicle =>
-      vehicle.brand.toLowerCase() ===
-      brand.toLowerCase()
-    );
-
-  displayVehicles(results);
-  displayBikes(results);
-
-  document
-    .getElementById("cars")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-}
-
-
-// ============================================================
-// AUTOMATIC BRAND BUTTONS
-// ============================================================
-
-function createBrandButtons() {
-
-  const container =
-    document.querySelector(
-      ".brand-grid"
-    );
-
-  if (!container) return;
-
-  const brands =
-    [...new Set(
-      vehicles.map(vehicle =>
-        vehicle.brand
-      )
-    )];
-
-  container.innerHTML =
-    brands.map(brand => `
-      <button
-        onclick="filterByBrand('${brand}')"
-      >
-        ${brand}
-      </button>
-    `).join("");
-}
-
-
-// ============================================================
-// DETAILS
-// ============================================================
+/* =========================================================
+   SHOW DETAILS
+   ========================================================= */
 
 function showDetails(vehicle) {
 
   const box =
-    document.getElementById(
-      "compareBox"
-    );
+    document.getElementById("compareBox");
+
+  if (!box) return;
 
   box.innerHTML = `
 
     <div class="details-panel">
-
-      <div class="details-image">
-        <img
-          src="${createPlaceholder(vehicle)}"
-          alt="${vehicle.name}"
-          id="detailsVehicleImage"
-        >
-      </div>
 
       <h3>${vehicle.name}</h3>
 
@@ -1552,7 +1633,7 @@ function showDetails(vehicle) {
       </p>
 
       <p>
-        <strong>Model Year:</strong>
+        <strong>Year:</strong>
         ${vehicle.year}
       </p>
 
@@ -1581,6 +1662,10 @@ function showDetails(vehicle) {
         ${vehicle.price}
       </p>
 
+      <span class="vehicle-tag">
+        ${vehicle.tag}
+      </span>
+
     </div>
   `;
 
@@ -1589,26 +1674,26 @@ function showDetails(vehicle) {
     .scrollIntoView({
       behavior: "smooth"
     });
-
-  getVehicleImage(vehicle)
-    .then(image => {
-
-      const detailsImage =
-        document.getElementById(
-          "detailsVehicleImage"
-        );
-
-      if (detailsImage) {
-        detailsImage.src = image;
-      }
-
-    });
 }
 
 
-// ============================================================
-// INITIALIZE
-// ============================================================
+/* =========================================================
+   BRAND BUTTONS
+   ========================================================= */
+
+function showBrand(brand) {
+
+  document
+    .getElementById("searchInput")
+    .value = brand;
+
+  searchVehicles();
+}
+
+
+/* =========================================================
+   KEYBOARD SEARCH
+   ========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -1616,8 +1701,6 @@ document.addEventListener(
 
     displayVehicles();
     displayBikes();
-
-    createBrandButtons();
 
     const searchInput =
       document.getElementById(
