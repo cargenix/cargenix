@@ -38,7 +38,7 @@ const vehicles = [
     mileage: "Up to 15.2 km/l",
     seats: "4",
     tag: "Adventure",
-    image: "images/thar.jpg",
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80",
   },
 
   {
