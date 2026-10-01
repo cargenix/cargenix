@@ -22,7 +22,7 @@ const vehicles = [
     torque: "Up to 114 Nm",
     tag: "Compact SUV"
   },
-
+  
   {
     name: "Hyundai Venue",
     brand: "Hyundai",
