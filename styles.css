@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -9,694 +9,461 @@ html {
 }
 
 body {
-  font-family: Inter, Arial, sans-serif;
-  background: #ffffff;
-  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f5;
+  color: #111;
   line-height: 1.5;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* ================= NAVBAR ================= */
 
-button,
-input {
-  font: inherit;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.topbar {
-  width: 100%;
-  height: 78px;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 76px;
+  padding: 0 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 6%;
-  border-bottom: 1px solid #eeeeee;
-  background: rgba(255,255,255,0.96);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 25px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 900;
   letter-spacing: -1px;
 }
 
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: #e52b3c;
-  color: white;
+.navbar nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
+  gap: 32px;
 }
 
-.topbar nav {
-  display: flex;
-  gap: 34px;
-  align-items: center;
-}
-
-.topbar nav a {
-  font-size: 14px;
+.navbar nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 15px;
   font-weight: 600;
-  color: #333;
-  transition: 0.25s;
+  transition: 0.2s;
 }
 
-.topbar nav a:hover {
-  color: #e52b3c;
+.navbar nav a:hover {
+  color: #e11d2e;
 }
 
-.mobile-menu {
-  display: none;
-  border: 0;
-  background: transparent;
-  font-size: 25px;
-}
-
-
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero {
-  min-height: 680px;
+  min-height: 650px;
   padding: 80px 6%;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
   align-items: center;
+  background: #f7f7f5;
 }
 
-.hero-content {
-  max-width: 650px;
+.hero-text {
+  max-width: 620px;
 }
 
 .eyebrow {
-  color: #e52b3c;
-  font-size: 12px;
+  margin-bottom: 18px;
+  color: #e11d2e;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
-  margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(55px, 6vw, 92px);
-  line-height: 0.94;
+  font-size: clamp(55px, 6vw, 90px);
+  line-height: 0.95;
   letter-spacing: -5px;
-  font-weight: 900;
   margin-bottom: 28px;
 }
 
 .hero h1 span {
-  color: #e52b3c;
+  color: #e11d2e;
 }
 
-.hero-text {
+.subtitle {
   max-width: 520px;
-  font-size: 17px;
   color: #666;
-  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.hero-search {
+/* ================= SEARCH ================= */
+
+.search-box {
   display: flex;
-  width: 100%;
-  max-width: 570px;
-  height: 58px;
-  border: 1px solid #dddddd;
+  max-width: 560px;
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
-.hero-search input {
+.search-box input {
   flex: 1;
-  border: 0;
-  outline: 0;
-  padding: 0 20px;
-  font-size: 15px;
+  border: none;
+  outline: none;
+  padding: 18px 20px;
+  font-size: 16px;
+  min-width: 0;
 }
 
-.hero-search button {
-  border: 0;
-  padding: 0 30px;
-  background: #e52b3c;
+.search-box button {
+  border: none;
+  background: #e11d2e;
   color: white;
+  padding: 0 30px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.hero-search button:hover {
-  background: #c91f30;
+.search-box button:hover {
+  background: #bd1524;
 }
 
 .popular {
-  display: flex;
-  gap: 10px;
-  align-items: center;
   margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.popular span {
-  font-size: 13px;
-  color: #777;
+.popular b {
+  margin-right: 5px;
+  font-size: 14px;
 }
 
 .popular button {
-  border: 0;
-  background: transparent;
-  color: #555;
-  font-size: 13px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 8px 14px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .popular button:hover {
-  color: #e52b3c;
+  border-color: #e11d2e;
+  color: #e11d2e;
 }
 
-
-/* =========================
-   HERO IMAGE
-========================= */
+/* ================= HERO IMAGE ================= */
 
 .hero-image {
+  width: 100%;
   height: 520px;
-  border-radius: 24px;
   overflow: hidden;
-  position: relative;
-  background: #111;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+  border-radius: 24px;
+  background: #ddd;
 }
 
-.hero-image > img {
+.hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.image-card {
-  position: absolute;
-  left: 25px;
-  bottom: 25px;
-  background: rgba(0,0,0,0.78);
-  color: white;
-  padding: 18px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-}
-
-.image-card strong {
-  display: block;
-  font-size: 15px;
-}
-
-.image-card span {
-  display: block;
-  font-size: 12px;
-  color: #cccccc;
-  margin-top: 4px;
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
 
 .section {
   padding: 100px 6%;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .section-heading {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 40px;
-  margin-bottom: 45px;
+  align-items: end;
+  margin-bottom: 40px;
 }
 
-.section-heading h2 {
-  font-size: clamp(38px, 4vw, 58px);
+.section h2 {
+  font-size: 48px;
   line-height: 1;
   letter-spacing: -2px;
+  margin-bottom: 35px;
 }
 
-.section-heading > p {
-  max-width: 400px;
-  color: #777;
-}
-
-
-/* =========================
-   CATEGORY CARDS
-========================= */
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.category-card {
-  padding: 32px;
-  min-height: 260px;
-  border: 1px solid #e8e8e8;
-  border-radius: 18px;
-  transition: 0.3s;
-  background: #fff;
-}
-
-.category-card:hover {
-  transform: translateY(-7px);
-  border-color: #e52b3c;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-.category-icon {
-  font-size: 32px;
-  margin-bottom: 25px;
-}
-
-.category-card h3 {
-  font-size: 23px;
-  margin-bottom: 10px;
-}
-
-.category-card p {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 22px;
-}
-
-.category-card a {
-  color: #e52b3c;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-
-/* =========================
-   VEHICLES
-========================= */
-
-.vehicles-section {
-  background: #f7f7f7;
-}
+/* ================= VEHICLES ================= */
 
 .vehicle-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .vehicle-card {
   background: white;
+  border: 1px solid #e5e5e5;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #eeeeee;
-  transition: 0.3s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .vehicle-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
-.vehicle-img {
-  height: 230px;
-  position: relative;
+.vehicle-image {
+  height: 240px;
   overflow: hidden;
-  background: #ddd;
+  background: #eee;
 }
 
-.vehicle-img img {
+.vehicle-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s;
+  transition: transform 0.4s;
 }
 
-.vehicle-card:hover .vehicle-img img {
-  transform: scale(1.06);
-}
-
-.vehicle-tag {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: #e52b3c;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: 800;
+.vehicle-card:hover .vehicle-image img {
+  transform: scale(1.05);
 }
 
 .vehicle-info {
-  padding: 23px;
-}
-
-.vehicle-brand {
-  color: #e52b3c;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  padding: 24px;
 }
 
 .vehicle-info h3 {
-  font-size: 27px;
-  margin: 3px 0 8px;
+  font-size: 23px;
+  margin-bottom: 15px;
 }
 
-.vehicle-info > p:not(.vehicle-brand) {
-  color: #777;
-  font-size: 13px;
-}
-
-.vehicle-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 22px;
-}
-
-.vehicle-bottom strong {
-  font-size: 13px;
-}
-
-.vehicle-bottom button {
-  border: 0;
-  background: #111;
-  color: white;
-  padding: 8px 13px;
-  border-radius: 7px;
-  cursor: pointer;
-}
-
-
-/* =========================
-   FEATURE SECTION
-========================= */
-
-.feature-section {
-  padding: 110px 6%;
-  background: #111;
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-}
-
-.feature-section h2 {
-  font-size: clamp(45px, 5vw, 70px);
-  line-height: 0.98;
-  letter-spacing: -3px;
-}
-
-.feature-text {
-  color: #aaa;
-  max-width: 500px;
-  margin-top: 25px;
-  font-size: 16px;
-}
-
-.feature-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-list > div {
-  padding: 28px 0;
-  border-bottom: 1px solid #333;
-}
-
-.feature-list span {
-  color: #e52b3c;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.feature-list h3 {
-  margin: 8px 0;
-  font-size: 21px;
-}
-
-.feature-list p {
-  color: #999;
+.vehicle-info p {
+  color: #666;
   font-size: 14px;
+  margin: 7px 0;
 }
 
+.vehicle-info p strong {
+  color: #222;
+}
 
-/* =========================
-   NEWS
-========================= */
+.vehicle-tag {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fce8eb;
+  color: #d7192b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.details-btn {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.details-btn:hover {
+  background: #e11d2e;
+}
+
+/* ================= BRANDS ================= */
+
+.brands {
+  background: #111;
+  color: white;
+  max-width: none;
+}
+
+.brands .eyebrow {
+  color: #ff3448;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.brand-grid button {
+  min-height: 90px;
+  border: 1px solid #333;
+  border-radius: 14px;
+  background: #181818;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.brand-grid button:hover {
+  background: #e11d2e;
+  border-color: #e11d2e;
+  transform: translateY(-4px);
+}
+
+/* ================= COMPARE ================= */
+
+.compare {
+  background: #f0f0ed;
+  max-width: none;
+}
+
+.compare-box {
+  max-width: 700px;
+  min-height: 220px;
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.compare-box h3 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.compare-box p {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* ================= NEWS ================= */
 
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
-.news-card {
-  border: 1px solid #e8e8e8;
-  padding: 32px;
+.news-grid article {
+  padding: 30px;
+  min-height: 200px;
   border-radius: 18px;
-  transition: 0.3s;
-}
-
-.news-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.07);
-}
-
-.news-card > span {
-  color: #e52b3c;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.news-card h3 {
-  font-size: 24px;
-  margin: 18px 0 12px;
-}
-
-.news-card p {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 25px;
-}
-
-.news-card a {
-  color: #e52b3c;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background: #080808;
-  color: white;
-  padding: 60px 6%;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 25px;
-}
-
-footer > p {
-  color: #888;
-  margin: 18px 0;
-}
-
-.footer-links {
-  display: flex;
-  gap: 25px;
-  margin: 25px 0;
-}
-
-.footer-links a {
-  color: #aaa;
-  font-size: 14px;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-.copyright {
-  border-top: 1px solid #222;
-  padding-top: 25px;
-  font-size: 12px;
-}
-
-
-/* =========================
-   MODAL
-========================= */
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 500;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal.active {
-  display: flex;
-}
-
-.modal-box {
   background: white;
-  max-width: 500px;
-  width: 100%;
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
+  border: 1px solid #e3e3e3;
 }
 
-.modal-box h2 {
-  font-size: 40px;
-  margin-bottom: 12px;
+.news-grid h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
-.modal-box p:not(.eyebrow) {
+.news-grid p {
   color: #666;
 }
 
-.close-modal {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  border: 0;
-  background: transparent;
-  font-size: 30px;
-  cursor: pointer;
-}
+/* ================= FOOTER ================= */
 
-.modal-button {
-  margin-top: 25px;
-  background: #e52b3c;
+footer {
+  padding: 55px 6%;
+  background: #111;
   color: white;
-  border: 0;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
+footer strong {
+  font-size: 25px;
+}
 
-/* =========================
-   MOBILE
-========================= */
+footer p {
+  margin-top: 8px;
+  color: #aaa;
+}
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 1000px) {
-
   .hero {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero-image {
-    height: 420px;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
+    height: 400px;
   }
 
   .vehicle-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .feature-section {
+  .brand-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
   }
 }
 
 @media (max-width: 650px) {
-
-  .topbar {
-    height: 65px;
+  .navbar {
+    height: auto;
+    padding: 20px;
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
   }
 
-  .topbar nav {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: block;
+  .navbar nav {
+    width: 100%;
+    gap: 15px;
+    overflow-x: auto;
   }
 
   .hero {
-    padding: 60px 5%;
-    gap: 40px;
+    padding: 55px 20px;
   }
 
   .hero h1 {
-    font-size: 55px;
+    font-size: 52px;
     letter-spacing: -3px;
   }
 
   .hero-image {
-    height: 320px;
+    height: 300px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    padding: 15px;
   }
 
   .section {
-    padding: 70px 5%;
+    padding: 70px 20px;
   }
 
-  .section-heading {
-    display: block;
+  .section h2 {
+    font-size: 38px;
   }
 
-  .section-heading > p {
-    margin-top: 20px;
-  }
-
-  .category-grid,
-  .vehicle-grid,
-  .news-grid {
+  .vehicle-grid {
     grid-template-columns: 1fr;
   }
 
-  .feature-section {
-    padding: 70px 5%;
-  }
-
-  .hero-search {
-    height: 52px;
-  }
-
-  .popular {
-    margin-bottom: 10px;
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
