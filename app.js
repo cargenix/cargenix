@@ -8,7 +8,7 @@ const vehicles = [
     power: "Up to 160 PS",
     torque: "Up to 253 Nm",
     tag: "Popular SUV",
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Hyundai_Creta.jpg"
   },
 
   {
@@ -20,7 +20,7 @@ const vehicles = [
     power: "Up to 177 PS",
     torque: "Up to 400 Nm",
     tag: "Adventure",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Mahindra_Thar.jpg"
   },
 
   {
@@ -32,7 +32,7 @@ const vehicles = [
     power: "Up to 160 PS",
     torque: "Up to 253 Nm",
     tag: "Premium SUV",
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=85"
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kia_Seltos_2024.jpg/1280px-Kia_Seltos_2024.jpg"
   },
 
   {
@@ -44,7 +44,7 @@ const vehicles = [
     power: "Up to 204 PS",
     torque: "Up to 500 Nm",
     tag: "Premium SUV",
-    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d0/Toyota_Fortuner_India.jpg"
   },
 
   {
@@ -56,7 +56,7 @@ const vehicles = [
     power: "Up to 258 PS",
     torque: "400 Nm",
     tag: "Luxury",
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ce/BMW_3_Series_3.jpg"
   },
 
   {
@@ -82,7 +82,7 @@ const bikes = [
     power: "20.2 PS",
     torque: "27 Nm",
     tag: "Popular Bike",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/73/Royal_Enfield_Classic_350.jpg"
   },
 
   {
@@ -94,7 +94,7 @@ const bikes = [
     power: "46 PS",
     torque: "39 Nm",
     tag: "Performance",
-    image: "https://images.unsplash.com/photo-1558980394-0c7c4e4b8e0b?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Ktm_duke_390.jpg"
   },
 
   {
@@ -106,7 +106,7 @@ const bikes = [
     power: "18.4 PS",
     torque: "14.2 Nm",
     tag: "Sports Bike",
-    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1000&q=85"
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Yamaha_R15.jpg"
   }
 ];
 
