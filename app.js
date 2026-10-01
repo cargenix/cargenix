@@ -1,530 +1,547 @@
+/* =========================================================
+   CARGENIX V2
+   Cars • Bikes • Specifications • Compare
+   ========================================================= */
+
 const vehicles = [
 
+  /* ===================== CARS ===================== */
+
   {
-    id:'creta',
-    name:'Hyundai Creta',
-    brand:'Hyundai',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'1.5L petrol / diesel / turbo petrol',
-    power:'Up to 160 PS',
-    torque:'Up to 253 Nm',
-    fuel:'Petrol / Diesel',
-    gearbox:'MT / IVT / DCT / AT',
-    drive:'FWD',
-    seats:'5',
-    tag:'Popular SUV',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20Creta%201.5%20Plus%202024.jpg'
+    id: "creta",
+    name: "Hyundai Creta",
+    brand: "Hyundai",
+    kind: "car",
+    type: "SUV",
+    price: "₹11.11 Lakh*",
+    engine: "1.5L Petrol / Diesel",
+    power: "115 PS",
+    torque: "144 Nm",
+    transmission: "6MT / IVT / 7DCT",
+    mileage: "Up to 21.8 km/l",
+    seats: "5",
+    tag: "Popular",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20Creta.jpg"
   },
 
   {
-    id:'thar',
-    name:'Mahindra Thar',
-    brand:'Mahindra',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'Turbo petrol / diesel',
-    power:'Up to 177 PS',
-    torque:'Up to 400 Nm',
-    fuel:'Petrol / Diesel',
-    gearbox:'MT / AT',
-    drive:'RWD / 4WD',
-    seats:'4',
-    tag:'Adventure',
-    image: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg",
+    id: "thar",
+    name: "Mahindra Thar",
+    brand: "Mahindra",
+    kind: "car",
+    type: "SUV",
+    price: "₹11.50 Lakh*",
+    engine: "2.0L Turbo Petrol / 2.2L Diesel",
+    power: "152 PS",
+    torque: "320 Nm",
+    transmission: "6MT / 6AT",
+    mileage: "Up to 15.2 km/l",
+    seats: "4",
+    tag: "Adventure",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mahindra%20Thar.jpg"
   },
 
   {
-    id:'seltos',
-    name:'Kia Seltos',
-    brand:'Kia',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'1.5L petrol / turbo petrol / diesel',
-    power:'Up to 160 PS',
-    torque:'Up to 253 Nm',
-    fuel:'Petrol / Diesel',
-    gearbox:'MT / iMT / IVT / DCT / AT',
-    drive:'FWD',
-    seats:'5',
-    tag:'Tech SUV',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/2026%20Kia%20Seltos.jpg'
+    id: "seltos",
+    name: "Kia Seltos",
+    brand: "Kia",
+    kind: "car",
+    type: "SUV",
+    price: "₹11.13 Lakh*",
+    engine: "1.5L Petrol / Diesel",
+    power: "160 PS",
+    torque: "253 Nm",
+    transmission: "6MT / IVT / 7DCT",
+    mileage: "Up to 20.8 km/l",
+    seats: "5",
+    tag: "Featured",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kia%20Seltos.jpg"
   },
 
   {
-    id:'city',
-    name:'Honda City',
-    brand:'Honda',
-    kind:'car',
-    type:'Sedan',
-    price:'Check latest',
-    engine:'1.5L petrol',
-    power:'121 PS',
-    torque:'145 Nm',
-    fuel:'Petrol',
-    gearbox:'MT / CVT',
-    drive:'FWD',
-    seats:'5',
-    tag:'Sedan',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20City%202020.jpg'
+    id: "city",
+    name: "Honda City",
+    brand: "Honda",
+    kind: "car",
+    type: "Sedan",
+    price: "₹11.95 Lakh*",
+    engine: "1.5L Petrol",
+    power: "121 PS",
+    torque: "145 Nm",
+    transmission: "6MT / CVT",
+    mileage: "Up to 18.4 km/l",
+    seats: "5",
+    tag: "Sedan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20City.jpg"
   },
 
   {
-    id:'nexon',
-    name:'Tata Nexon',
-    brand:'Tata',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'1.2L turbo petrol / diesel / EV',
-    power:'Varies by powertrain',
-    torque:'Varies by powertrain',
-    fuel:'Petrol / Diesel / EV',
-    gearbox:'MT / AMT / DCT',
-    drive:'FWD',
-    seats:'5',
-    tag:'5-star safety',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Tata%20Nexon%20aero%20at%202018%20Delhi%20auto%20expo..jpg'
+    id: "nexon",
+    name: "Tata Nexon",
+    brand: "Tata",
+    kind: "car",
+    type: "SUV",
+    price: "₹8.00 Lakh*",
+    engine: "1.2L Turbo Petrol",
+    power: "120 PS",
+    torque: "170 Nm",
+    transmission: "5MT / 6MT / AMT / DCT",
+    mileage: "Up to 24.08 km/l",
+    seats: "5",
+    tag: "Value",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tata%20Nexon.jpg"
   },
 
   {
-    id:'xuv3xo',
-    name:'Mahindra XUV 3XO',
-    brand:'Mahindra',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'1.2L turbo petrol / 1.5L diesel',
-    power:'Up to 131 PS',
-    torque:'Up to 230 Nm',
-    fuel:'Petrol / Diesel',
-    gearbox:'MT / AT',
-    drive:'FWD',
-    seats:'5',
-    tag:'Value SUV',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Mahindra%20XUV%203XO%202025.jpg'
+    id: "xuv3xo",
+    name: "Mahindra XUV 3XO",
+    brand: "Mahindra",
+    kind: "car",
+    type: "SUV",
+    price: "₹7.99 Lakh*",
+    engine: "1.2L Turbo Petrol / 1.5L Diesel",
+    power: "130 PS",
+    torque: "250 Nm",
+    transmission: "6MT / 6AT",
+    mileage: "Up to 20.1 km/l",
+    seats: "5",
+    tag: "Popular",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mahindra%20XUV%203XO.jpg"
   },
 
   {
-    id:'fortuner',
-    name:'Toyota Fortuner',
-    brand:'Toyota',
-    kind:'car',
-    type:'SUV',
-    price:'Check latest',
-    engine:'2.7L petrol / 2.8L diesel',
-    power:'Up to 204 PS',
-    torque:'Up to 500 Nm',
-    fuel:'Petrol / Diesel',
-    gearbox:'MT / AT',
-    drive:'RWD / 4WD',
-    seats:'7',
-    tag:'Full-size SUV',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Fortuner%20car.jpg'
+    id: "fortuner",
+    name: "Toyota Fortuner",
+    brand: "Toyota",
+    kind: "car",
+    type: "SUV",
+    price: "₹34.16 Lakh*",
+    engine: "2.7L Petrol / 2.8L Diesel",
+    power: "204 PS",
+    torque: "500 Nm",
+    transmission: "6MT / 6AT",
+    mileage: "Up to 14.6 km/l",
+    seats: "7",
+    tag: "Premium",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Fortuner.jpg"
   },
 
   {
-    id:'innova',
-    name:'Toyota Innova Crysta',
-    brand:'Toyota',
-    kind:'car',
-    type:'MPV',
-    price:'Check latest',
-    engine:'2.4L diesel',
-    power:'150 PS',
-    torque:'343 Nm',
-    fuel:'Diesel',
-    gearbox:'MT',
-    drive:'RWD',
-    seats:'7 / 8',
-    tag:'MPV',
-    image:'https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%20Crysta.jpg'
+    id: "innova",
+    name: "Toyota Innova Crysta",
+    brand: "Toyota",
+    kind: "car",
+    type: "SUV",
+    price: "₹19.99 Lakh*",
+    engine: "2.4L Diesel",
+    power: "150 PS",
+    torque: "343 Nm",
+    transmission: "5MT / 6AT",
+    mileage: "15.6 km/l",
+    seats: "7/8",
+    tag: "Family",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova.jpg"
   },
 
   {
-    id:'slavia',
-    name:'Skoda Slavia',
-    brand:'Skoda',
-    kind:'car',
-    type:'Sedan',
-    price:'Check latest',
-    engine:'1.0L / 1.5L TSI',
-    power:'Up to 150 PS',
-    torque:'Up to 250 Nm',
-    fuel:'Petrol',
-    gearbox:'MT / AT / DSG',
-    drive:'FWD',
-    seats:'5',
-    tag:'Turbo sedan'
+    id: "slavia",
+    name: "Skoda Slavia",
+    brand: "Skoda",
+    kind: "car",
+    type: "Sedan",
+    price: "₹10.49 Lakh*",
+    engine: "1.0L / 1.5L TSI",
+    power: "150 PS",
+    torque: "250 Nm",
+    transmission: "6MT / 6AT / 7DSG",
+    mileage: "Up to 20.32 km/l",
+    seats: "5",
+    tag: "Premium Sedan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Skoda%20Slavia.jpg"
   },
 
   {
-    id:'verna',
-    name:'Hyundai Verna',
-    brand:'Hyundai',
-    kind:'car',
-    type:'Sedan',
-    price:'Check latest',
-    engine:'1.5L petrol / turbo petrol',
-    power:'Up to 160 PS',
-    torque:'Up to 253 Nm',
-    fuel:'Petrol',
-    gearbox:'MT / IVT / DCT',
-    drive:'FWD',
-    seats:'5',
-    tag:'Performance sedan'
+    id: "verna",
+    name: "Hyundai Verna",
+    brand: "Hyundai",
+    kind: "car",
+    type: "Sedan",
+    price: "₹11.07 Lakh*",
+    engine: "1.5L Petrol / Turbo Petrol",
+    power: "160 PS",
+    torque: "253 Nm",
+    transmission: "6MT / IVT / 7DCT",
+    mileage: "Up to 20.6 km/l",
+    seats: "5",
+    tag: "Performance",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20Verna.jpg"
   },
 
   {
-    id:'m340i',
-    name:'BMW M340i',
-    brand:'BMW',
-    kind:'car',
-    type:'Sports',
-    price:'Check latest',
-    engine:'3.0L turbo petrol',
-    power:'374 PS',
-    torque:'500 Nm',
-    fuel:'Petrol',
-    gearbox:'8-speed automatic',
-    drive:'AWD',
-    seats:'5',
-    tag:'Performance'
+    id: "octavia",
+    name: "Skoda Octavia RS",
+    brand: "Skoda",
+    kind: "car",
+    type: "Sports",
+    price: "₹56.69 Lakh*",
+    engine: "2.0L TSI Turbo",
+    power: "265 PS",
+    torque: "370 Nm",
+    transmission: "7-Speed DSG",
+    mileage: "Performance focused",
+    seats: "5",
+    tag: "Performance",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Skoda%20Octavia%20RS.jpg"
   },
 
   {
-    id:'octavia',
-    name:'Škoda Octavia RS',
-    brand:'Skoda',
-    kind:'car',
-    type:'Sports',
-    price:'Check latest',
-    engine:'2.0L TSI turbo petrol',
-    power:'265 PS',
-    torque:'370 Nm',
-    fuel:'Petrol',
-    gearbox:'7-speed DSG',
-    drive:'FWD',
-    seats:'5',
-    tag:'RS'
+    id: "m340i",
+    name: "BMW M340i",
+    brand: "BMW",
+    kind: "car",
+    type: "Sports",
+    price: "₹75.90 Lakh*",
+    engine: "3.0L TwinPower Turbo",
+    power: "374 PS",
+    torque: "500 Nm",
+    transmission: "8-Speed Automatic",
+    mileage: "13.02 km/l",
+    seats: "5",
+    tag: "M Performance",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/BMW%20M340i.jpg"
+  },
+
+
+  /* ===================== BIKES ===================== */
+
+  {
+    id: "hunter",
+    name: "Royal Enfield Hunter 350",
+    brand: "Royal Enfield",
+    kind: "bike",
+    type: "Cruiser",
+    price: "₹1.50 Lakh*",
+    engine: "349.34 cc",
+    power: "20.2 PS",
+    torque: "27 Nm",
+    transmission: "5-Speed",
+    mileage: "36.2 km/l",
+    seats: "2",
+    tag: "Popular",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Enfield%20Hunter%20350.jpg"
   },
 
   {
-    id:'hunter',
-    name:'Royal Enfield Hunter 350',
-    brand:'Royal Enfield',
-    kind:'bike',
-    type:'Cruiser',
-    price:'Check latest',
-    engine:'349cc single-cylinder',
-    power:'20.2 PS',
-    torque:'27 Nm',
-    fuel:'Petrol',
-    gearbox:'5-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'City bike'
+    id: "classic350",
+    name: "Royal Enfield Classic 350",
+    brand: "Royal Enfield",
+    kind: "bike",
+    type: "Cruiser",
+    price: "₹1.93 Lakh*",
+    engine: "349.34 cc",
+    power: "20.2 PS",
+    torque: "27 Nm",
+    transmission: "5-Speed",
+    mileage: "41.55 km/l",
+    seats: "2",
+    tag: "Iconic",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Enfield%20Classic%20350.jpg"
   },
 
   {
-    id:'classic',
-    name:'Royal Enfield Classic 350',
-    brand:'Royal Enfield',
-    kind:'bike',
-    type:'Cruiser',
-    price:'Check latest',
-    engine:'349cc single-cylinder',
-    power:'20.2 PS',
-    torque:'27 Nm',
-    fuel:'Petrol',
-    gearbox:'5-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Iconic'
+    id: "himalayan",
+    name: "Royal Enfield Himalayan",
+    brand: "Royal Enfield",
+    kind: "bike",
+    type: "Adventure",
+    price: "₹2.93 Lakh*",
+    engine: "452 cc",
+    power: "40 PS",
+    torque: "40 Nm",
+    transmission: "6-Speed",
+    mileage: "30 km/l",
+    seats: "2",
+    tag: "Adventure",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Enfield%20Himalayan.jpg"
   },
 
   {
-    id:'himalayan',
-    name:'Royal Enfield Himalayan 450',
-    brand:'Royal Enfield',
-    kind:'bike',
-    type:'Adventure',
-    price:'Check latest',
-    engine:'452cc single-cylinder',
-    power:'40 PS',
-    torque:'40 Nm',
-    fuel:'Petrol',
-    gearbox:'6-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Adventure'
+    id: "r15",
+    name: "Yamaha R15 V4",
+    brand: "Yamaha",
+    kind: "bike",
+    type: "Sports",
+    price: "₹1.83 Lakh*",
+    engine: "155 cc",
+    power: "18.4 PS",
+    torque: "14.2 Nm",
+    transmission: "6-Speed",
+    mileage: "47.92 km/l",
+    seats: "2",
+    tag: "Sports",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20R15.jpg"
   },
 
   {
-    id:'r15',
-    name:'Yamaha R15',
-    brand:'Yamaha',
-    kind:'bike',
-    type:'Sports',
-    price:'Check latest',
-    engine:'155cc single-cylinder',
-    power:'18.4 PS',
-    torque:'14.2 Nm',
-    fuel:'Petrol',
-    gearbox:'6-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Sportbike'
+    id: "duke390",
+    name: "KTM 390 Duke",
+    brand: "KTM",
+    kind: "bike",
+    type: "Sports",
+    price: "₹2.95 Lakh*",
+    engine: "399 cc",
+    power: "46 PS",
+    torque: "39 Nm",
+    transmission: "6-Speed",
+    mileage: "30 km/l",
+    seats: "2",
+    tag: "Performance",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/KTM%20390%20Duke.jpg"
   },
 
   {
-    id:'duke',
-    name:'KTM 390 Duke',
-    brand:'KTM',
-    kind:'bike',
-    type:'Sports',
-    price:'Check latest',
-    engine:'399cc single-cylinder',
-    power:'46 PS',
-    torque:'39 Nm',
-    fuel:'Petrol',
-    gearbox:'6-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Naked'
+    id: "activa",
+    name: "Honda Activa 6G",
+    brand: "Honda",
+    kind: "bike",
+    type: "Scooter",
+    price: "₹80,950*",
+    engine: "109.51 cc",
+    power: "7.79 PS",
+    torque: "8.84 Nm",
+    transmission: "Automatic",
+    mileage: "50 km/l",
+    seats: "2",
+    tag: "Scooter",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Activa.jpg"
   },
 
   {
-    id:'activa',
-    name:'Honda Activa',
-    brand:'Honda',
-    kind:'bike',
-    type:'Scooter',
-    price:'Check latest',
-    engine:'110cc class',
-    power:'Varies by generation',
-    torque:'Varies by generation',
-    fuel:'Petrol',
-    gearbox:'CVT',
-    drive:'Belt drive',
-    seats:'2',
-    tag:'Scooter'
+    id: "apache",
+    name: "TVS Apache RTR 200 4V",
+    brand: "TVS",
+    kind: "bike",
+    type: "Sports",
+    price: "₹1.54 Lakh*",
+    engine: "197.75 cc",
+    power: "20.8 PS",
+    torque: "17.25 Nm",
+    transmission: "5-Speed",
+    mileage: "37 km/l",
+    seats: "2",
+    tag: "Sports",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/TVS%20Apache.jpg"
   },
 
   {
-    id:'apache',
-    name:'TVS Apache RTR 160',
-    brand:'TVS',
-    kind:'bike',
-    type:'Sports',
-    price:'Check latest',
-    engine:'159.7cc single-cylinder',
-    power:'Up to 16.5 PS',
-    torque:'14.8 Nm',
-    fuel:'Petrol',
-    gearbox:'5-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Street'
-  },
-
-  {
-    id:'classic650',
-    name:'Royal Enfield Classic 650',
-    brand:'Royal Enfield',
-    kind:'bike',
-    type:'Cruiser',
-    price:'Check latest',
-    engine:'648cc parallel twin',
-    power:'47 PS class',
-    torque:'52 Nm class',
-    fuel:'Petrol',
-    gearbox:'6-speed',
-    drive:'Chain drive',
-    seats:'2',
-    tag:'Twin-cylinder'
+    id: "classic650",
+    name: "Royal Enfield Classic 650",
+    brand: "Royal Enfield",
+    kind: "bike",
+    type: "Cruiser",
+    price: "₹3.37 Lakh*",
+    engine: "648 cc",
+    power: "47 PS",
+    torque: "52 Nm",
+    transmission: "6-Speed",
+    mileage: "22 km/l",
+    seats: "2",
+    tag: "Premium",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Enfield%20Classic%20650.jpg"
   }
 
 ];
 
-const brandList = [
-  'Audi','BMW','Bajaj','Ducati','Ferrari',
-  'Harley-Davidson','Hero','Honda','Hyundai',
-  'Kia','KTM','Lamborghini','Mahindra',
-  'Maruti Suzuki','Mercedes-Benz','Nissan',
-  'Porsche','Royal Enfield','Skoda','Tata',
-  'Toyota','TVS','Volkswagen','Yamaha'
-];
 
-let currentFilter='all';
-let lastPage='home';
+/* =========================================================
+   BASIC HELPERS
+   ========================================================= */
 
 const $ = id => document.getElementById(id);
 
-function hidePages(){
-  document.querySelectorAll('.page').forEach(x => x.classList.add('hidden'));
-}
+let currentPage = "home";
+let previousPage = "home";
+let currentKind = "all";
 
-function setPage(id){
-  hidePages();
-  if($(id)) $(id).classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+let favorites = JSON.parse(
+  localStorage.getItem("cargenixFavorites") || "[]"
+);
 
-function showHome(){
-  lastPage='home';
-  setPage('home');
-  renderFeatured();
-}
 
-function showListing(filter='all'){
-  lastPage='listing';
-  currentFilter=filter;
+/* =========================================================
+   IMAGE SYSTEM
+   ========================================================= */
 
-  setPage('listing');
+function mediaBlock(v, large = false) {
 
-  if($('listingTitle')){
-    $('listingTitle').textContent =
-      filter==='car' ? 'Cars' :
-      filter==='bike' ? 'Bikes' :
-      filter==='all' ? 'All vehicles' :
-      filter;
-  }
+  const fallback = `
+    <div class="vehicle-img ${large ? "large-media" : ""}">
+      <strong>${v.name}</strong>
+      <small>${v.brand} • ${v.type}</small>
+      <em>Vehicle media unavailable</em>
+    </div>
+  `;
 
-  if($('listingSearch')) $('listingSearch').value='';
-
-  if($('typeFilter')){
-    $('typeFilter').value =
-      ['SUV','Sedan','Hatchback','Sports','Cruiser','Adventure','Scooter'].includes(filter)
-      ? filter
-      : 'all';
-  }
-
-  renderListing();
-}
-
-function showBrands(){
-  lastPage='brands';
-  setPage('brands');
-
-  if($('brandSearch')) $('brandSearch').value='';
-
-  renderBrands();
-}
-
-function showCompare(){
-  lastPage='compare';
-  setPage('compare');
-  fillCompare();
-  renderCompare();
-}
-
-function showNews(){
-  lastPage='news';
-  setPage('news');
-}
-
-function goBack(){
-  showListing(
-    currentFilter==='car' || currentFilter==='bike'
-    ? currentFilter
-    : 'all'
-  );
-}
-
-function doSearch(){
-
-  const input = $('homeSearch');
-
-  if(!input) return;
-
-  const q=input.value.trim();
-
-  if(!q){
-    return showListing('all');
-  }
-
-  showListing('all');
-
-  if($('listingTitle')){
-    $('listingTitle').textContent='Search results';
-  }
-
-  if($('listingSearch')){
-    $('listingSearch').value=q;
-  }
-
-  renderListing();
-}
-
-function quickSearch(q){
-  if($('homeSearch')){
-    $('homeSearch').value=q;
-    doSearch();
-  }
-}
-
-function toggleMenu(){
-
-  if($('mainNav')){
-    $('mainNav').classList.toggle('open');
-  }
-
-}
-
-function toggleTheme(){
-
-  document.body.classList.toggle('dark');
-
-  localStorage.setItem(
-    'cargenixTheme',
-    document.body.classList.contains('dark')
-    ? 'dark'
-    : 'light'
-  );
-
-}
-
-/* VEHICLE IMAGE */
-
-function mediaBlock(v,large=false){
-
-  if(v.image){
-
-    return `
-      <div class="vehicle-img ${large?'large-media':''}">
-        <img
-          src="${v.image}"
-          alt="${v.name}"
-          loading="lazy"
-          onerror="this.parentElement.classList.add('image-error');this.style.display='none'"
-        >
-        <div class="image-fallback">
-          <strong>${v.name}</strong>
-          <span>Image unavailable</span>
-        </div>
-      </div>
-    `;
-
-  }
+  if (!v.image) return fallback;
 
   return `
-    <div class="vehicle-img ${large?'large-media':''} image-placeholder">
-      <div>
-        <strong>${v.name}</strong>
-        <span>Vehicle image coming soon</span>
-      </div>
+    <div class="vehicle-img ${large ? "large-media" : ""}">
+      <img
+        src="${v.image}"
+        alt="${v.name}"
+        loading="lazy"
+        style="width:100%;height:100%;object-fit:cover;display:block;"
+        onerror="this.parentElement.innerHTML='<strong>${v.name}</strong><small>${v.brand} • ${v.type}</small><em>Vehicle media unavailable</em>'"
+      >
     </div>
   `;
 }
 
 
-/* VEHICLE CARD */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
-function card(v){
+function hideAllPages() {
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.add("hidden");
+  });
+}
+
+function showPage(id) {
+  hideAllPages();
+
+  const page = $(id);
+
+  if (page) {
+    page.classList.remove("hidden");
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function showHome() {
+  previousPage = currentPage;
+  currentPage = "home";
+  showPage("home");
+  renderFeatured();
+  updateCounts();
+}
+
+function showListing(filter = "all") {
+
+  previousPage = currentPage;
+  currentPage = "listing";
+
+  currentKind = filter;
+
+  showPage("listing");
+
+  const title = $("listingTitle");
+
+  if (title) {
+
+    if (filter === "car") {
+      title.textContent = "Cars";
+    }
+
+    else if (filter === "bike") {
+      title.textContent = "Bikes";
+    }
+
+    else if (
+      ["SUV", "Sedan", "Hatchback", "Sports", "Cruiser", "Adventure", "Scooter"]
+        .includes(filter)
+    ) {
+      title.textContent = filter;
+    }
+
+    else {
+      title.textContent = "All Vehicles";
+    }
+  }
+
+  if ($("listingSearch")) {
+    $("listingSearch").value = "";
+  }
+
+  renderListing();
+}
+
+function showBrands() {
+
+  previousPage = currentPage;
+  currentPage = "brands";
+
+  showPage("brands");
+
+  renderBrands();
+}
+
+function showCompare() {
+
+  previousPage = currentPage;
+  currentPage = "compare";
+
+  showPage("compare");
+
+  populateCompare();
+
+  renderCompare();
+}
+
+function showNews() {
+
+  previousPage = currentPage;
+  currentPage = "news";
+
+  showPage("news");
+}
+
+function goBack() {
+
+  if (previousPage === "detail") {
+    showHome();
+  }
+
+  else if (previousPage === "listing") {
+    showListing(currentKind);
+  }
+
+  else {
+    showHome();
+  }
+}
+
+
+/* =========================================================
+   HOME
+   ========================================================= */
+
+function renderFeatured() {
+
+  const grid = $("featuredGrid");
+
+  if (!grid) return;
+
+  const featured = vehicles.slice(0, 8);
+
+  grid.innerHTML = featured
+    .map(vehicleCard)
+    .join("");
+}
+
+
+/* =========================================================
+   VEHICLE CARD
+   ========================================================= */
+
+function vehicleCard(v) {
+
+  const isFav = favorites.includes(v.id);
 
   return `
     <article class="vehicle-card">
@@ -541,10 +558,10 @@ function card(v){
 
           <button
             class="heart"
-            onclick="toggleFavorite('${v.id}',this)"
-            aria-label="Save ${v.name}"
+            onclick="toggleFavorite('${v.id}')"
+            title="Favorite"
           >
-            ♡
+            ${isFav ? "♥" : "♡"}
           </button>
 
         </div>
@@ -561,11 +578,11 @@ function card(v){
 
         <div class="card-actions">
 
-          <button onclick="openVehicle('${v.id}')">
+          <button onclick="showDetail('${v.id}')">
             View details
           </button>
 
-          <button onclick="addCompare('${v.id}')">
+          <button onclick="addToCompare('${v.id}')">
             Compare
           </button>
 
@@ -578,183 +595,211 @@ function card(v){
 }
 
 
-/* FEATURED VEHICLES */
+/* =========================================================
+   LISTING
+   ========================================================= */
 
-function renderFeatured(){
+function renderListing() {
 
-  if(!$('featuredGrid')) return;
+  const grid = $("listingGrid");
 
-  $('featuredGrid').innerHTML =
-    vehicles
-      .slice(0,8)
-      .map(card)
-      .join('');
+  if (!grid) return;
 
-  updateStats();
-}
+  let data = [...vehicles];
 
-
-/* LISTING */
-
-function renderListing(){
-
-  if(!$('listingGrid')) return;
-
-  const q =
-    ($('listingSearch')?.value || '').toLowerCase();
+  const search =
+    ($("listingSearch")?.value || "")
+      .trim()
+      .toLowerCase();
 
   const type =
-    $('typeFilter')?.value || 'all';
-
-  let list = vehicles.filter(v => {
-
-    const filterMatch =
-      currentFilter==='all' ||
-      (currentFilter==='car' && v.kind==='car') ||
-      (currentFilter==='bike' && v.kind==='bike') ||
-      v.type===currentFilter;
-
-    const typeMatch =
-      type==='all' || v.type===type;
-
-    const searchMatch =
-      !q ||
-      `${v.name} ${v.brand} ${v.type} ${v.engine}`
-        .toLowerCase()
-        .includes(q);
-
-    return filterMatch && typeMatch && searchMatch;
-
-  });
+    $("typeFilter")?.value || "all";
 
   const sort =
-    $('sortFilter')?.value || 'default';
+    $("sortFilter")?.value || "featured";
 
-  if(sort==='name'){
-    list.sort((a,b)=>a.name.localeCompare(b.name));
+
+  /* Filter by cars / bikes */
+
+  if (currentKind === "car") {
+    data = data.filter(v => v.kind === "car");
   }
 
-  if(sort==='brand'){
-    list.sort((a,b)=>a.brand.localeCompare(b.brand));
+  else if (currentKind === "bike") {
+    data = data.filter(v => v.kind === "bike");
   }
 
-  $('listingGrid').innerHTML =
-    list.length
-    ? list.map(card).join('')
-    : `
+  /* Filter by body type */
+
+  else if (
+    ["SUV", "Sedan", "Hatchback", "Sports", "Cruiser", "Adventure", "Scooter"]
+      .includes(currentKind)
+  ) {
+    data = data.filter(v => v.type === currentKind);
+  }
+
+
+  /* Search */
+
+  if (search) {
+
+    data = data.filter(v => {
+
+      const text = `
+        ${v.name}
+        ${v.brand}
+        ${v.engine}
+        ${v.type}
+      `.toLowerCase();
+
+      return text.includes(search);
+
+    });
+
+  }
+
+
+  /* Type dropdown */
+
+  if (type !== "all") {
+    data = data.filter(v => v.type === type);
+  }
+
+
+  /* Sort */
+
+  if (sort === "name") {
+
+    data.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+  }
+
+  else if (sort === "brand") {
+
+    data.sort((a, b) =>
+      a.brand.localeCompare(b.brand)
+    );
+
+  }
+
+
+  if (!data.length) {
+
+    grid.innerHTML = `
       <div class="empty">
-        <b>No vehicles found.</b>
-        <span>Try another model, brand or body type.</span>
+        <b>No vehicles found</b>
+        <span>Try another search or filter.</span>
       </div>
     `;
 
-}
-
-
-/* BRANDS */
-
-function renderBrands(){
-
-  if(!$('brandGrid')) return;
-
-  const q =
-    ($('brandSearch')?.value || '').toLowerCase();
-
-  $('brandGrid').innerHTML =
-    brandList
-      .filter(b=>b.toLowerCase().includes(q))
-      .map(b=>`
-
-        <button onclick="brandVehicles('${b.replace(/'/g,"\\'")}')">
-
-          <span class="brand-logo">
-            ${b.slice(0,1)}
-          </span>
-
-          ${b}
-
-          <small>
-            Explore vehicles →
-          </small>
-
-        </button>
-
-      `)
-      .join('');
-
-}
-
-function brandVehicles(b){
-
-  showListing('all');
-
-  if($('listingTitle')){
-    $('listingTitle').textContent=b;
+    return;
   }
 
-  if($('listingSearch')){
-    $('listingSearch').value=b;
+
+  grid.innerHTML =
+    data.map(vehicleCard).join("");
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function doSearch() {
+
+  const query =
+    ($("homeSearch")?.value || "").trim();
+
+  if (!query) {
+    showListing("all");
+    return;
+  }
+
+  showListing("all");
+
+  if ($("listingSearch")) {
+    $("listingSearch").value = query;
   }
 
   renderListing();
+}
 
+function quickSearch(query) {
+
+  if ($("homeSearch")) {
+    $("homeSearch").value = query;
+  }
+
+  doSearch();
 }
 
 
-/* VEHICLE DETAILS */
+/* =========================================================
+   DETAIL PAGE
+   ========================================================= */
 
-function openVehicle(id){
+function showDetail(id) {
 
-  const v=vehicles.find(x=>x.id===id);
+  const v =
+    vehicles.find(vehicle => vehicle.id === id);
 
-  if(!v) return;
+  if (!v) return;
 
-  lastPage='detail';
+  previousPage = currentPage;
+  currentPage = "detail";
 
-  setPage('detail');
+  showPage("detail");
 
-  if(!$('detailContent')) return;
+  const content = $("detailContent");
 
-  $('detailContent').innerHTML=`
+  if (!content) return;
+
+  content.innerHTML = `
 
     <div class="detail">
 
       <div class="detail-hero">
 
-        ${mediaBlock(v,true)}
+        <div>
+          ${mediaBlock(v, true)}
+        </div>
 
-        <div class="detail-copy">
+        <div>
 
           <span class="eyebrow">
-            ${v.brand.toUpperCase()} • ${v.type.toUpperCase()}
+            ${v.brand.toUpperCase()}
           </span>
 
           <h1>${v.name}</h1>
 
           <p class="detail-sub">
-            ${v.tag} • ${v.seats} seats
+            ${v.type} • ${v.kind === "car" ? "Car" : "Bike"}
           </p>
 
           <div class="detail-price">
             ${v.price}
           </div>
 
-          <p class="notice">
-            Vehicle data is structured for Cargenix.
-            Before publishing exact figures or media,
-            verify them against an authoritative source
-            and use only media you are licensed or
-            authorized to publish.
-          </p>
+          <div class="notice">
+            Specifications shown on Cargenix should be verified
+            against the manufacturer's latest official information
+            before purchase.
+          </div>
+
+          <br>
 
           <div class="detail-actions">
 
-            <button onclick="addCompare('${v.id}')">
+            <button onclick="addToCompare('${v.id}')">
               Add to compare
             </button>
 
-            <button onclick="toggleFavorite('${v.id}',this)">
-              ♡ Save
+            <button onclick="toggleFavorite('${v.id}')">
+              ${favorites.includes(v.id)
+                ? "♥ Favorited"
+                : "♡ Favorite"}
             </button>
 
           </div>
@@ -764,129 +809,216 @@ function openVehicle(id){
       </div>
 
 
-      <div class="spec-grid">
+      <section class="section">
 
-        ${[
-          ['Engine',v.engine],
-          ['Power',v.power],
-          ['Torque',v.torque],
-          ['Fuel',v.fuel],
-          ['Transmission',v.gearbox],
-          ['Drive',v.drive],
-          ['Seats',v.seats],
-          ['Body type',v.type],
-          ['Brand',v.brand]
-        ]
+        <div class="section-head">
 
-        .map(s=>`
+          <div>
+            <span class="eyebrow">
+              SPECIFICATIONS
+            </span>
 
-          <div class="spec">
-
-            <small>${s[0]}</small>
-
-            <b>${s[1]}</b>
-
+            <h2>
+              ${v.name} specs
+            </h2>
           </div>
 
-        `)
-        .join('')}
-
-      </div>
+        </div>
 
 
-      <div class="content-note">
+        <div class="spec-grid">
 
-        <h2>
-          Real vehicle media
-        </h2>
+          <div class="spec">
+            <small>Engine</small>
+            <b>${v.engine}</b>
+          </div>
 
-        <p>
-          Cargenix uses properly licensed or
-          authorized vehicle media.
-          Image source and licensing information
-          should be recorded before publication.
-        </p>
+          <div class="spec">
+            <small>Power</small>
+            <b>${v.power}</b>
+          </div>
 
-      </div>
+          <div class="spec">
+            <small>Torque</small>
+            <b>${v.torque}</b>
+          </div>
+
+          <div class="spec">
+            <small>Transmission</small>
+            <b>${v.transmission}</b>
+          </div>
+
+          <div class="spec">
+            <small>Mileage</small>
+            <b>${v.mileage}</b>
+          </div>
+
+          <div class="spec">
+            <small>Seats</small>
+            <b>${v.seats}</b>
+          </div>
+
+          <div class="spec">
+            <small>Body type</small>
+            <b>${v.type}</b>
+          </div>
+
+          <div class="spec">
+            <small>Brand</small>
+            <b>${v.brand}</b>
+          </div>
+
+          <div class="spec">
+            <small>Category</small>
+            <b>${v.kind === "car" ? "Car" : "Bike"}</b>
+          </div>
+
+        </div>
+
+
+        <div class="content-note">
+
+          <h3>About ${v.name}</h3>
+
+          <p>
+            Explore the key specifications, vehicle category,
+            performance information and comparison options for
+            the ${v.name}.
+          </p>
+
+        </div>
+
+      </section>
 
     </div>
-
   `;
-
 }
 
 
-/* COMPARE */
+/* =========================================================
+   FAVORITES
+   ========================================================= */
 
-function fillCompare(){
+function toggleFavorite(id) {
 
-  if(!$('compareA') || !$('compareB')) return;
+  if (favorites.includes(id)) {
 
-  const opts =
-    vehicles
-      .map(v=>`
-        <option value="${v.id}">
-          ${v.name}
-        </option>
-      `)
-      .join('');
+    favorites =
+      favorites.filter(x => x !== id);
 
-  $('compareA').innerHTML=opts;
-  $('compareB').innerHTML=opts;
-
-  if(vehicles[1]){
-    $('compareB').value=vehicles[1].id;
   }
 
+  else {
+
+    favorites.push(id);
+
+  }
+
+  localStorage.setItem(
+    "cargenixFavorites",
+    JSON.stringify(favorites)
+  );
+
+  renderFeatured();
+
+  if (currentPage === "listing") {
+    renderListing();
+  }
+
+  if (currentPage === "detail") {
+    showDetail(id);
+  }
 }
 
-function addCompare(id){
+
+/* =========================================================
+   COMPARE
+   ========================================================= */
+
+function populateCompare() {
+
+  const a = $("compareA");
+  const b = $("compareB");
+
+  if (!a || !b) return;
+
+  const options = vehicles
+    .map(v =>
+      `<option value="${v.id}">${v.name}</option>`
+    )
+    .join("");
+
+  a.innerHTML = options;
+  b.innerHTML = options;
+
+  if (vehicles.length > 1) {
+    b.value = vehicles[1].id;
+  }
+}
+
+
+function addToCompare(id) {
 
   showCompare();
 
-  if($('compareA')){
-    $('compareA').value=id;
+  const a = $("compareA");
+
+  if (a) {
+    a.value = id;
   }
 
   renderCompare();
-
 }
 
-function renderCompare(){
 
-  if(!$('compareTable')) return;
+function renderCompare() {
+
+  const table = $("compareTable");
+
+  if (!table) return;
 
   const a =
-    vehicles.find(
-      v=>v.id===$('compareA')?.value
+    vehicles.find(v =>
+      v.id === $("compareA")?.value
     );
 
   const b =
-    vehicles.find(
-      v=>v.id===$('compareB')?.value
+    vehicles.find(v =>
+      v.id === $("compareB")?.value
     );
 
-  if(!a || !b) return;
+  if (!a || !b) return;
 
-  const rows=[
-    ['Type',a.type,b.type],
-    ['Price',a.price,b.price],
-    ['Engine',a.engine,b.engine],
-    ['Power',a.power,b.power],
-    ['Torque',a.torque,b.torque],
-    ['Fuel',a.fuel,b.fuel],
-    ['Transmission',a.gearbox,b.gearbox],
-    ['Drive',a.drive,b.drive],
-    ['Seats',a.seats,b.seats]
+  const rows = [
+
+    ["Price", a.price, b.price],
+
+    ["Engine", a.engine, b.engine],
+
+    ["Power", a.power, b.power],
+
+    ["Torque", a.torque, b.torque],
+
+    ["Transmission", a.transmission, b.transmission],
+
+    ["Mileage", a.mileage, b.mileage],
+
+    ["Seats", a.seats, b.seats],
+
+    ["Body Type", a.type, b.type],
+
+    ["Brand", a.brand, b.brand]
+
   ];
 
-  $('compareTable').innerHTML=`
+
+  table.innerHTML = `
 
     <div class="compare-table">
 
       <div class="compare-head">
 
-        <span>Specification</span>
+        <b>Specification</b>
 
         <b>${a.name}</b>
 
@@ -894,84 +1026,179 @@ function renderCompare(){
 
       </div>
 
-      ${rows.map(r=>`
+      ${rows.map(row => `
 
         <div>
 
-          <span>
-            <b>${r[0]}</b>
-          </span>
+          <span>${row[0]}</span>
 
-          <span>${r[1]}</span>
+          <span>${row[1]}</span>
 
-          <span>${r[2]}</span>
+          <span>${row[2]}</span>
 
         </div>
 
-      `).join('')}
+      `).join("")}
 
     </div>
 
   `;
-
 }
 
 
-/* FAVORITES */
+/* =========================================================
+   BRANDS
+   ========================================================= */
 
-function toggleFavorite(id,btn){
+function renderBrands() {
 
-  let fav =
-    JSON.parse(
-      localStorage.getItem('cargenixFavs') || '[]'
-    );
+  const grid = $("brandGrid");
 
-  fav =
-    fav.includes(id)
-    ? fav.filter(x=>x!==id)
-    : [...fav,id];
+  if (!grid) return;
+
+  const search =
+    ($("brandSearch")?.value || "")
+      .toLowerCase()
+      .trim();
+
+  const brands =
+    [...new Set(vehicles.map(v => v.brand))]
+      .sort()
+      .filter(brand =>
+        brand.toLowerCase().includes(search)
+      );
+
+
+  grid.innerHTML =
+    brands.map(brand => {
+
+      const count =
+        vehicles.filter(v => v.brand === brand).length;
+
+      const letter =
+        brand.charAt(0).toUpperCase();
+
+      return `
+
+        <button
+          onclick="showBrandVehicles('${brand.replace(/'/g, "\\'")}')"
+        >
+
+          <span class="brand-logo">
+            ${letter}
+          </span>
+
+          <span>
+            ${brand}
+          </span>
+
+          <small>
+            ${count} vehicle${count > 1 ? "s" : ""}
+          </small>
+
+        </button>
+
+      `;
+
+    }).join("");
+}
+
+
+function showBrandVehicles(brand) {
+
+  currentKind = "all";
+
+  showListing("all");
+
+  if ($("listingSearch")) {
+    $("listingSearch").value = brand;
+  }
+
+  renderListing();
+}
+
+
+/* =========================================================
+   THEME
+   ========================================================= */
+
+function toggleTheme() {
+
+  document.body.classList.toggle("dark");
 
   localStorage.setItem(
-    'cargenixFavs',
-    JSON.stringify(fav)
+    "cargenixDark",
+    document.body.classList.contains("dark")
+      ? "1"
+      : "0"
   );
-
-  if(btn){
-    btn.textContent =
-      fav.includes(id)
-      ? '♥'
-      : '♡';
-  }
-
 }
 
 
-/* STATS */
+function loadTheme() {
 
-function updateStats(){
-
-  if($('vehicleCount')){
-    $('vehicleCount').textContent =
-      vehicles.length + '+';
+  if (
+    localStorage.getItem("cargenixDark") === "1"
+  ) {
+    document.body.classList.add("dark");
   }
-
-  if($('brandCount')){
-    $('brandCount').textContent =
-      brandList.length + '+';
-  }
-
 }
 
 
-/* THEME */
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
-if(
-  localStorage.getItem('cargenixTheme')==='dark'
-){
-  document.body.classList.add('dark');
+function toggleMenu() {
+
+  const nav = $("mainNav");
+
+  if (nav) {
+    nav.classList.toggle("open");
+  }
 }
 
 
-/* START */
+/* =========================================================
+   COUNTERS
+   ========================================================= */
 
-showHome();
+function updateCounts() {
+
+  const vehicleCount =
+    $("vehicleCount");
+
+  const brandCount =
+    $("brandCount");
+
+  const brands =
+    new Set(vehicles.map(v => v.brand));
+
+  if (vehicleCount) {
+    vehicleCount.textContent =
+      vehicles.length;
+  }
+
+  if (brandCount) {
+    brandCount.textContent =
+      brands.size;
+  }
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    loadTheme();
+
+    updateCounts();
+
+    renderFeatured();
+
+  }
+);
