@@ -1,4 +1,20 @@
-const fallbackCar="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85";
+const fallbackCar="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700"><rect width="1200" height="700" fill="#eef1f4"/><rect x="70" y="70" width="1060" height="560" rx="36" fill="#dfe4e9"/><text x="600" y="330" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#66717d">Vehicle image loading…</text><text x="600" y="385" text-anchor="middle" font-family="Arial" font-size="22" fill="#7b8794">CarGenix will find a model-specific image</text></svg>`);
+const imageCache = JSON.parse(localStorage.getItem("cargenix_image_cache_v9")||"{}");
+const brandOfficial = {
+  "Maruti Suzuki":"https://www.marutisuzuki.com/", "Hyundai":"https://www.hyundai.com/in/en", "Tata":"https://cars.tatamotors.com/",
+  "Mahindra":"https://auto.mahindra.com/", "Kia":"https://www.kia.com/in/", "Toyota":"https://www.toyotabharat.com/",
+  "Honda":"https://www.hondacarindia.com/", "MG":"https://www.mgmotor.co.in/", "Skoda":"https://www.skoda-auto.co.in/",
+  "Volkswagen":"https://www.volkswagen.co.in/", "Renault":"https://www.renault.co.in/", "Nissan":"https://www.nissan.in/",
+  "Citroen":"https://www.citroen.in/", "Jeep":"https://www.jeep-india.com/", "BYD":"https://www.byd.com/in/",
+  "Isuzu":"https://www.isuzu.in/", "Force":"https://www.forcemotors.com/", "BMW":"https://www.bmw.in/",
+  "Mercedes-Benz":"https://www.mercedes-benz.co.in/", "Audi":"https://www.audi.in/", "Volvo":"https://www.volvocars.com/in/",
+  "Lexus":"https://www.lexusindia.co.in/", "Jaguar":"https://www.jaguar.in/", "Land Rover":"https://www.landrover.in/",
+  "Porsche":"https://www.porsche.com/india/", "Mini":"https://www.mini.in/", "Tesla":"https://www.tesla.com/en_in",
+  "VinFast":"https://vinfastauto.in/", "Lamborghini":"https://www.lamborghini.com/", "Ferrari":"https://www.ferrari.com/",
+  "Maserati":"https://www.maserati.com/in/en", "Aston Martin":"https://www.astonmartin.com/", "Rolls-Royce":"https://www.rolls-roycemotorcars.com/",
+  "Bentley":"https://www.bentleymotors.com/", "Haval":"https://www.gwm-global.com/", "Lotus":"https://www.lotuscars.com/",
+  "McLaren":"https://cars.mclaren.com/", "Bugatti":"https://www.bugatti.com/"
+};
 
 const img = {
   xuv:"https://media.zigcdn.com/media/model/2026/Jan/mahindra_xuv_7xo.jpg",
@@ -113,7 +129,7 @@ function makeCatalogVehicle(brand,name){
   const lower=name.toLowerCase();
   const ev=/ev|electric|e-tron|ioniq|eq|i[0-9]|taycan|model [3ysx]|spectre|atv|e-/.test(lower);
   const suv=/suv|xuv|creta|venue|tucson|seltos|sonet|thar|scorpio|fortuner|hector|harrier|safari|defender|discovery|range rover|urus|cayenne|macan|eletre|q[3578]|x[123567]|gloster|gla|glb|glc|gle|gls|g-class|jimny|brezza|fronx|kiger|magnite|duster|kodiaq|taigun|tiguan|tayron/.test(lower);
-  return {id,type:"car",brand,name,category:ev?"EV":suv?"SUV":"Car",year:2026,badge:"CATALOG",price:"View variants",image:fallbackCar,gallery:[fallbackCar],colors:[["White","#eeeeea"],["Black","#15171b"],["Silver","#a8abb0"],["Red","#9b2b2e"],["Blue","#315d8d"]],engines:[ev?"Electric powertrain • variant dependent":"Petrol / Diesel / Hybrid • variant dependent"],fuel:ev?"Electric":"Multiple",transmission:"Multiple variants",drive:"Variant dependent",seats:"Variant dependent",mileage:"Variant dependent",length:"See variant",wheelbase:"See variant",features:["Variant-specific equipment","Safety features vary by trim","Colour and powertrain options vary by variant"],source:"Catalog entry for the current India model range. Technical figures are shown only where CarGenix has verified model-level data."};
+  return {id,type:"car",brand,name,category:ev?"EV":suv?"SUV":"Car",year:2026,badge:"2026 CATALOG",price:"View variants",image:fallbackCar,gallery:[fallbackCar],imageQuery:`${brand} ${name} car India`,colors:[["White","#eeeeea"],["Black","#15171b"],["Silver","#a8abb0"],["Red","#9b2b2e"],["Blue","#315d8d"]],engines:[ev?"Electric powertrain • variant dependent":"Petrol / Diesel / Hybrid • variant dependent"],fuel:ev?"Electric":"Multiple",transmission:"Multiple variants",drive:"Variant dependent",seats:"Variant dependent",mileage:"Variant dependent",length:"See variant",wheelbase:"See variant",features:["Variant-specific equipment","Safety features vary by trim","Colour and powertrain options vary by variant"],officialBrand:brandOfficial[brand]||"",source:"Catalog model. CarGenix does not invent technical figures where a verified model-level source is unavailable."};
 }
 
 function buildCompleteCatalog(){
@@ -124,7 +140,9 @@ function buildCompleteCatalog(){
     const key=(brand+" "+name).toLowerCase();
     if(!have.has(key)){ const v=makeCatalogVehicle(brand,name); if(v){added.push(v);have.add(key);} }
   }));
-  return [...enriched,...added];
+  const all=[...enriched,...added];
+  all.forEach(v=>{ if(!v.imageQuery) v.imageQuery=`${v.brand} ${v.name} car India`; if(!v.officialBrand) v.officialBrand=brandOfficial[v.brand]||""; });
+  return all;
 }
 
 const completeVehicles = buildCompleteCatalog();
@@ -132,12 +150,37 @@ const completeVehicles = buildCompleteCatalog();
 
 let currentFilter="all", compareIds=[];
 
-function safeImage(el){el.onerror=()=>{el.onerror=null;el.src=fallbackCar}}
+function safeImage(el){el.onerror=()=>{el.onerror=null;el.src=fallbackCar;el.dataset.failed="1"}}
+function persistImageCache(){localStorage.setItem("cargenix_image_cache_v9",JSON.stringify(imageCache))}
+async function findWikimediaImage(query){
+  if(imageCache[query]) return imageCache[query];
+  try{
+    const url=`https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime&iiurlwidth=1000&format=json&origin=*`;
+    const r=await fetch(url); const data=await r.json();
+    const pages=Object.values(data.query?.pages||{});
+    const page=pages.find(x=>x.imageinfo?.[0]?.mime?.startsWith("image/"));
+    const u=page?.imageinfo?.[0]?.thumburl||page?.imageinfo?.[0]?.url;
+    if(u){imageCache[query]=u;persistImageCache();return u;}
+  }catch(e){}
+  return "";
+}
+async function hydrateImages(){
+  const cards=[...document.querySelectorAll(".vehicle-card[data-id]")];
+  for(const cardEl of cards){
+    const v=getVehicle(cardEl.dataset.id); if(!v || v.imageHydrated) continue;
+    v.imageHydrated=true;
+    if(!v.imageQuery) continue;
+    const u=await findWikimediaImage(v.imageQuery);
+    if(u){v.image=u;v.gallery=[u,...(v.gallery||[]).filter(x=>x!==fallbackCar&&x!==u)];
+      const im=cardEl.querySelector(".vehicle-image img"); if(im){im.src=u;im.dataset.failed="0";}
+    }
+  }
+}
 function money(v){return v||"Price on request"}
 
 function card(v){
  return `<article class="vehicle-card" data-id="${v.id}" data-type="${v.category}" data-name="${(v.brand+" "+v.name).toLowerCase()}">
-   <div class="vehicle-image"><img src="${v.image}" alt="${v.brand} ${v.name}" onerror="safeImage(this)"><span class="badge">${v.badge}</span><button class="heart" onclick="toggleFavourite('${v.id}',this)">♡</button></div>
+   <div class="vehicle-image"><img src="${v.image}" alt="${v.brand} ${v.name}" loading="lazy" onerror="safeImage(this)"><span class="badge">${v.badge}</span><button class="heart" onclick="toggleFavourite('${v.id}',this)">♡</button></div>
    <div class="vehicle-body"><h3>${v.brand} ${v.name}</h3><div class="meta">${v.year} • ${v.category} • ${v.fuel}</div>
    <div class="spec-row"><div class="spec"><b>${v.engines[0].split("•")[0]}</b><span>Engine</span></div><div class="spec"><b>${v.transmission}</b><span>Gearbox</span></div><div class="spec"><b>${v.seats}</b><span>Seats</span></div></div>
    <div class="price">${money(v.price)}</div><div class="actions"><button class="primary" onclick="openVehicle('${v.id}')">View Details</button><button onclick="addCompare('${v.id}')">Compare</button></div></div>
@@ -149,11 +192,12 @@ function render(){
  document.getElementById("vehicleGrid").innerHTML=cars.map(card).join("");
  document.getElementById("latestGrid").innerHTML=completeVehicles.filter(v=>v.badge!=="CATALOG").slice(0,8).map(card).join("");
  document.getElementById("bikeGrid").innerHTML=bikes.map(card).join("");
- renderBrands(); renderCompare();
+ renderBrands(); renderCompare(); hydrateImages();
 }
 function renderBrands(){
- const brands=[...new Set(completeVehicles.map(v=>v.brand))].sort();
- document.getElementById("brandGrid").innerHTML=brands.map(b=>`<button class="brand-btn" onclick="filterByBrand('${b}')"><span class="brand-mark">${b.split(" ").map(x=>x[0]).join("").slice(0,2)}</span>${b}</button>`).join("");
+ const counts={}; completeVehicles.forEach(v=>counts[v.brand]=(counts[v.brand]||0)+1);
+ const brands=Object.keys(counts).sort((a,b)=>a.localeCompare(b));
+ document.getElementById("brandGrid").innerHTML=brands.map(b=>`<button class="brand-btn" onclick="filterByBrand('${b.replace(/'/g,"\\'")}')"><span class="brand-mark">${b.split(" ").map(x=>x[0]).join("").slice(0,2)}</span><span><b>${b}</b><small>${counts[b]} models</small></span></button>`).join("");
 }
 function setFilter(f,btn){currentFilter=f;document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");document.getElementById("cars").scrollIntoView({behavior:"smooth"});render()}
 function showAll(){currentFilter="all";render()}
@@ -163,6 +207,7 @@ function filterByBrand(brand){
   const heading=document.querySelector("#cars h2");
   if(heading) heading.textContent=`${brand} — All Models (${all.length})`;
   document.getElementById("vehicleGrid").innerHTML=all.map(card).join("");
+  hydrateImages();
   document.getElementById("cars").scrollIntoView({behavior:"smooth"});
 }
 function quickSearch(q){document.getElementById("searchInput").value=q;searchVehicles()}
@@ -177,7 +222,8 @@ function searchVehicles(){
  });
  const heading=document.querySelector("#cars h2");
  if(heading) heading.textContent=all.length?`${exactBrand.length?document.getElementById("searchInput").value.trim()+" — All Models":`Search results for “${document.getElementById("searchInput").value.trim()}”`} (${all.length})`:"No vehicles found";
- document.getElementById("vehicleGrid").innerHTML=all.length?all.map(card).join(""):`<div style="grid-column:1/-1;padding:60px;text-align:center;color:#aab6c5"><h3>No vehicle found</h3><p>Try Toyota, Mahindra, Hyundai, Kia, Creta, XUV 7XO, Seltos, Thar or KTM.</p></div>`;
+ document.getElementById("vehicleGrid").innerHTML=all.length?all.map(card).join(""):`<div style="grid-column:1/-1;padding:60px;text-align:center;color:#aab6c5"><h3>No vehicle found</h3><p>Try a brand such as Toyota, Tata, MG, Jeep, Hyundai, Mahindra, Kia, BMW or Mercedes-Benz.</p></div>`;
+ hydrateImages();
  document.getElementById("cars").scrollIntoView({behavior:"smooth"});
 }
 
@@ -187,14 +233,15 @@ function openVehicle(id){
  const swatches=v.colors.map((c,i)=>`<button title="${c[0]}" class="swatch ${i===0?"active":""}" style="background:${c[1]}" onclick="selectColor(this,'${c[0]}')"></button>`).join("");
  document.getElementById("modalContent").innerHTML=`
  <div class="detail-top">
-  <div class="detail-media"><div class="detail-main" id="detailStage"><img id="detailMainImage" src="${v.gallery[0]}" alt="${v.brand} ${v.name}" onerror="safeImage(this)"><span id="colorOverlay" class="color-overlay"></span><div class="stage-label">${v.official360?"360° VIEW AVAILABLE":"PHOTO GALLERY"}</div></div><div class="spin-hint">Select a colour to preview it on the vehicle. For a true interactive 360° experience, use the manufacturer viewer below.</div><div class="thumbs">${v.gallery.map((g,i)=>`<button class="${i===0?"active":""}" onclick="changeDetailImage('${g}',this)"><img src="${g}" onerror="safeImage(this)"></button>`).join("")}</div></div>
+  <div class="detail-media"><div class="detail-main" id="detailStage"><img id="detailMainImage" src="${v.gallery[0]}" alt="${v.brand} ${v.name}" onerror="safeImage(this)"><div class="stage-label">${v.official360?"360° VIEW AVAILABLE":"PHOTO GALLERY"}</div></div><div class="spin-hint">Select a colour to preview it on the vehicle. For a true interactive 360° experience, use the manufacturer viewer below.</div><div class="thumbs">${v.gallery.map((g,i)=>`<button class="${i===0?"active":""}" onclick="changeDetailImage('${g}',this)"><img src="${g}" onerror="safeImage(this)"></button>`).join("")}</div></div>
   <div class="detail-info"><div class="tag">${v.badge} • ${v.year}</div><h2>${v.brand} ${v.name}</h2><div class="meta">${v.category} • ${v.fuel} • ${v.seats} seats</div><div class="detail-price">${money(v.price)}</div>
    <div class="option-title">COLOUR</div><div class="swatches">${swatches}</div><div id="selectedColor" class="meta" style="margin-top:9px">Selected: ${v.colors[0][0]}</div>
    <div class="option-title">ENGINE / POWERTRAIN</div><select class="select">${v.engines.map(x=>`<option>${x}</option>`).join("")}</select>
    <div class="detail-actions"><button class="primary" onclick="addCompare('${v.id}');closeModal()">＋ Add to Compare</button><button onclick="saveVehicle('${v.id}')">♡ Save</button></div>
    ${v.official360?`<div class="official"><a class="view360" href="${v.official360}" target="_blank" rel="noopener">🔄 Open official 360° / configurator</a></div>`:""}
    ${v.interiorUrl?`<div class="official">🛋️ <a href="${v.interiorUrl}" target="_blank" rel="noopener">Open official interior & 360° page</a></div>`:""}
-   <div class="source-note">${v.source}</div>
+   ${v.officialBrand?`<div class="official">🏭 <a href="${v.officialBrand}" target="_blank" rel="noopener">Open ${v.brand} official showroom / configurator</a></div>`:""}
+   <div class="source-note">${v.source}${v.badge.includes("CATALOG")?` <br><br><strong>Visual note:</strong> CarGenix never substitutes a different model's photograph. If a model-specific image cannot be found, this card stays as a neutral loading placeholder until a matching source is available.</strong>`:""}</div>
   </div>
  </div>
  <div class="detail-sections"><div class="tabs"><button class="tab active" onclick="detailTab('specs',this)">Specifications</button><button class="tab" onclick="detailTab('features',this)">Features</button><button class="tab" onclick="detailTab('gallery',this)">Gallery</button></div>
@@ -207,12 +254,16 @@ function featurePanel(v){return `<div class="feature-list">${v.features.map(x=>`
 function galleryPanel(v){return `<div class="feature-list">${v.gallery.map((x,i)=>`<div class="feature"><img src="${x}" style="width:100%;height:220px;object-fit:contain;background:#f0f1f2;border-radius:10px" onerror="safeImage(this)"><p style="margin-top:8px">${i?"Gallery view":"Main exterior view"}</p></div>`).join("")}</div>`}
 function detailTab(tab,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active");const v=getVehicle(document.querySelector(".modal-card")?.dataset?.id); /* fallback below */ const title=document.querySelector(".detail-info h2")?.textContent||"";const vv=completeVehicles.find(x=>`${x.brand} ${x.name}`===title);document.getElementById("detailPanel").innerHTML=tab==="specs"?specPanel(vv):tab==="features"?featurePanel(vv):galleryPanel(vv)}
 function changeDetailImage(src,btn){document.getElementById("detailMainImage").src=src;document.querySelectorAll(".thumbs button").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
-function selectColor(btn,name){
+async function selectColor(btn,name){
  document.querySelectorAll(".swatch").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
- const overlay=document.getElementById("colorOverlay");
- const color=btn.style.backgroundColor || btn.style.background;
- if(overlay){overlay.style.background=color;overlay.style.opacity="0.38";}
- document.getElementById("selectedColor").textContent="Selected: "+name+" • visual colour preview";
+ const v=completeVehicles.find(x=>`${x.brand} ${x.name}`===document.querySelector(".detail-info h2")?.textContent);
+ const selected=document.getElementById("selectedColor");
+ if(selected) selected.textContent=`Selected: ${name} • finding matching vehicle photo…`;
+ if(!v)return;
+ const query=`${v.brand} ${v.name} ${name} car India`;
+ const u=await findWikimediaImage(query);
+ if(u){v.image=u;v.gallery=[u,...(v.gallery||[]).filter(x=>x!==u)];const im=document.getElementById("detailMainImage");if(im)im.src=u; if(selected)selected.textContent=`Selected: ${name} • matching photo loaded`;}
+ else {if(selected)selected.textContent=`Selected: ${name} • exact colour photo not found; use the official configurator for an exact factory render.`;}
 }
 function closeModal(){document.getElementById("vehicleModal").classList.remove("show");document.body.style.overflow=""}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
