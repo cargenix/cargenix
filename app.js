@@ -63,6 +63,73 @@ const bikes=[
 {id:"r15",type:"bike",brand:"Yamaha",name:"R15 V4",category:"Bike",year:2026,badge:"SPORT",price:"₹1.84 Lakh*",image:img.r15,gallery:[img.r15],colors:[["Blue","#244f8e"],["Black","#111"],["Red","#9c2727"]],engines:["155cc liquid-cooled • 18.4 PS • 14.2 Nm"],fuel:"Petrol",transmission:"6-speed",drive:"Chain",seats:"2",mileage:"~47 km/l*",length:"1990 mm",wheelbase:"1325 mm",features:["VVA engine","Assist & slipper clutch","Traction control","Dual-channel ABS","Deltabox frame"],source:"Indicative current-range data."}
 ];
 
+// ================= COMPLETE INDIA MODEL CATALOG (V8) =================
+// Catalog entries intentionally keep unknown specifications as "Multiple / see variants"
+// instead of inventing technical figures. Enriched models above retain their detailed data.
+const catalogModels = {
+  "Maruti Suzuki": "Alto K10|S-Presso|Celerio|Wagon R|Swift|Baleno|Dzire|Ignis|Fronx|Brezza|Grand Vitara|Victoris|Eeco|Ertiga|XL6|Invicto|e Vitara",
+  "Hyundai": "Grand i10 Nios|i20|i20 N Line|Aura|Exter|Venue|Venue N Line|Creta|Creta Electric|Alcazar|Verna|Tucson|Ioniq 5|Ioniq 6|Santa Fe",
+  "Tata": "Tiago|Tiago NRG|Tigor|Punch|Punch EV|Altroz|Altroz Racer|Nexon|Nexon EV|Curvv|Curvv EV|Harrier|Harrier EV|Safari|Sierra|Avinya",
+  "Mahindra": "XUV 3XO|XUV 3XO EV|XUV 7XO|XUV700|Scorpio|Scorpio N|Bolero|Bolero Neo|Thar|Thar ROXX|Thar OG|Marazzo|BE 6|XEV 9e|XEV 9S|Global Pik Up",
+  "Kia": "Sonet|Syros|Seltos|Carens|Carens Clavis|Carens Clavis EV|EV6|EV9|Sorento|Carnival",
+  "Toyota": "Glanza|Urban Cruiser Taisor|Rumion|Urban Cruiser Hyryder|Innova Crysta|Innova Hycross|Hilux|Fortuner|Fortuner Legender|Camry|Vellfire|Land Cruiser 300|Urban Cruiser Ebella",
+  "Honda": "Amaze|City|City e:HEV|Elevate|Elevate EV",
+  "MG": "Comet EV|Windsor EV|Astor|Hector|Hector Plus|ZS EV|Gloster|Majestor",
+  "Skoda": "Kylaq|Kushaq|Slavia|Kodiaq|Superb|Octavia RS|Enyaq|Enyaq Coupe",
+  "Volkswagen": "Taigun|Virtus|Tiguan|Tayron|Golf GTI|ID.4|ID.7",
+  "Renault": "Kwid|Triber|Kiger|Duster|Bigster",
+  "Nissan": "Magnite|X-Trail|Juke|Qashqai",
+  "Citroen": "C3|C3 Aircross|C3 Aircross EV|Basalt|eC3|C5 Aircross",
+  "Jeep": "Compass|Meridian|Wrangler|Grand Cherokee|Avenger",
+  "BYD": "Atto 3|Seal|e6|Sealion 7|Sealion 5|Dolphin|Yangwang U8",
+  "Isuzu": "D-Max|D-Max V-Cross|MU-X",
+  "Force": "Gurkha|Gurkha 5-door|Trax Cruiser|Urbania",
+  "BMW": "2 Series Gran Coupe|3 Series|5 Series|7 Series|X1|X3|X5|X6|X7|XM|i4|i5|i7|iX|iX1|iX3|M2|M3|M4|M5|M8|Z4",
+  "Mercedes-Benz": "A-Class Limousine|C-Class|E-Class|S-Class|CLA|CLE|CLS|GLA|GLB|GLC|GLE|GLS|G-Class|EQA|EQB|EQE|EQE SUV|EQS|EQS SUV|AMG GT|Maybach GLS|Maybach S-Class|Maybach EQS SUV|G-Class Electric",
+  "Audi": "A4|A6|A8 L|Q3|Q5|Q7|Q8|Q3 Sportback|Q8 e-tron|Q8 e-tron Sportback|e-tron GT|RS5|RS Q8|S5|S6|S7|S8",
+  "Volvo": "EX30|EX40|EC40|XC40|XC60|XC90|S90|ES90|EX90|EM90",
+  "Lexus": "ES|LM|LS|LX|NX|RX|RZ|LC 500h|LBX",
+  "Jaguar": "F-Pace|F-Type|I-Pace|XE|XF",
+  "Land Rover": "Defender|Discovery|Discovery Sport|Range Rover|Range Rover Sport|Range Rover Velar|Range Rover Evoque",
+  "Porsche": "718 Cayman|718 Boxster|911|Taycan|Panamera|Macan|Cayenne",
+  "Mini": "Cooper 3 Door|Cooper 5 Door|Cooper Convertible|Countryman|Aceman|Clubman",
+  "Tesla": "Model 3|Model Y|Model S|Model X|Cybertruck",
+  "VinFast": "VF e34|VF 6|VF 7|VF 8|VF 9",
+  "Lamborghini": "Revuelto|Urus|Urus SE|Temerario",
+  "Ferrari": "296 GTB|296 GTS|Roma|Roma Spider|Purosangue|12Cilindri|SF90 Stradale|SF90 Spider",
+  "Maserati": "Grecale|GranTurismo|GranCabrio|MC20|MC20 Cielo|Levante|Quattroporte",
+  "Aston Martin": "Vantage|DB12|Vanquish|DBX|Valhalla",
+  "Rolls-Royce": "Ghost|Phantom|Cullinan|Spectre|Black Badge Ghost|Black Badge Cullinan",
+  "Bentley": "Bentayga|Continental GT|Continental GTC|Flying Spur",
+  "Haval": "H6|Jolion|H9",
+  "Lotus": "Emira|Eletre|Emeya",
+  "McLaren": "750S|Artura|GTS|W1",
+  "Bugatti": "Chiron|Tourbillon"
+};
+
+function slugify(x){return x.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function makeCatalogVehicle(brand,name){
+  const id="catalog-"+slugify(brand+"-"+name);
+  const lower=name.toLowerCase();
+  const ev=/ev|electric|e-tron|ioniq|eq|i[0-9]|taycan|model [3ysx]|spectre|atv|e-/.test(lower);
+  const suv=/suv|xuv|creta|venue|tucson|seltos|sonet|thar|scorpio|fortuner|hector|harrier|safari|defender|discovery|range rover|urus|cayenne|macan|eletre|q[3578]|x[123567]|gloster|gla|glb|glc|gle|gls|g-class|jimny|brezza|fronx|kiger|magnite|duster|kodiaq|taigun|tiguan|tayron/.test(lower);
+  return {id,type:"car",brand,name,category:ev?"EV":suv?"SUV":"Car",year:2026,badge:"CATALOG",price:"View variants",image:fallbackCar,gallery:[fallbackCar],colors:[["White","#eeeeea"],["Black","#15171b"],["Silver","#a8abb0"],["Red","#9b2b2e"],["Blue","#315d8d"]],engines:[ev?"Electric powertrain • variant dependent":"Petrol / Diesel / Hybrid • variant dependent"],fuel:ev?"Electric":"Multiple",transmission:"Multiple variants",drive:"Variant dependent",seats:"Variant dependent",mileage:"Variant dependent",length:"See variant",wheelbase:"See variant",features:["Variant-specific equipment","Safety features vary by trim","Colour and powertrain options vary by variant"],source:"Catalog entry for the current India model range. Technical figures are shown only where CarGenix has verified model-level data."};
+}
+
+function buildCompleteCatalog(){
+  const enriched=[...vehicles,...bikes];
+  const have=new Set(enriched.map(v=>(v.brand+" "+v.name).toLowerCase()));
+  const added=[];
+  Object.entries(catalogModels).forEach(([brand,list])=>list.split("|").forEach(name=>{
+    const key=(brand+" "+name).toLowerCase();
+    if(!have.has(key)){ const v=makeCatalogVehicle(brand,name); if(v){added.push(v);have.add(key);} }
+  }));
+  return [...enriched,...added];
+}
+
+const completeVehicles = buildCompleteCatalog();
+
+
 let currentFilter="all", compareIds=[];
 
 function safeImage(el){el.onerror=()=>{el.onerror=null;el.src=fallbackCar}}
@@ -78,35 +145,43 @@ function card(v){
 }
 
 function render(){
- const cars=vehicles.filter(v=>currentFilter==="all"||v.category===currentFilter);
+ const cars=completeVehicles.filter(v=>currentFilter==="all"||v.category===currentFilter);
  document.getElementById("vehicleGrid").innerHTML=cars.map(card).join("");
- document.getElementById("latestGrid").innerHTML=vehicles.filter(v=>v.year>=2026).slice(0,8).map(card).join("");
+ document.getElementById("latestGrid").innerHTML=completeVehicles.filter(v=>v.badge!=="CATALOG").slice(0,8).map(card).join("");
  document.getElementById("bikeGrid").innerHTML=bikes.map(card).join("");
  renderBrands(); renderCompare();
 }
 function renderBrands(){
- const brands=[...new Set([...vehicles,...bikes].map(v=>v.brand))].sort();
+ const brands=[...new Set(completeVehicles.map(v=>v.brand))].sort();
  document.getElementById("brandGrid").innerHTML=brands.map(b=>`<button class="brand-btn" onclick="filterByBrand('${b}')"><span class="brand-mark">${b.split(" ").map(x=>x[0]).join("").slice(0,2)}</span>${b}</button>`).join("");
 }
 function setFilter(f,btn){currentFilter=f;document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");document.getElementById("cars").scrollIntoView({behavior:"smooth"});render()}
 function showAll(){currentFilter="all";render()}
-function filterByBrand(brand){document.getElementById("searchInput").value=brand;searchVehicles()}
+function filterByBrand(brand){
+  document.getElementById("searchInput").value=brand;
+  const all=completeVehicles.filter(v=>v.brand.toLowerCase()===brand.toLowerCase());
+  const heading=document.querySelector("#cars h2");
+  if(heading) heading.textContent=`${brand} — All Models (${all.length})`;
+  document.getElementById("vehicleGrid").innerHTML=all.map(card).join("");
+  document.getElementById("cars").scrollIntoView({behavior:"smooth"});
+}
 function quickSearch(q){document.getElementById("searchInput").value=q;searchVehicles()}
 function focusSearch(){document.getElementById("searchInput").focus();window.scrollTo({top:0,behavior:"smooth"})}
 function searchVehicles(){
  const q=document.getElementById("searchInput").value.trim().toLowerCase();
  if(!q){render();return}
- const all=[...vehicles,...bikes].filter(v=>{
+ const exactBrand=completeVehicles.filter(v=>v.brand.toLowerCase()===q);
+ const all=exactBrand.length?exactBrand:completeVehicles.filter(v=>{
    const text=[v.brand,v.name,v.category,v.fuel,v.badge,...v.engines].join(" ").toLowerCase();
    return text.includes(q);
  });
  const heading=document.querySelector("#cars h2");
- if(heading) heading.textContent=all.length?`Search results for “${document.getElementById("searchInput").value.trim()}” (${all.length})`:"No vehicles found";
+ if(heading) heading.textContent=all.length?`${exactBrand.length?document.getElementById("searchInput").value.trim()+" — All Models":`Search results for “${document.getElementById("searchInput").value.trim()}”`} (${all.length})`:"No vehicles found";
  document.getElementById("vehicleGrid").innerHTML=all.length?all.map(card).join(""):`<div style="grid-column:1/-1;padding:60px;text-align:center;color:#aab6c5"><h3>No vehicle found</h3><p>Try Toyota, Mahindra, Hyundai, Kia, Creta, XUV 7XO, Seltos, Thar or KTM.</p></div>`;
  document.getElementById("cars").scrollIntoView({behavior:"smooth"});
 }
 
-function getVehicle(id){return [...vehicles,...bikes].find(v=>v.id===id)}
+function getVehicle(id){return completeVehicles.find(v=>v.id===id)}
 function openVehicle(id){
  const v=getVehicle(id); if(!v)return;
  const swatches=v.colors.map((c,i)=>`<button title="${c[0]}" class="swatch ${i===0?"active":""}" style="background:${c[1]}" onclick="selectColor(this,'${c[0]}')"></button>`).join("");
@@ -130,7 +205,7 @@ function specPanel(v){return `<div class="spec-table">
  ${[["Engine",v.engines.join(" / ")],["Fuel",v.fuel],["Transmission",v.transmission],["Drivetrain",v.drive],["Seating",v.seats],["Mileage / Range",v.mileage],["Length",v.length],["Wheelbase",v.wheelbase],["Price",v.price]].map(x=>`<div class="spec-cell"><span>${x[0]}</span><b>${x[1]}</b></div>`).join("")}</div>`}
 function featurePanel(v){return `<div class="feature-list">${v.features.map(x=>`<div class="feature">✓ ${x}</div>`).join("")}</div>`}
 function galleryPanel(v){return `<div class="feature-list">${v.gallery.map((x,i)=>`<div class="feature"><img src="${x}" style="width:100%;height:220px;object-fit:contain;background:#f0f1f2;border-radius:10px" onerror="safeImage(this)"><p style="margin-top:8px">${i?"Gallery view":"Main exterior view"}</p></div>`).join("")}</div>`}
-function detailTab(tab,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active");const v=getVehicle(document.querySelector(".modal-card")?.dataset?.id); /* fallback below */ const title=document.querySelector(".detail-info h2")?.textContent||"";const vv=[...vehicles,...bikes].find(x=>`${x.brand} ${x.name}`===title);document.getElementById("detailPanel").innerHTML=tab==="specs"?specPanel(vv):tab==="features"?featurePanel(vv):galleryPanel(vv)}
+function detailTab(tab,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active");const v=getVehicle(document.querySelector(".modal-card")?.dataset?.id); /* fallback below */ const title=document.querySelector(".detail-info h2")?.textContent||"";const vv=completeVehicles.find(x=>`${x.brand} ${x.name}`===title);document.getElementById("detailPanel").innerHTML=tab==="specs"?specPanel(vv):tab==="features"?featurePanel(vv):galleryPanel(vv)}
 function changeDetailImage(src,btn){document.getElementById("detailMainImage").src=src;document.querySelectorAll(".thumbs button").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
 function selectColor(btn,name){
  document.querySelectorAll(".swatch").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
